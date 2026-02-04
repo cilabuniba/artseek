@@ -5,6 +5,7 @@ from pathlib import Path
 
 import click
 import pandas as pd
+import os
 import torch
 from datasets import load_from_disk
 from dotenv import find_dotenv, load_dotenv
@@ -42,7 +43,11 @@ def cli(ctx):
 
     ctx.obj["logger"] = logger
     try:
-        ctx.obj["graph"] = Neo4jGraph()
+        ctx.obj["graph"] = Neo4jGraph(
+            url=os.environ["NEO4J_URI"],
+            username=os.environ["NEO4J_USERNAME"],
+            password=os.environ["NEO4J_PASSWORD"],
+        )
     except Exception as e:
         logger.error(f"Error creating Neo4j graph: {e}")
         ctx.obj["graph"] = None

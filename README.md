@@ -23,6 +23,24 @@ ArtSeek is a multimodal system for understanding artworks, which combines three 
 
 ![In-context reasoning pipeline](assets/generation.png)
 
+## Pre-Requisites
+
+### Neo4j
+
+The ArtGraph dataset can be accessed via Neo4j. We report here the steps to reproduce our setting:
+
+1. Install the Neo4j Community Edition 4.4.47 tar for the executable.
+2. ```bash
+   tar -xzf neo4j-community-4.4.47-unix.tar.gz
+   ```
+3. Download the [ArtGraph dump](https://zenodo.org/records/8172374). You only need the `artgraph2.0.dump` file.
+4. Create the graph database at the main position (`neo4j`):
+   ```bash
+   ./neo4j-community-4.4.47/bin/neo4j-admin load --from=artgraph2.0.dump --database=neo4j --force
+   ```
+5. Download the APOC JAR and put it inside the `plugins` subfolder of the Neo4j installation. The APOC release for the same version of Neo4j is [here](https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/4.4.0.24).
+6. Allow APOC procedures in the `conf/neo4j.conf` file.
+
 ## Installation
 
 Create a conda environment using the provided `artseek.yml` file:
