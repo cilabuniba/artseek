@@ -85,7 +85,7 @@ def download_image_wikiart(record, output_dir, existing_images, modifiers):
 
     # Skip if the image is already downloaded
     if name in existing_images:
-        return f"Already downloaded {name}"
+        return None
 
     # Remove existing modifiers
     for modifier in modifiers:
@@ -153,7 +153,8 @@ def download_and_save_images_wikiart(graph, output_dir: Path | str, num_threads=
         )
 
     for res in results:
-        print(res)
+        if res is not None:
+            print(res)
 
 
 def download_and_save_images_wikipedia(
