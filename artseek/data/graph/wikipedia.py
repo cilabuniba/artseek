@@ -137,6 +137,9 @@ def select_category_pages(category: str, max_depth: int = 0):
         max_depth (int, optional): Maximum search depth (included). Defaults to 0.
     """
     session = requests.Session()
+    session.headers.update({
+        "User-Agent": "ArtSeek/1.0 (contact: add your contact information here)"
+    })
     pages = _find_pages_in_category_recursive(category, session, max_depth=max_depth)
     print(f"Found {len(pages)} pages in the category {category}")
 

@@ -23,6 +23,7 @@ from .datasets.processing import FragmentCreator
 from .graph import ops as graph_ops
 from .graph import wikidata as graph_wikidata
 from .graph import wikipedia as graph_wikipedia
+from .graph import wikipedia_new as graph_wikipedia_new
 from .images import downloader as images_downloader
 from .images import embed as images_embed
 from .texts import extractor as texts_extractor
@@ -199,7 +200,7 @@ def get_visual_arts_dataset_pages(ctx):
     logger = ctx.obj["logger"]
 
     category = "Category:Visual arts"
-    graph_wikipedia.select_category_pages(category, 5)
+    graph_wikipedia_new.select_category_pages(category, 5)
     logger.info(
         f"Visual arts dataset pages saved at {get_data_dir() / 'graph' / category}.csv"
     )
