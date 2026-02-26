@@ -97,6 +97,7 @@ def make_qdrant_store(dataset_path: Path | str, process_idx: int, num_proc: int)
                     size=128,  # size of each vector produced by ColBERT
                     distance=models.Distance.COSINE,  # similarity metric between each vector
                     on_disk=True,
+                    datatype=models.Datatype.FLOAT16,
                     multivector_config=models.MultiVectorConfig(
                         comparator=models.MultiVectorComparator.MAX_SIM  # similarity metric between multivectors (matrices)
                     ),
@@ -110,6 +111,7 @@ def make_qdrant_store(dataset_path: Path | str, process_idx: int, num_proc: int)
                     size=128,  # size of each vector produced by ColBERT
                     distance=models.Distance.COSINE,  # similarity metric between each vector
                     on_disk=True,
+                    datatype=models.Datatype.FLOAT16,
                     multivector_config=models.MultiVectorConfig(
                         comparator=models.MultiVectorComparator.MAX_SIM  # similarity metric between multivectors (matrices)
                     ),
