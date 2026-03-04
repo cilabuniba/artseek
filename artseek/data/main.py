@@ -7,7 +7,7 @@ import click
 import pandas as pd
 import os
 import torch
-from datasets import load_from_disk
+from datasets import load_from_disk, disable_caching
 from dotenv import find_dotenv, load_dotenv
 from langchain_community.graphs import Neo4jGraph
 from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
@@ -17,6 +17,7 @@ from tqdm import tqdm
 from transformers import BitsAndBytesConfig
 from wikidata.client import Client
 from sklearn.model_selection import train_test_split
+from multiprocess import set_start_method
 
 from ..utils.dirutils import get_data_dir, get_fonts_dir, get_project_dir, get_store_dir
 from .datasets.processing import FragmentCreator
@@ -258,7 +259,7 @@ def create_wikifragments_visual_arts_full_dataset(ctx):
         return example
 
     ds = ds.map(create_fragment, num_proc=32, load_from_cache_file=False)
-    ds.save_to_disk(get_data_dir() / "wikifragments_visual_arts_dataset")
+    ds.save_to_disk(get_data_dir() / "wikifragments_visual_arts_dataset", num_proc=32)
 
 
 @cli.command()
@@ -268,6 +269,28 @@ def colqwen_embed(ctx):
 
     images_embed.colqwen_embed(get_data_dir() / "wikifragments_visual_arts_dataset")
     logger.info("Embeddings created")
+
+
+@cli.command()
+@click.option(
+    "--start-idx", type=int, default=None, help="Start index for dataset selection"
+)
+@click.option(
+    "--end-idx", type=int, default=None, help="End index for dataset selection"
+)
+@click.option(
+    "--step", type=click.Choice(["extract", "merge", "all"]), default="extract"
+)
+@click.pass_context
+def colqwen_embed_new(ctx, start_idx, end_idx, step):
+    logger = ctx.obj["logger"]
+
+    set_start_method("spawn")
+    embedder = images_embed.ColQwenPipeline(
+        str(get_data_dir() / "wikifragments_visual_arts_dataset"),
+    )
+
+    embedder.run(step=step, start_idx=start_idx, end_idx=end_idx)
 
 
 @cli.command()
