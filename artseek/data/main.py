@@ -301,7 +301,7 @@ def make_qdrant_store(ctx, process_idx, num_proc):
     logger = ctx.obj["logger"]
 
     images_embed.make_qdrant_store(
-        get_data_dir() / "wikifragments_visual_arts_dataset_embeds",
+        "cilabuniba/wikifragments-visual-arts-embeds",
         process_idx=process_idx,
         num_proc=num_proc,
     )
@@ -315,20 +315,20 @@ def add_qdrant_index(ctx):
 
     client = QdrantClient(url="http://localhost", prefer_grpc=True)
     try:
-        client.get_collection("wikifragments_visual_arts_dataset_embeds")
+        client.get_collection("wikifragments-visual-arts-embeds")
     except Exception:
         raise ValueError("Collection does not exist")
     client.update_collection(
-        collection_name="wikifragments_visual_arts_dataset_embeds",
+        collection_name="wikifragments-visual-arts-embeds",
         optimizer_config=models.OptimizersConfigDiff(indexing_threshold=20000),
         hnsw_config=models.HnswConfigDiff(m=16),
     )
 
     # every 5 minutes get the collection and check the state
     while True:
-        info = client.get_collection("wikifragments_visual_arts_dataset_embeds")
+        info = client.get_collection("wikifragments-visual-arts-embeds")
         logger.info(
-            f"Qdrant index status: {info.status} - {info.indexed_vectors_count} / {info.vectors_count}"
+            f"Qdrant index status: {info.status} - {info.indexed_vectors_count} / {info.points_count}"
         )
         if info.status != "yellow":
             logger.info(f"Qdrant index updated to {info.status}")
