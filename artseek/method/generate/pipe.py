@@ -4,6 +4,7 @@ from functools import partial
 from pathlib import Path
 from typing import Annotated
 
+import io
 from datasets import load_from_disk, load_dataset, disable_caching
 disable_caching()
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, ToolMessage
@@ -121,7 +122,11 @@ class Qwen2_5_VLRAGModel:
         ):
             prompt.append({"type": "text", "text": f"### Image {i}\n"})
             prompt.append({"type": "image"})
-            images.append(image)
+            if isinstance(image, dict):
+                decoded_image = Image.open(io.BytesIO(image["bytes"]))
+            else:
+                decoded_image = image
+            images.append(decoded_image)
             prompt.append({"type": "text", "text": f"Caption: {caption}\n\n"})
         prompt.append({"type": "text", "text": f"### Document Text\n{doc[0]['text']}"})
         return prompt, images
@@ -292,7 +297,7 @@ MODEL = Qwen2_5_VLRAGModel(
         "num_tasks": 5,
     },
     dataset_path="cilabuniba/wikifragments-visual-arts-embeds",
-    artgraph_path="data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/94ca4f9ec14941fa2cd45643ea351164e46b442e",
+    artgraph_path="data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/febde3ca54032ca61d058232396d175e60cfa137",
     shot_path=Path(__file__).parent / "shot",
 )
 
