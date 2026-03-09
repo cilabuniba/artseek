@@ -12,7 +12,7 @@ task_types:
   tag: multi-label
 accelerator:
   log_with: wandb
-  project_dir: models/checkpoints/retrieve/li_classification_network_tft
+  project_dir: models/checkpoints/classify/li_classification_network_tft
 model:
   pretrained_model_name_or_path: models/colqwen2-v1.0
   torch_dtype: bfloat16
@@ -39,19 +39,19 @@ optimizer_partial:
 datasets:
   train:
     _target_: artseek.data.datasets.artgraph.ArtGraphClassificationDataset
-    data_dir: data/artgraph
+    data_dir: data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/94ca4f9ec14941fa2cd45643ea351164e46b442e
     label_type: both
     with_image: false
     split: train
   val:
     _target_: artseek.data.datasets.artgraph.ArtGraphClassificationDataset
-    data_dir: data/artgraph
+    data_dir: data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/94ca4f9ec14941fa2cd45643ea351164e46b442e
     label_type: both
     with_image: false
     split: val
   test:
     _target_: artseek.data.datasets.artgraph.ArtGraphClassificationDataset
-    data_dir: data/artgraph
+    data_dir: data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/94ca4f9ec14941fa2cd45643ea351164e46b442e
     label_type: both
     with_image: false
     split: test
