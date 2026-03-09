@@ -46,7 +46,7 @@ RUSTFLAGS="-C target-cpu=native" cargo build --release --bin qdrant
 ## Try ArtSeek
 
 > [!NOTE]
-> Running the full pipeline requires the Qdrant server with the `wikifragments_visual_arts_dataset_embeds` collection loaded. The store requires ~1.5 TB of disk space.
+> Running the full pipeline requires the Qdrant server with the `wikifragments-visual-arts-embeds` collection loaded. The store requires ~1.5 TB of disk space.
 
 ### 1. Download datasets and models
 
@@ -147,11 +147,12 @@ All steps are run via `artseek.data.main`:
 3. **`define-valid-labels-artgraph-dataset`** — Defines evaluation labels.
 4. **`get-visual-arts-dataset-pages`** — Recursively collects Wikipedia pages under "Visual arts" (depth=5).
 5. **WikiExtractor** (run from `wikiextractor/` directory):
-```bash
-   python WikiExtractorNew.py --json -s --lists --links \
-     ../data/dumps/enwiki-latest-pages-articles.xml.bz2 -o text_en
-```
+    ```bash
+    python WikiExtractorNew.py --json -s --lists --links \
+        ../data/dumps/enwiki-latest-pages-articles.xml.bz2 -o text_en
+    ```
    This is a modified WikiExtractor that preserves image URLs and captions as `<a>` tags.
+
 6. **`download-and-save-images-wikipedia`** — Downloads images from extracted Wikipedia pages.
 7. **`create-wikifragments-dataset`** — Builds an HF dataset of Wikipedia paragraphs with attached images.
 8. **`create-wikifragments-visual-arts-full-dataset`** — Filters to visual arts pages and builds fragment images.
