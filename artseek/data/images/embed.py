@@ -5,8 +5,9 @@ import torch
 from transformers.utils.import_utils import is_flash_attn_2_available
 
 from torchvision.transforms import PILToTensor
+import time
 from transformers import ColQwen2ForRetrieval, ColQwen2Processor
-from datasets import DatasetDict, concatenate_datasets
+from datasets import DatasetDict, concatenate_datasets, load_dataset, disable_caching
 
 # from colpali_engine.models import ColQwen2, ColQwen2Processor
 from multiprocess import set_start_method
@@ -246,101 +247,126 @@ class ColQwenPipeline:
         return current_path
 
 
-def make_qdrant_store(dataset_path: Path | str, process_idx: int, num_proc: int):
+def make_qdrant_store(
+    dataset_path: Path | str, process_idx: int, num_proc: int, from_disk: bool = False
+):
     batch_size = 512
-    dataset_path = Path(dataset_path)
+    qdrant_url = "http://localhost"
+    collection_name = Path(dataset_path).stem
 
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
-    ds = load_from_disk(dataset_path)
+    # --- 1. WAIT FOR QDRANT TO BE READY ---
+    # Since Qdrant starts in the background of your Slurm script,
+    # we check if it's accepting connections before proceeding.
+    wait_client = QdrantClient(url=qdrant_url)
+    connected = False
+    for i in range(10):
+        try:
+            wait_client.get_collections()
+            connected = True
+            break
+        except Exception:
+            print(f"Waiting for Qdrant server... (Attempt {i+1}/10)")
+            time.sleep(2)
 
+    if not connected:
+        raise RuntimeError("Could not connect to Qdrant server on localhost.")
+
+    # --- 2. DATASET LOADING ---
+    if from_disk:
+        ds = load_from_disk(Path(dataset_path))
+    else:
+        ds = load_dataset(dataset_path)
+
+    # --- 3. COLLECTION SETUP (Process 0 only) ---
     if process_idx == 0:
-        client.create_collection(
-            collection_name=dataset_path.stem,
+        setup_client = QdrantClient(url=qdrant_url, prefer_grpc=True)
+        setup_client.delete_collection(collection_name)
+        setup_client.create_collection(
+            collection_name=collection_name,
             on_disk_payload=True,
             vectors_config={
                 "pooled": models.VectorParams(
-                    size=128,  # size of each vector produced by ColBERT
-                    distance=models.Distance.COSINE,  # similarity metric between each vector
+                    size=128,
+                    distance=models.Distance.COSINE,
                     on_disk=True,
                     datatype=models.Datatype.FLOAT16,
                     multivector_config=models.MultiVectorConfig(
-                        comparator=models.MultiVectorComparator.MAX_SIM  # similarity metric between multivectors (matrices)
+                        comparator=models.MultiVectorComparator.MAX_SIM
                     ),
                     quantization_config=models.BinaryQuantization(
-                        binary=models.BinaryQuantizationConfig(
-                            always_ram=True,
-                        ),
+                        binary=models.BinaryQuantizationConfig(always_ram=True),
                     ),
                 ),
                 "full": models.VectorParams(
-                    size=128,  # size of each vector produced by ColBERT
-                    distance=models.Distance.COSINE,  # similarity metric between each vector
+                    size=128,
+                    distance=models.Distance.COSINE,
                     on_disk=True,
                     datatype=models.Datatype.FLOAT16,
                     multivector_config=models.MultiVectorConfig(
-                        comparator=models.MultiVectorComparator.MAX_SIM  # similarity metric between multivectors (matrices)
+                        comparator=models.MultiVectorComparator.MAX_SIM
                     ),
                     quantization_config=models.BinaryQuantization(
                         binary=models.BinaryQuantizationConfig(),
                     ),
-                    hnsw_config=models.HnswConfigDiff(
-                        m=0,
-                    ),
+                    hnsw_config=models.HnswConfigDiff(m=0),
                 ),
             },
-            optimizers_config=models.OptimizersConfigDiff(
-                indexing_threshold=0,
-            ),
+            optimizers_config=models.OptimizersConfigDiff(indexing_threshold=0),
             shard_number=4,
         )
+    else:
+        time.sleep(300)
 
-    def upload_points(examples, idxs, start_idx=None, client=None):
-        if client is None:
-            raise RuntimeError("Client is None")
+    # --- 4. THE UPLOAD WORKER ---
+    def upload_points(examples, idxs, start_idx=None):
+        # Initializing here prevents the "SSLContext" pickle error.
+        # This is safe and standard practice for multiprocessing/mapped tasks.
+        worker_client = QdrantClient(url=qdrant_url, prefer_grpc=True)
+
         retries = 5
         for attempt in range(retries):
             try:
-                client.upload_points(
-                    collection_name=dataset_path.stem,
-                    points=[
-                        models.PointStruct(
-                            id=id,
-                            vector={"full": vector, "pooled": pooled_vector},
-                            payload={"idx": start_idx + idx},
-                        )
-                        for id, pooled_vector, vector, idx in zip(
-                            examples["id"],
-                            examples["pooled_embedding"],
-                            examples["embedding"],
-                            idxs,
-                        )
-                    ],
+                points = [
+                    models.PointStruct(
+                        id=id,
+                        vector={"full": vector, "pooled": pooled_vector},
+                        payload={"idx": start_idx + idx},
+                    )
+                    for id, pooled_vector, vector, idx in zip(
+                        examples["id"],
+                        examples["pooled_embeddings"],
+                        examples["full_embeddings"],
+                        idxs,
+                    )
+                ]
+                worker_client.upload_points(
+                    collection_name=collection_name,
+                    points=points,
                 )
-                break  # Exit the loop if upload is successful
+                break
             except Exception as e:
                 if attempt < retries - 1:
-                    print(f"Attempt {attempt + 1} failed: {e}. Retrying...")
+                    time.sleep(1)  # Simple backoff
+                    continue
                 else:
-                    print(f"Attempt {attempt + 1} failed: {e}. No more retries left.")
                     raise e
         return examples
 
-    # Split the dataset into shards
+    # --- 5. SHARDING AND MAPPING ---
     shards = [
         ds["train"].shard(num_shards=num_proc, index=i, contiguous=True)
         for i in range(num_proc)
     ]
     shard = shards[process_idx]
-    shard_lens = [len(shard) for shard in shards]
-    shard_start_idxs = [sum(shard_lens[:i]) for i in range(num_proc)]
-    shard_start_idx = shard_start_idxs[process_idx]
+    shard_lens = [len(s) for s in shards]
+    shard_start_idx = sum(shard_lens[:process_idx])
 
     shard.map(
         upload_points,
         with_indices=True,
         batched=True,
         batch_size=batch_size,
-        num_proc=1,
-        fn_kwargs={"start_idx": shard_start_idx, "client": client},
+        num_proc=4,  # Keep at 1 as your Slurm script handles the parallel tasks
+        fn_kwargs={"start_idx": shard_start_idx},
         load_from_cache_file=False,
     )
