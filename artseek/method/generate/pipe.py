@@ -4,7 +4,8 @@ from functools import partial
 from pathlib import Path
 from typing import Annotated
 
-from datasets import load_from_disk
+from datasets import load_from_disk, load_dataset, disable_caching
+disable_caching()
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage, ToolMessage
 from langchain_core.tools import tool
 from langgraph.graph import END, START, StateGraph
@@ -74,7 +75,7 @@ class Qwen2_5_VLRAGModel:
         )
 
         # Load DS
-        self.ds = load_from_disk(dataset_path)
+        self.ds = load_dataset(dataset_path)
 
         # Load the one-shot example
         shot_path = Path(shot_path)
@@ -266,13 +267,9 @@ class Qwen2_5_VLRAGModel:
 
 MODEL = Qwen2_5_VLRAGModel(
     retriever_pretrained_model_name_or_path=get_models_dir() / "colqwen2-v1.0",
-    retriever_collection_name="wikipedia_visual_arts_dataset_embeds",
+    retriever_collection_name="wikifragments-visual-arts-embeds",
     model_pretrained_model_name_or_path="Qwen/Qwen2.5-VL-32B-Instruct-AWQ",
-    licn_pretrained_path=get_model_checkpoints_dir()
-    / "classify"
-    / "li_classification_network_tft"
-    / "checkpoints"
-    / "checkpoint_epoch_25",
+    licn_pretrained_path="data_/hf/hub/models--cilabuniba--artseek-licn/snapshots/b02c6e12a21fc9d4af84897a6ac1efbe46da2695",
     model_kwargs={
         "torch_dtype": torch.bfloat16,
         "attn_implementation": "flash_attention_2",
@@ -294,8 +291,8 @@ MODEL = Qwen2_5_VLRAGModel(
     licn_loss_kwargs={
         "num_tasks": 5,
     },
-    dataset_path=get_data_dir() / "wikifragments_visual_arts_dataset_embeds",
-    artgraph_path=get_data_dir() / "artgraph",
+    dataset_path="cilabuniba/wikifragments-visual-arts-embeds",
+    artgraph_path="data_/hf/hub/datasets--cilabuniba--artseek-licn-data/snapshots/94ca4f9ec14941fa2cd45643ea351164e46b442e",
     shot_path=Path(__file__).parent / "shot",
 )
 
