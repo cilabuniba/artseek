@@ -15,7 +15,7 @@ from PIL import Image
 from safetensors.torch import load_file, load_model, save_file
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from tqdm import tqdm
-from transformers import AdamW, AutoModelForSequenceClassification, get_scheduler
+from transformers import AutoModelForSequenceClassification, get_scheduler
 
 from ...data.datasets.artgraph import ArtGraphClassificationDataset
 from .metrics import (
@@ -37,7 +37,7 @@ def cli():
 
 
 # Collate using the processor
-def _collate_fn(batch, processor, tasks, precomputed, task_class_counts=None):
+def _collate_fn(batch, data_dir, processor, tasks, precomputed, task_class_counts=None):
     new_batch = {}
     for task in tasks:
         # Get all unique label IDs across the batch for this task
@@ -65,16 +65,14 @@ def _collate_fn(batch, processor, tasks, precomputed, task_class_counts=None):
                 if (
                     precomputed
                     and (
-                        get_data_dir()
-                        / "artgraph"
+                        data_dir
                         / "precomputed"
                         / task
                         / f"{label_id}.safetensors"
                     ).exists()
                 ):
                     tensors = load_file(
-                        get_data_dir()
-                        / "artgraph"
+                        data_dir
                         / "precomputed"
                         / task
                         / f"{label_id}.safetensors"
@@ -134,16 +132,14 @@ def _collate_fn(batch, processor, tasks, precomputed, task_class_counts=None):
         if (
             precomputed
             and (
-                get_data_dir()
-                / "artgraph"
+                data_dir
                 / "precomputed"
                 / "images"
                 / f"{item['artwork'][0][1]}.safetensors"
             ).exists()
         ):
             tensors = load_file(
-                get_data_dir()
-                / "artgraph"
+                data_dir
                 / "precomputed"
                 / "images"
                 / f"{item['artwork'][0][1]}.safetensors"
@@ -182,6 +178,9 @@ def precompute(config_path):
         config_dict = yaml.safe_load(f)
         config = instantiate(config_dict)
 
+    train_data_dir = config.datasets.train.data_dir
+    val_data_dir = config.datasets.val.data_dir
+    test_data_dir = config.datasets.test.data_dir
     tasks = config.tasks
 
     # Model
@@ -193,16 +192,16 @@ def precompute(config_path):
     model.to(device)
 
     # Read data from train.json
-    with open(get_data_dir() / "artgraph" / "train.json", "r") as f:
+    with open(train_data_dir / "train.json", "r") as f:
         data = json.load(f)
     # Also read val and test data, and extend the images key of data
-    with open(get_data_dir() / "artgraph" / "val.json", "r") as f:
+    with open(val_data_dir / "val.json", "r") as f:
         data["artwork"].update(json.load(f)["artwork"])
-    with open(get_data_dir() / "artgraph" / "test.json", "r") as f:
+    with open(test_data_dir / "test.json", "r") as f:
         data["artwork"].update(json.load(f)["artwork"])
 
     # Create a directory name precomputed in the data directory
-    precomputed_dir = get_data_dir() / "artgraph" / "precomputed"
+    precomputed_dir = train_data_dir / "precomputed"
     precomputed_dir.mkdir(exist_ok=True)
 
     # Create subdirectories for images and each task
@@ -227,7 +226,7 @@ def precompute(config_path):
             continue
 
         batch_images = [
-            Image.open(get_data_dir() / "artgraph" / "images" / image_name)
+            Image.open(train_data_dir / "images" / image_name)
             for image_name in batch_image_names
         ]
         batch_images = processor.process_images(batch_images).to(device)
@@ -316,9 +315,14 @@ def train(config_path):
     # Data
     train_dataset = config.datasets.train
     val_dataset = config.datasets.val
+    
+    train_data_dir = config.datasets.train.data_dir
+    val_data_dir = config.datasets.val.data_dir
+    test_data_dir = config.datasets.test.data_dir
 
     collate_fn_train = partial(
         _collate_fn,
+        data_dir=train_data_dir,
         processor=processor,
         tasks=tasks,
         precomputed=precomputed,
@@ -326,6 +330,7 @@ def train(config_path):
     )
     collate_fn_val = partial(
         _collate_fn,
+        data_dir=val_data_dir,
         processor=processor,
         tasks=tasks,
         precomputed=precomputed,
@@ -871,6 +876,119 @@ def test(config_path):
             metrics_dict[task][metric] = metrics_dict[task][metric].item()
     with open(os.path.join(config.accelerator.project_dir, "metrics.json"), "w") as f:
         json.dump(metrics_dict, f, indent=4)
+        
+        
+@cli.command(name="export-task-matrices")
+@click.option("--config-path", type=click.Path(exists=True), required=True, help="Path to the model config file.")
+@click.option("--output-dir", type=click.Path(), required=True, help="Directory path to save lookups and matrices.")
+@torch.no_grad()
+def export_task_matrices(config_path, output_dir):
+    """Computes and saves task lookups and matrices to a specified directory."""
+    
+    # 1. Load config
+    with open(config_path, "r") as f:
+        config_dict = yaml.safe_load(f)
+        config = instantiate(config_dict)
+
+    tasks = config.tasks
+
+    # 2. Load model
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    li_classification_network = LateInteractionClassificationNetwork(
+        **config.li_classification_network
+    ).to(device)
+    
+    checkpoint_dir = os.path.join(config.accelerator.project_dir, "checkpoints")
+    # find the last checkpoint
+    checkpoints = [
+        f for f in os.listdir(checkpoint_dir) if f.startswith("checkpoint_epoch_")
+    ]
+    checkpoints_lookup = {
+        int(checkpoint.split("_")[-1]): checkpoint for checkpoint in checkpoints
+    }
+    last_checkpoint = checkpoints_lookup[max(checkpoints_lookup.keys())]
+    checkpoint_path = os.path.join(checkpoint_dir, last_checkpoint, "model.safetensors")
+    
+    load_model(li_classification_network, checkpoint_path)
+    li_classification_network.eval()
+
+    # 3. Define and fill the task matrices
+    data_dir = config.datasets.test.data_dir
+    precomputed_dir = os.path.join(data_dir, "precomputed")
+    
+    task_matrices = {}
+    task_lookups = {}
+    batch_size = 64
+    
+    for task_idx, task in enumerate(tasks):
+        task_dir = os.path.join(precomputed_dir, task)
+        task_lookups[task] = {"-100": -100}
+        
+        # count the safetensors files
+        filenames = [f for f in os.listdir(task_dir) if f.endswith(".safetensors")]
+        n_files = len(filenames)
+        n_classes = n_files
+        
+        task_matrix = torch.zeros(
+            n_classes, config.li_classification_network.output_dim
+        ).to(device)
+
+        # load batches of embeddings, process them with the model and fill the task matrix
+        real_i = 0
+        for i in tqdm(range(0, n_files, batch_size), desc=f"Processing {task}"):
+            batch = []
+            real_batch_size = 0
+            for j, filename in enumerate(filenames[i : i + batch_size]):
+                class_id = filename.removesuffix(".safetensors")
+                tensors = load_file(os.path.join(task_dir, filename))
+                batch.append(tensors["embedding"])
+                task_lookups[task][class_id] = real_batch_size + real_i
+                real_batch_size += 1
+                
+            if real_batch_size == 0:
+                continue
+
+            # find the max length of the embeddings
+            max_len = max([embedding.size(0) for embedding in batch])
+            # create the mask
+            attention_mask = torch.tensor(
+                [
+                    [1] * embedding.size(0) + [0] * (max_len - embedding.size(0))
+                    for embedding in batch
+                ],
+                dtype=torch.bool,
+            ).to(device)
+            # pad the embeddings
+            batch_padded = [
+                torch.cat(
+                    [
+                        embedding,
+                        torch.zeros(max_len - embedding.size(0), embedding.size(1)),
+                    ]
+                )
+                for embedding in batch
+            ]
+            batch_tensor = torch.stack(batch_padded).to(device)
+
+            # process the batch with the model
+            task_matrix[real_i : real_i + real_batch_size] = li_classification_network(
+                text_embeddings=batch_tensor, text_mask=attention_mask, task_idx=task_idx
+            )["text_task_embeddings"]
+            real_i += real_batch_size
+            
+        task_matrices[task] = task_matrix
+
+    # 4. Save to the provided CLI output directory
+    os.makedirs(output_dir, exist_ok=True)
+    
+    lookups_path = os.path.join(output_dir, "task_lookups.json")
+    with open(lookups_path, "w") as f:
+        json.dump(task_lookups, f, indent=4)
+        
+    matrices_path = os.path.join(output_dir, "task_matrices.safetensors")
+    save_file(task_matrices, matrices_path)
+    
+    click.echo(f"Successfully saved task lookups and matrices to: {output_dir}")
 
 
 if __name__ == "__main__":
