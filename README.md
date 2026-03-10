@@ -14,7 +14,9 @@ ArtSeek is a multimodal system for understanding artworks built on three compone
 
 ## Installation
 
+> [!NOTE]
 > Developed on: 8 CPUs, 1× NVIDIA A100 (CUDA 12.6), 128 GB RAM.
+
 ```bash
 uv sync
 uv pip install flash-attn --no-build-isolation
@@ -46,7 +48,7 @@ RUSTFLAGS="-C target-cpu=native" cargo build --release --bin qdrant
 ## Try ArtSeek
 
 > [!NOTE]
-> Running the full pipeline requires the Qdrant server with the `wikifragments-visual-arts-embeds` collection loaded. The store requires ~1.5 TB of disk space.
+> Running the full pipeline requires the Qdrant server with the `wikifragments-visual-arts-embeds` collection loaded. The store requires ~250 GB of disk space.
 
 ### 1. Download datasets and models
 
