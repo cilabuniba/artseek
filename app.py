@@ -102,10 +102,19 @@ def render_card(card: dict):
 
 
 def parse_ai_content(content: str) -> tuple[str | None, str]:
-    """Split an AI message into *(thinking, visible_response)*."""
-    m = re.search(r"<think>(.*?)</think>", content, re.DOTALL)
-    thinking = m.group(1).strip() if m else None
-    visible = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+    """Split an AI message into *(thinking, visible_response)*.
+
+    The model often omits the opening ``<think>`` tag and only emits
+    ``</think>``, so we look for the closing tag and treat everything
+    before it as the thinking portion.
+    """
+    idx = content.find("</think>")
+    if idx != -1:
+        thinking = content[:idx].replace("<think>", "").strip()
+        visible = content[idx + len("</think>"):].strip()
+    else:
+        thinking = None
+        visible = content.strip()
     return thinking, visible
 
 
@@ -120,7 +129,7 @@ def render_documents(artifact: dict | None):
             score_pct = int(doc["score"] * 100)
             st.markdown(f"**📖 {doc['title']}** · relevance {score_pct}%")
 
-            # Document images
+            # Document images (thumbnails)
             imgs = doc.get("images", [])
             if imgs:
                 img_cols = st.columns(min(len(imgs), 4))
@@ -129,10 +138,12 @@ def render_documents(artifact: dict | None):
                         img = entry["image"]
                         if isinstance(img, dict):
                             img = Image.open(io.BytesIO(img["bytes"]))
+                        if isinstance(img, Image.Image):
+                            img.thumbnail((200, 200), Image.LANCZOS)
                         st.image(
                             img,
                             caption=entry.get("caption", ""),
-                            use_container_width=True,
+                            use_container_width=False,
                         )
 
             # Document text
@@ -255,11 +266,6 @@ with st.sidebar:
         st.session_state.tool_artifacts.clear()
         st.rerun()
 
-    # Classification card
-    if st.session_state.card and classify:
-        st.divider()
-        render_card(st.session_state.card)
-
 # ── Main area ────────────────────────────────────────────────────────────────
 
 if st.session_state.input_image is None:
@@ -285,6 +291,13 @@ if st.session_state.input_image is None:
     """
     )
     st.stop()
+
+# ── Classification card (main area, always visible) ──────────────────────────
+
+if st.session_state.card and classify:
+    with st.container(border=True):
+        st.markdown("### 🎨 Artwork Classification")
+        render_card(st.session_state.card)
 
 # ── Chat history ─────────────────────────────────────────────────────────────
 
