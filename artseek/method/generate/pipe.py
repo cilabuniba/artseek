@@ -267,6 +267,205 @@ class Qwen2_5_VLRAGModel:
 
         return task_preds
 
+    # ── Multi-turn chat support ──────────────────────────────────────────
+
+    def _get_system_message(self, classify: bool, retrieve: bool) -> SystemMessage:
+        """Return the appropriate system message for the given configuration."""
+        if classify and retrieve:
+            return SystemMessage(
+                "You are a helpful assistant.\n\n# Rules\n"
+                "When given a user query, analyze how best to respond.\n"
+                "* Only very simple questions (e.g., naming clearly visible objects) should be answered directly.\n"
+                '* An artwork card is provided with some information about the artwork. The artwork card might not be completely accurate, so when referring to the artist (for instance), always use terms such as "might be" or similar.\n'
+                "* For most other questions—especially those involving the artist, historical context, stylistic analysis, or external references—you must retrieve and use relevant documents before responding.\n"
+                "* Not all documents may be useful; select only the most relevant ones to support your answer.\n"
+                '* To retrieve documents, use the tool "get_relevant_documents".\n'
+                '* You may call the "get_relevant_documents" tool at most 3 times per user query.\n'
+                "* Whenever possible, indicate which documents were used in your reasoning. Enclose your reasoning process within <think></think> XML tags."
+            )
+        elif classify:
+            return SystemMessage(
+                "You are a helpful assistant.\n\n# Rules\n"
+                "When given a user query, analyze how best to respond.\n"
+                "* Only very simple questions (e.g., naming clearly visible objects) should be answered directly.\n"
+                '* An artwork card is provided with some information about the artwork. The artwork card might not be completely accurate, so when referring to the artist (for instance), always use terms such as "might be" or similar.\n'
+                "* For most other questions—especially those involving the artist, historical context, or stylistic analysis—use the information in the artwork card and your own knowledge to answer.\n"
+                "* Whenever possible, indicate your reasoning process within <think></think> XML tags."
+            )
+        elif retrieve:
+            return SystemMessage(
+                "You are a helpful assistant.\n\n# Rules\n"
+                "When given a user query, analyze how best to respond.\n"
+                "* Only very simple questions (e.g., naming clearly visible objects) should be answered directly.\n"
+                "* For most other questions—especially those involving the artist, historical context, stylistic analysis, or external references—you must retrieve and use relevant documents before responding.\n"
+                "* Not all documents may be useful; select only the most relevant ones to support your answer.\n"
+                '* To retrieve documents, use the tool "get_relevant_documents".\n'
+                '* You may call the "get_relevant_documents" tool at most 5 times per user query.\n'
+                "* Whenever possible, indicate which documents were used in your reasoning. Enclose your reasoning process within <think></think> XML tags."
+            )
+        else:
+            return SystemMessage(
+                "You are a helpful assistant.\n\n# Rules\n"
+                "When given a user query, analyze how best to respond.\n"
+                "* Only very simple questions (e.g., naming clearly visible objects) should be answered directly.\n"
+                "* For most other questions—especially those involving the artist, historical context, or stylistic analysis—use your own knowledge to answer.\n"
+                "* Whenever possible, indicate your reasoning process within <think></think> XML tags."
+            )
+
+    def _call_retrieve_tool(
+        self, query: str, requires_image: bool, input_image: Image.Image
+    ) -> tuple[list[dict], dict]:
+        """Call the retrieval tool directly (bypasses LangGraph ToolNode).
+
+        Args:
+            query: The retrieval query.
+            requires_image: Whether the query should be combined with the image.
+            input_image: The input image.
+
+        Returns:
+            tuple: (content_for_model, artifact_for_display)
+        """
+        embeds = self.retriever.embed(
+            [query], [input_image] if requires_image else None
+        )
+        response = self.retriever.query(embeds[0], prefetch_limit=100, limit=10)
+
+        idxs = [record.payload["idx"] for record in response.points]
+        scores = [record.score for record in response.points]
+        context = [(self.ds["train"][idx], score) for idx, score in zip(idxs, scores)]
+        context_prompts = [
+            self._doc_to_prompt(doc, idx)
+            for idx, doc in enumerate(context, start=1)
+        ]
+        context_prompt_texts = [p for p, _ in context_prompts]
+        context_prompt_images = [imgs for _, imgs in context_prompts]
+        context_prompt_texts = [
+            item for sublist in context_prompt_texts for item in sublist
+        ]
+        context_prompt_images = [
+            item for sublist in context_prompt_images for item in sublist
+        ]
+        context_prompt_texts.insert(0, {"type": "text", "text": "# Context"})
+
+        # Build structured document info for display
+        documents = []
+        for row, score in context:
+            doc_images = []
+            for img, cap in zip(
+                row["images"]["image"], row["images"]["caption"]
+            ):
+                if isinstance(img, dict):
+                    pil_img = Image.open(io.BytesIO(img["bytes"]))
+                elif isinstance(img, Image.Image):
+                    pil_img = img
+                else:
+                    pil_img = img
+                doc_images.append({"image": pil_img, "caption": cap})
+            documents.append(
+                {
+                    "title": row["title"],
+                    "score": score,
+                    "text": row["text"],
+                    "images": doc_images,
+                }
+            )
+
+        return context_prompt_texts, {
+            "context_images": context_prompt_images,
+            "context_idxs": idxs,
+            "documents": documents,
+        }
+
+    @torch.no_grad()
+    def chat_turn(
+        self,
+        messages: list,
+        input_image: Image.Image,
+        classify: bool = True,
+        retrieve: bool = True,
+        context_images: list | None = None,
+        max_new_tokens: int = 512,
+    ) -> tuple[list, list]:
+        """Run a single turn of multi-turn conversation.
+
+        Handles the model call and the tool-calling loop for one turn.
+        The caller manages conversation state (message history and accumulated
+        context images) across turns.
+
+        Args:
+            messages: Full conversation history (list of langchain messages).
+            input_image: The input artwork image.
+            classify: Whether classification is being used.
+            retrieve: Whether retrieval (RAG) is enabled.
+            context_images: Previously accumulated context images from tool calls.
+            max_new_tokens: Maximum number of new tokens to generate.
+
+        Returns:
+            tuple: (new_messages, new_context_images)
+        """
+        system_message = self._get_system_message(classify, retrieve)
+        context_images = list(context_images) if context_images else []
+
+        # Build full message + image lists
+        use_shot = classify or retrieve
+        if use_shot:
+            all_messages = [system_message] + self.shot["messages"] + messages
+            all_images = (
+                list(self.shot["images"]) + [input_image] + context_images
+            )
+        else:
+            all_messages = [system_message] + messages
+            all_images = [input_image] + context_images
+
+        # Bind tools when retrieval is enabled
+        if retrieve:
+            model = self.model.bind_tools(
+                [get_json_schema_no_state(get_relevant_documents.func)]
+            )
+        else:
+            model = self.model
+
+        new_messages: list = []
+        new_context_images: list = []
+
+        for _ in range(5):  # max tool-call iterations
+            response = model.invoke(
+                all_messages,
+                images=all_images,
+                max_new_tokens=max_new_tokens,
+            )
+            new_messages.append(response)
+            all_messages.append(response)
+
+            if not response.tool_calls:
+                break
+
+            # Execute every tool call in the response
+            for tc in response.tool_calls:
+                query = tc["args"].get("query", "")
+                requires_image = tc["args"].get("requires_image", False)
+                content, artifact = self._call_retrieve_tool(
+                    query, requires_image, input_image
+                )
+                tool_msg = ToolMessage(
+                    content=content,
+                    artifact=artifact,
+                    tool_call_id=tc["id"],
+                    name="get_relevant_documents",
+                )
+                new_messages.append(tool_msg)
+                all_messages.append(tool_msg)
+
+                # Resize and accumulate context images for the model
+                resized = [
+                    self._resize_to_target_pixels(img, 128 * 28 * 28)
+                    for img in artifact["context_images"]
+                ]
+                new_context_images.extend(resized)
+                all_images.extend(resized)
+
+        return new_messages, new_context_images
+
 
 # Model and tools
 
