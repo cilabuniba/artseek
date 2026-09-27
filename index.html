@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtSeek: Deep Artwork Understanding</title>
+  <meta name="description" content="ArtSeek: deep artwork understanding via multimodal in-context reasoning and late interaction retrieval. A multimodal LLM that classifies an artwork, retrieves Wikipedia knowledge with late interaction, and reasons before answering.">
+  <meta property="og:title" content="ArtSeek: Deep artwork understanding via multimodal in-context reasoning and late interaction retrieval">
+  <meta property="og:description" content="Retrieval-augmented multimodal reasoning over artworks, with the WikiFragments knowledge base.">
+  <meta property="og:image" content="static/img/figures/artseek.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23b5532f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>A</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="#top">ArtSeek</a>
+  <div class="nav-links">
+    <a href="#demo">Demo</a>
+    <a href="#method">Method</a>
+    <a href="#wikifragments">WikiFragments</a>
+    <a href="#results">Results</a>
+    <a href="#human">Human study</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+</nav>
+
+<header class="hero" id="top">
+  <span class="status-badge">Paper under review</span>
+  <h1><span class="brand">ArtSeek</span><br><span class="subtitle">Deep Artwork Understanding via Multimodal In-Context Reasoning and Late Interaction Retrieval</span></h1>
+  <p class="authors">
+    <span>Nicola Fanelli</span><span>Gennaro Vessio</span><span>Giovanna Castellano</span>
+  </p>
+  <p class="affiliation">University of Bari Aldo Moro, Italy</p>
+  <div class="buttons">
+    <a class="btn" href="https://arxiv.org/abs/2507.21917"><i class="fa-solid fa-file-pdf"></i>Paper (arXiv)</a>
+    <a class="btn" href="https://github.com/cilabuniba/artseek"><i class="fa-brands fa-github"></i>Code</a>
+    <a class="btn" href="https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds"><i class="fa-solid fa-database"></i>WikiFragments</a>
+    <a class="btn" href="https://huggingface.co/cilabuniba/artseek-licn"><i class="fa-solid fa-cube"></i>LICN model</a>
+    <a class="btn" href="https://github.com/cilabuniba/artseek/tree/rebuttal/rebuttal_experiments"><i class="fa-solid fa-flask"></i>Experiments</a>
+    <a class="btn btn-ghost" href="#bibtex"><i class="fa-solid fa-quote-right"></i>BibTeX</a>
+  </div>
+
+  <div class="teaser">
+    <div class="pipeline" id="pipeline" aria-label="ArtSeek pipeline animation">
+      <div class="pnode" data-step="0"><div class="picon"><i class="fa-regular fa-image"></i></div><b>Artwork + question</b><small>any digitized image, no metadata</small></div>
+      <div class="parrow"></div>
+      <div class="pnode" data-step="1"><div class="picon"><i class="fa-solid fa-tags"></i></div><b>Artwork card</b><small>LICN predicts artist, genre, style, media, tags</small></div>
+      <div class="parrow"></div>
+      <div class="pnode" data-step="2"><div class="picon"><i class="fa-solid fa-magnifying-glass"></i></div><b>Late-interaction retrieval</b><small>ColQwen2 over millions of Wikipedia fragments</small></div>
+      <div class="parrow"></div>
+      <div class="pnode" data-step="3"><div class="picon"><i class="fa-solid fa-brain"></i></div><b>In-context reasoning</b><small>Qwen2.5-VL decides when and what to retrieve</small></div>
+      <div class="parrow"></div>
+      <div class="pnode" data-step="4"><div class="picon"><i class="fa-solid fa-circle-check"></i></div><b>Grounded answer</b><small>citing the fragments it read</small></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section narrow" id="abstract">
+  <h2>Abstract</h2>
+  <p>Analyzing digitized artworks requires not only visual interpretation but also a deep understanding of rich artistic, contextual, and historical knowledge. We introduce <b>ArtSeek</b>, a multimodal framework for art analysis that combines multimodal large language models with retrieval-augmented generation. Unlike prior work, our pipeline relies <b>only on image input</b>, enabling applicability to artworks without links to Wikidata or Wikipedia, which is common in most digitized collections. ArtSeek integrates three components: a multimodal retrieval module based on late interaction retrieval, a contrastive multitask network predicting artist, genre, style, media, and tags, and an agentic reasoning strategy enabled through in-context examples. Central to this approach is <b>WikiFragments</b>, a Wikipedia-scale dataset of image-text fragments curated to support knowledge-grounded multimodal reasoning.</p>
+  <p>Our multimodal query encoding raises retrieval NDCG@5 from 33.9 to 44.9, and token pooling keeps late-interaction search practical over millions of fragments at under 7% of the cost of full multi-vector retrieval. ArtSeek sets a new state of the art in artwork attribute classification (+8.4% F1 on style over GraphCLIP) and gains +7.1 BLEU@1 on ArtPedia captioning. On five knowledge-grounded question answering benchmarks, retrieval helps where the answer is documented in our index or lies inside the classifier's label space (+0.19 mean correctness) and is neutral where it is not; what separates the two regimes is how much of a benchmark the knowledge base covers. The gain transfers to two non-Qwen backbones, and a blind human study corroborates the picture.</p>
+
+  <div class="stat-row">
+    <div class="stat"><span class="stat-num" data-count="44.9" data-dec="1">0</span><span class="stat-label">NDCG@5 of the filtered multimodal query (from 33.9)</span></div>
+    <div class="stat"><span class="stat-num" data-count="7" data-prefix="&lt;" data-suffix="%">0</span><span class="stat-label">of the cost of full multi-vector retrieval</span></div>
+    <div class="stat"><span class="stat-num" data-count="8.4" data-dec="1" data-prefix="+" data-suffix="%">0</span><span class="stat-label">style F1 over the previous state of the art</span></div>
+    <div class="stat"><span class="stat-num" data-count="0.19" data-dec="2" data-prefix="+">0</span><span class="stat-label">mean correctness where the index covers the painting</span></div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <h2>Watch ArtSeek think</h2>
+  <p class="lead">Real traces from the ArtPedia-VQA benchmark: the artwork card, the fragments ArtSeek actually retrieved, its reasoning and its answer, next to the bare backbone (Qwen2.5-VL-32B). Answers are graded 0-2 by an LLM judge (phi-4). Two of the six are failure cases.</p>
+
+  <div class="demo">
+    <aside class="gallery" id="gallery" aria-label="Choose a painting"></aside>
+
+    <div class="chat-panel">
+      <div class="chat-toolbar">
+        <div class="steps" id="steps">
+          <span data-s="0">Question</span><span data-s="1">Card</span><span data-s="2">Retrieval</span><span data-s="3">Reasoning</span><span data-s="4">Answer</span>
+        </div>
+        <div class="controls">
+          <button class="chip" id="replayBtn"><i class="fa-solid fa-rotate-right"></i> Replay</button>
+          <button class="chip" id="skipBtn"><i class="fa-solid fa-forward"></i> Skip</button>
+        </div>
+      </div>
+      <div class="chat" id="chat" aria-live="polite"></div>
+    </div>
+
+    <aside class="side">
+      <div class="side-card" id="compareCard">
+        <h4>Backbone alone <span class="muted">Qwen2.5-VL-32B</span></h4>
+        <p id="baseAnswer" class="clamp"></p>
+        <div id="baseScore"></div>
+      </div>
+      <div class="side-card">
+        <h4>Reference answer</h4>
+        <p id="refAnswer"></p>
+      </div>
+      <div class="side-card note" id="exampleNote"></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <h2>How it works</h2>
+  <div class="tabs" data-tabs="method">
+    <button class="tab active" data-tab="m-retrieval">Late-interaction retrieval</button>
+    <button class="tab" data-tab="m-licn">Artwork card (LICN)</button>
+    <button class="tab" data-tab="m-icl">In-context reasoning</button>
+    <button class="tab" data-tab="m-overview">Overview</button>
+  </div>
+  <div class="tab-panels" data-panels="method">
+    <div class="tab-panel active" id="m-retrieval">
+      <figure><img src="static/img/figures/retrieval.png" alt="Two-stage retrieval with ColQwen2" loading="lazy"></figure>
+      <div class="cols">
+        <p><b>Late interaction.</b> ColQwen2 encodes every fragment, rendered as an image, into a sequence of token embeddings. A query matches each of its tokens to the most similar document token (MaxSim) and sums the scores, which is far more expressive than a single vector.</p>
+        <p><b>Filtered multimodal queries.</b> The painting and the question are encoded together, but only the question tokens are kept: they are contextualized by the image, and dropping the image tokens halves query time and raises NDCG@5 from 33.9 to 44.9.</p>
+        <p><b>Two stages.</b> Candidates are prefetched on 9 pooled vectors per fragment (clustered token embeddings) and reranked on the full representations. On 10,000 fragments this keeps 27.6 NDCG@5 at under 7% of the cost of full retrieval.</p>
+      </div>
+      <div class="ret-anim" id="retAnim" aria-label="Animation of two-stage retrieval">
+        <div class="ret-col"><div class="ret-title">Index</div><div class="dotgrid" id="dotgrid"></div><small>millions of fragments</small></div>
+        <div class="ret-arrow">prefetch<br><b>N₁ = 100</b><br>on pooled vectors</div>
+        <div class="ret-col"><div class="ret-title">Candidates</div><div class="dotgrid small" id="dotgrid2"></div><small>100 fragments</small></div>
+        <div class="ret-arrow">rerank<br><b>N₂ = 10</b><br>full MaxSim</div>
+        <div class="ret-col"><div class="ret-title">Context</div><div class="ranked" id="ranked"></div><small>10 fragments → prompt</small></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="m-licn">
+      <figure><img src="static/img/figures/classification.png" alt="Late Interaction Classification Network" loading="lazy"></figure>
+      <div class="cols">
+        <p><b>Late Interaction Classification Network.</b> Frozen ColQwen2 embeddings of the image and of every label name are concatenated with learnable task embeddings and encoded by a shared transformer. Each task (artist, genre, style, media, tags) gets its own projection, and images and labels are matched in embedding space.</p>
+        <p><b>Contrastive and open-set.</b> A SigLIP-style loss per task, combined with uncertainty weighting, trains it on the 116,475 ArtGraph artworks. Because it scores labels by similarity, it classifies over the whole label set and can take new classes without new layers.</p>
+        <p><b>The artwork card.</b> Its predictions, with confidences, are given to the language model. They help build retrieval queries even when a field is wrong, and help most when the answer lies in the classifier's label space.</p>
+      </div>
+    </div>
+    <div class="tab-panel" id="m-icl">
+      <figure><img src="static/img/figures/generation.png" alt="The one-shot in-context example" loading="lazy"></figure>
+      <div class="cols">
+        <p><b>One worked example.</b> Instead of fine-tuning, Qwen2.5-VL-32B is shown a single conversation: a visual question it answers directly, and a complex one where it calls <code>get_relevant_documents</code> several times, each time deciding what to look up next.</p>
+        <p><b>Policy that pays off.</b> Replacing the example with a prose description of the same policy lowers correctness on all five benchmarks (+0.05 to +0.19 for the example), makes answers 52% slower, and sometimes produces no answer at all.</p>
+        <p><b>Any backbone.</b> Models that cannot emit tool calls still benefit when retrieval is run before their first turn: +0.22 with Gemma-3-27B and +0.28 with Mistral-Small-3.1-24B.</p>
+      </div>
+    </div>
+    <div class="tab-panel" id="m-overview">
+      <figure><img src="static/img/figures/artseek.png" alt="ArtSeek pipeline" loading="lazy" class="fig-medium"></figure>
+      <p class="center muted">The full pipeline: user input, retriever over WikiFragments, attribute classifier, and the multimodal LLM that reasons over the context.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="wikifragments">
+  <h2>WikiFragments</h2>
+  <p class="lead">A <b>multimodal fragment</b> is a Wikipedia paragraph together with every image that appears above it in the page. Each fragment is rendered as one image (a grid of images and captions, then the text with its links) so that a vision-language retriever sees text and pictures jointly.</p>
+  <div class="wf-grid">
+    <div class="wf-stats">
+      <div class="stat"><span class="stat-num" data-count="50" data-suffix="M+">0</span><span class="stat-label">fragments from the whole English Wikipedia</span></div>
+      <div class="stat"><span class="stat-num" data-count="973406" data-sep="1">0</span><span class="stat-label">visual-arts pages, found by crawling categories from <i>Visual arts</i> (depth 5)</span></div>
+      <div class="stat"><span class="stat-num" data-count="8166323" data-sep="1">0</span><span class="stat-label">fragments in the released visual-arts index</span></div>
+      <a class="btn" href="https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds"><i class="fa-solid fa-database"></i>Visual-arts subset + embeddings</a>
+      <a class="btn btn-ghost" href="https://huggingface.co/datasets/cilabuniba/wikifragments"><i class="fa-solid fa-globe"></i>Full WikiFragments</a>
+    </div>
+    <div class="wf-examples">
+      <figure class="frame"><img src="static/img/figures/wikifragments_example1.jpg" alt="A fragment with four images about the Florentine Renaissance" loading="lazy"><figcaption>A fragment with images: the paragraph on the Florentine Renaissance and the four images above it.</figcaption></figure>
+      <figure class="frame"><img src="static/img/figures/wikifragments_example2.jpg" alt="A text-only fragment" loading="lazy"><figcaption>A text-only fragment. Hyperlinks are kept.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <h2>Results</h2>
+  <div class="tabs" data-tabs="results">
+    <button class="tab active" data-tab="r-vqa">Question answering</button>
+    <button class="tab" data-tab="r-coverage">Why it helps</button>
+    <button class="tab" data-tab="r-backbones">Other backbones</button>
+    <button class="tab" data-tab="r-caption">Captioning</button>
+    <button class="tab" data-tab="r-class">Classification</button>
+    <button class="tab" data-tab="r-retrieval">Retrieval</button>
+  </div>
+  <div class="tab-panels" data-panels="results">
+    <div class="tab-panel active" id="r-vqa">
+      <p class="lead">Mean correctness (0-2, judged by phi-4) on five benchmarks. Hover a bar for the exact value; the last column is ArtSeek minus the backbone with its 95% confidence interval (bootstrap over paintings).</p>
+      <div class="legend" id="vqaLegend"></div>
+      <div id="vqaChart" class="chart"></div>
+    </div>
+    <div class="tab-panel" id="r-coverage">
+      <p class="lead">What separates the benchmarks where retrieval helps from those where it does not is <b>knowledge-base coverage</b>, the share of a benchmark's paintings that have a page in the index, not who wrote the questions.</p>
+      <div id="covChart" class="chart"></div>
+      <p class="muted center">Each point: ArtSeek − backbone with 95% CI. Green intervals exclude zero.</p>
+    </div>
+    <div class="tab-panel" id="r-backbones">
+      <p class="lead">ArtPedia-VQA with the generator swapped and everything else fixed (retriever, index, classifier, prompt). Retrieval helps every backbone, most of all the weakest.</p>
+      <div id="bbChart" class="chart"></div>
+      <div class="two">
+        <div>
+          <h4>In-context example vs. prose policy</h4>
+          <div id="policyChart" class="chart"></div>
+        </div>
+        <div>
+          <h4>Latency per answer (s)</h4>
+          <div id="latChart" class="chart"></div>
+          <p class="muted small">Shared A100, vLLM, <code>max_num_seqs=4</code>: upper bounds. Classification costs 0.14 s.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-panel" id="r-caption">
+      <p class="lead">Zero-shot artwork explanation, standard captioning metrics. Competitors are trained on each dataset.</p>
+      <div class="table-wrap"><table class="rtable">
+        <thead><tr><th>Dataset</th><th>Model</th><th>B@1</th><th>B@4</th><th>METEOR</th><th>SPICE</th><th>ROUGE-L</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="5">ArtPedia</td><td>Wu et al.</td><td>24.7</td><td>3.06</td><td>6.58</td><td>—</td><td>22.4</td></tr>
+          <tr><td>Jiang et al. (KALE)</td><td>32.6</td><td><b>7.48</b></td><td>9.33</td><td>7.68</td><td><b>23.7</b></td></tr>
+          <tr><td>Qwen2.5-VL-32B</td><td>36.57</td><td>3.93</td><td>9.46</td><td>6.81</td><td>21.22</td></tr>
+          <tr><td>ArtSeek (w/o class.)</td><td>39.64</td><td>6.16</td><td><b>10.52</b></td><td>7.73</td><td>23.64</td></tr>
+          <tr class="hl"><td>ArtSeek</td><td><b>39.7</b></td><td>5.26</td><td>10.26</td><td><b>7.74</b></td><td>23.0</td></tr>
+          <tr><td rowspan="5">SemArt v2.0</td><td>Bai et al.</td><td>—</td><td><b>9.10</b></td><td><b>11.4</b></td><td>—</td><td><b>23.1</b></td></tr>
+          <tr><td>Jiang et al. (KALE)</td><td>27.7</td><td>8.57</td><td>9.51</td><td><b>7.31</b></td><td>21.9</td></tr>
+          <tr><td>Qwen2.5-VL-32B</td><td>26.49</td><td>1.02</td><td>5.91</td><td>3.58</td><td>16.89</td></tr>
+          <tr><td>ArtSeek (w/o class.)</td><td>27.45</td><td>1.09</td><td>5.98</td><td>3.97</td><td>16.66</td></tr>
+          <tr class="hl"><td>ArtSeek</td><td><b>28.15</b></td><td>1.30</td><td>6.21</td><td>4.12</td><td>17.28</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" id="r-class">
+      <p class="lead">Multitask attribute classification on ArtGraph (Top-1 / F1).</p>
+      <div class="table-wrap"><table class="rtable">
+        <thead><tr><th>Model</th><th>Artist Top-1</th><th>Artist F1</th><th>Genre Top-1</th><th>Genre F1</th><th>Style Top-1</th><th>Style F1</th><th>Media F1</th><th>Tags F1</th></tr></thead>
+        <tbody>
+          <tr><td>ResNet</td><td>—</td><td>—</td><td>62.51</td><td>57.37</td><td>48.46</td><td>47.23</td><td>—</td><td>—</td></tr>
+          <tr><td>ContextNet</td><td>—</td><td>—</td><td>61.77</td><td>56.70</td><td>42.61</td><td>41.42</td><td>—</td><td>—</td></tr>
+          <tr><td>ViT+GAT</td><td>—</td><td>—</td><td>72.29</td><td>65.29</td><td>58.58</td><td>56.58</td><td>—</td><td>—</td></tr>
+          <tr><td>ViT-Multitask</td><td>69.93</td><td>58.63</td><td>72.78</td><td>65.94</td><td>59.98</td><td>57.41</td><td>53.55</td><td><b>39.61</b></td></tr>
+          <tr><td>GraphCLIP</td><td>—</td><td>—</td><td>72.44</td><td>65.06</td><td>61.17</td><td>58.22</td><td>—</td><td>—</td></tr>
+          <tr class="hl"><td>LICN (ours)</td><td><b>71.75</b></td><td><b>65.01</b></td><td><b>78.54</b></td><td><b>73.25</b></td><td><b>69.80</b></td><td><b>66.65</b></td><td><b>59.49</b></td><td>39.59</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="tab-panel" id="r-retrieval">
+      <p class="lead">Retrieval on 10,000 WikiFragments (half text-only, half multimodal) from an image and a question about it.</p>
+      <div class="table-wrap"><table class="rtable">
+        <thead><tr><th>Store</th><th>Query</th><th>NDCG@5</th><th>R@1</th><th>Time (cs)</th></tr></thead>
+        <tbody>
+          <tr><td>CLIP</td><td>CLIP</td><td>2.66</td><td>1.49</td><td><b>0.39</b></td></tr>
+          <tr><td>Full (one stage)</td><td>Full</td><td>33.92</td><td>26.90</td><td>67.92</td></tr>
+          <tr class="hl"><td>Full (one stage)</td><td>Filtered</td><td><b>44.88</b></td><td><b>38.41</b></td><td>32.26</td></tr>
+          <tr><td>Pooled (two stages)</td><td>Full</td><td>21.50</td><td>17.39</td><td>11.14</td></tr>
+          <tr class="hl"><td>Pooled (two stages)</td><td>Filtered</td><td>27.61</td><td>23.87</td><td>4.66</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="human">
+  <h2>Human study</h2>
+  <p class="lead">Three raters (two lay, one art historian) scored blind descriptions of 14 paintings from Qwen2.5-VL-32B, ArtSeek and a tool-free GPT-5.5, on what they <i>claim</i>: subject, figures and placement, 0-2 each (Σ, 0-6). Four of the paintings belong to a regional gallery and have no Wikipedia article.</p>
+  <div class="two">
+    <div>
+      <div class="seg" id="tierSeg">
+        <button class="active" data-tier="overall">All 14</button>
+        <button data-tier="tierA">Wikipedia (10)</button>
+        <button data-tier="tierB">Gallery (4)</button>
+      </div>
+      <div id="humanChart" class="chart"></div>
+      <p class="muted small">On the gallery works ArtSeek gains +1.17 [+0.50, +2.00] Σ over its backbone and draws level with GPT-5.5. The automatic judge (phi-4) agrees with the raters at least as closely as they agree with each other.</p>
+    </div>
+    <div class="blind" id="blind">
+      <h4>Blind test: which description is ArtSeek?</h4>
+      <div class="blind-head">
+        <img id="blindImg" alt="">
+        <div>
+          <div id="blindTitle" class="blind-title"></div>
+          <div class="seg small" id="blindSeg"></div>
+        </div>
+      </div>
+      <div id="blindOptions" class="blind-options"></div>
+      <div id="blindResult" class="blind-result"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="examples">
+  <h2>More examples</h2>
+  <figure><img src="static/img/figures/qual3.png" alt="ArtSeek compared with ChatGPT and Qwen2.5-VL on two paintings" loading="lazy"></figure>
+  <p class="center muted">Left: ArtSeek identifies Saint Nicholas, which the backbone misses. Right: a failure case, where retrieval suggests a plausible but wrong battle.</p>
+</section>
+
+<section class="section narrow" id="bibtex">
+  <h2>BibTeX</h2>
+  <div class="bib">
+    <button class="chip copy" id="copyBib">Copy</button>
+<pre id="bibText">@article{fanelli2025artseek,
+  title   = {ArtSeek: Deep artwork understanding via multimodal in-context
+             reasoning and late interaction retrieval},
+  author  = {Fanelli, Nicola and Vessio, Gennaro and Castellano, Giovanna},
+  journal = {arXiv preprint arXiv:2507.21917},
+  year    = {2025}
+}</pre>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Paintings shown in the demo are in the public domain (ArtPedia, Wikimedia Commons). Retrieved images come from Wikimedia Commons and are in the public domain, except the <i>Kefermarkt altarpiece</i> photograph (<a href="https://commons.wikimedia.org/wiki/File:Kefermarkt_Kirche_Fl%C3%BCgelaltar_Schrein_01.jpg">source</a>), licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. WikiFragments text is from Wikipedia, CC BY-SA 4.0.</p>
+  <p>© ArtSeek authors · <a href="https://github.com/cilabuniba/artseek">GitHub</a></p>
+</footer>
+
+<script src="static/js/data.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+</html>
