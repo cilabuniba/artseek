@@ -1,0 +1,218 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "counts": {
+    "base": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_gemma3": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_mistral3": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_noclassify": {
+      "image_download_failure": 0,
+      "context_length_overflow": 7,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_systemprompt": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_noartist": {
+      "image_download_failure": 0,
+      "context_length_overflow": 1,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    }
+  },
+  "crosstab": {
+    "base": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.669291338582677,
+      "n_lost": 0,
+      "n_kept": 762
+    },
+    "base_gemma3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.669291338582677,
+      "n_lost": 0,
+      "n_kept": 762
+    },
+    "base_mistral3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.669291338582677,
+      "n_lost": 0,
+      "n_kept": 762
+    },
+    "full_classify": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.669291338582677,
+      "n_lost": 0,
+      "n_kept": 762
+    },
+    "full_noclassify": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.670198675496689,
+      "n_lost": 7,
+      "n_kept": 755
+    },
+    "full_systemprompt": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 7.669291338582677,
+      "n_lost": 0,
+      "n_kept": 762
+    },
+    "full_classify_noartist": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 7.0,
+      "mean_ref_words_kept": 7.671052631578948,
+      "n_lost": 2,
+      "n_kept": 760
+    }
+  },
+  "worst_case_imputation": {
+    "base": {
+      "n_universe": 762,
+      "n_observed": 762,
+      "observed_recall": 0.5117060367454068,
+      "observed_correctness": 1.010498687664042,
+      "imputed_recall": 0.5117060367454068,
+      "imputed_correctness": 1.010498687664042
+    },
+    "base_gemma3": {
+      "n_universe": 762,
+      "n_observed": 762,
+      "observed_recall": 0.6097244094488189,
+      "observed_correctness": 1.211286089238845,
+      "imputed_recall": 0.6097244094488189,
+      "imputed_correctness": 1.211286089238845
+    },
+    "base_mistral3": {
+      "n_universe": 762,
+      "n_observed": 762,
+      "observed_recall": 0.411994750656168,
+      "observed_correctness": 0.8136482939632546,
+      "imputed_recall": 0.411994750656168,
+      "imputed_correctness": 0.8136482939632546
+    },
+    "full_classify": {
+      "n_universe": 762,
+      "n_observed": 762,
+      "observed_recall": 0.6065879265091864,
+      "observed_correctness": 1.1968503937007875,
+      "imputed_recall": 0.6065879265091864,
+      "imputed_correctness": 1.1968503937007875
+    },
+    "full_noclassify": {
+      "n_universe": 762,
+      "n_observed": 755,
+      "observed_recall": 0.5505562913907285,
+      "observed_correctness": 1.086092715231788,
+      "imputed_recall": 0.545498687664042,
+      "imputed_correctness": 1.0761154855643045
+    },
+    "full_systemprompt": {
+      "n_universe": 762,
+      "n_observed": 762,
+      "observed_recall": 0.5889501312335957,
+      "observed_correctness": 1.136482939632546,
+      "imputed_recall": 0.5889501312335957,
+      "imputed_correctness": 1.136482939632546
+    },
+    "full_classify_noartist": {
+      "n_universe": 762,
+      "n_observed": 760,
+      "observed_recall": 0.5797236842105263,
+      "observed_correctness": 1.1486842105263158,
+      "imputed_recall": 0.5782020997375328,
+      "imputed_correctness": 1.1456692913385826
+    }
+  },
+  "ranking_observed": [
+    "base_gemma3",
+    "full_classify",
+    "full_classify_noartist",
+    "full_systemprompt",
+    "full_noclassify",
+    "base",
+    "base_mistral3"
+  ],
+  "ranking_worst_case": [
+    "base_gemma3",
+    "full_classify",
+    "full_classify_noartist",
+    "full_systemprompt",
+    "full_noclassify",
+    "base",
+    "base_mistral3"
+  ],
+  "ranking_preserved": true,
+  "n_universe": 762
+}

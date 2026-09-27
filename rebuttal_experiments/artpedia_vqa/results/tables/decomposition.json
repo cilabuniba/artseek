@@ -1,0 +1,51 @@
+{
+  "variant": "full_classify",
+  "benchmarks": {
+    "ArtPedia-VQA": {
+      "n": 651,
+      "kind": "single-hop",
+      "mean_calls": 1.0061443932411673,
+      "pct_zero": 13.671274961597543,
+      "pct_one": 74.03993855606758,
+      "pct_two_plus": 12.288786482334869,
+      "max_calls": 4
+    },
+    "AQUA": {
+      "n": 652,
+      "kind": "single-hop",
+      "mean_calls": 0.8788343558282209,
+      "pct_zero": 18.25153374233129,
+      "pct_one": 76.38036809815951,
+      "pct_two_plus": 5.368098159509203,
+      "max_calls": 3
+    },
+    "ArtQuest": {
+      "n": 1199,
+      "kind": "single-hop",
+      "mean_calls": 0.9182652210175146,
+      "pct_zero": 11.759799833194329,
+      "pct_one": 84.98748957464554,
+      "pct_two_plus": 3.252710592160134,
+      "max_calls": 3
+    },
+    "LICNHeldOut": {
+      "n": 762,
+      "kind": "single-hop",
+      "mean_calls": 0.6482939632545932,
+      "pct_zero": 35.170603674540686,
+      "pct_one": 64.82939632545933,
+      "pct_two_plus": 0.0,
+      "max_calls": 1
+    },
+    "ArtCurate-AIC": {
+      "n": 1491,
+      "kind": "conceptual",
+      "mean_calls": 1.07981220657277,
+      "pct_zero": 4.493628437290409,
+      "pct_one": 85.51307847082495,
+      "pct_two_plus": 9.99329309188464,
+      "max_calls": 3
+    }
+  },
+  "shot_demonstrated_calls": 3
+}

@@ -1,0 +1,139 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "licn_artist_accuracy": {
+    "n_paintings_with_named_gold_artist": 306,
+    "n_anonymous_excluded": 20,
+    "top1_strict": 0.27450980392156865,
+    "top1_lenient": 0.31699346405228757,
+    "mean_confidence_when_correct": 0.8228840249634924,
+    "mean_confidence_when_wrong": 0.6410053088791199
+  },
+  "stratified": {
+    "full_classify->full_classify_noartist|correctness|LICN artist CORRECT": {
+      "n": 165,
+      "n_clusters": 84,
+      "mean": -0.08484848484848485,
+      "ci_low": -0.18404907975460122,
+      "ci_high": 0.018072289156626505,
+      "cohens_dz": -0.12562614441433612
+    },
+    "full_classify->full_classify_noartist|correctness|LICN artist WRONG": {
+      "n": 440,
+      "n_clusters": 222,
+      "mean": 0.029545454545454545,
+      "ci_low": -0.027210884353741496,
+      "ci_high": 0.08803611738148984,
+      "cohens_dz": 0.050109841833889585
+    },
+    "full_classify->full_classify_noartist|recall|LICN artist CORRECT": {
+      "n": 165,
+      "n_clusters": 84,
+      "mean": -0.04387878787878788,
+      "ci_low": -0.0923780487804878,
+      "ci_high": 0.004817073170731707,
+      "cohens_dz": -0.13189757917201975
+    },
+    "full_classify->full_classify_noartist|recall|LICN artist WRONG": {
+      "n": 440,
+      "n_clusters": 222,
+      "mean": 0.01609090909090909,
+      "ci_low": -0.010589569160997733,
+      "ci_high": 0.04357630979498861,
+      "cohens_dz": 0.05606008322551453
+    },
+    "full_classify->full_noclassify|correctness|LICN artist CORRECT": {
+      "n": 167,
+      "n_clusters": 84,
+      "mean": -0.0658682634730539,
+      "ci_low": -0.1686746987951807,
+      "ci_high": 0.03614457831325301,
+      "cohens_dz": -0.09471938859912632
+    },
+    "full_classify->full_noclassify|correctness|LICN artist WRONG": {
+      "n": 438,
+      "n_clusters": 222,
+      "mean": 0.0821917808219178,
+      "ci_low": 0.020454545454545454,
+      "ci_high": 0.14516129032258066,
+      "cohens_dz": 0.12630920824658398
+    },
+    "full_classify->full_noclassify|recall|LICN artist CORRECT": {
+      "n": 167,
+      "n_clusters": 84,
+      "mean": -0.026826347305389225,
+      "ci_low": -0.07678571428571428,
+      "ci_high": 0.02335329341317365,
+      "cohens_dz": -0.07997810688188328
+    },
+    "full_classify->full_noclassify|recall|LICN artist WRONG": {
+      "n": 438,
+      "n_clusters": 222,
+      "mean": 0.04237442922374429,
+      "ci_low": 0.011032110091743118,
+      "ci_high": 0.07392694063926941,
+      "cohens_dz": 0.12672748719703947
+    }
+  },
+  "confidence_gate_simulation": {
+    "0.0": {
+      "tau": 0.0,
+      "pct_showing_artist": 100.0,
+      "mean_correctness": 0.7271317829457364,
+      "mean_recall": 0.3711472868217054
+    },
+    "0.1": {
+      "tau": 0.1,
+      "pct_showing_artist": 99.68992248062015,
+      "mean_correctness": 0.7271317829457364,
+      "mean_recall": 0.3711472868217054
+    },
+    "0.2": {
+      "tau": 0.2,
+      "pct_showing_artist": 99.06976744186046,
+      "mean_correctness": 0.7286821705426356,
+      "mean_recall": 0.37192248062015504
+    },
+    "0.3": {
+      "tau": 0.3,
+      "pct_showing_artist": 97.05426356589147,
+      "mean_correctness": 0.7302325581395349,
+      "mean_recall": 0.3722325581395349
+    },
+    "0.4": {
+      "tau": 0.4,
+      "pct_showing_artist": 93.95348837209302,
+      "mean_correctness": 0.7302325581395349,
+      "mean_recall": 0.3718449612403101
+    },
+    "0.5": {
+      "tau": 0.5,
+      "pct_showing_artist": 87.59689922480621,
+      "mean_correctness": 0.737984496124031,
+      "mean_recall": 0.3756434108527132
+    },
+    "0.6": {
+      "tau": 0.6,
+      "pct_showing_artist": 69.76744186046511,
+      "mean_correctness": 0.7457364341085271,
+      "mean_recall": 0.37886821705426355
+    },
+    "0.7": {
+      "tau": 0.7,
+      "pct_showing_artist": 48.992248062015506,
+      "mean_correctness": 0.737984496124031,
+      "mean_recall": 0.3762325581395349
+    },
+    "0.8": {
+      "tau": 0.8,
+      "pct_showing_artist": 27.596899224806204,
+      "mean_correctness": 0.7426356589147287,
+      "mean_recall": 0.37880620155038763
+    },
+    "0.9": {
+      "tau": 0.9,
+      "pct_showing_artist": 13.178294573643413,
+      "mean_correctness": 0.7457364341085271,
+      "mean_recall": 0.3803565891472868
+    }
+  }
+}

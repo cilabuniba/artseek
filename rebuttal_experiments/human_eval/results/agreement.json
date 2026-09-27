@@ -1,0 +1,21 @@
+{
+  "n_items": 14,
+  "raters": [
+    "E1",
+    "L1",
+    "L2"
+  ],
+  "roles": {
+    "E1": "expert",
+    "L1": "lay",
+    "L2": "lay"
+  },
+  "alpha_humans": 0.4627147501973361,
+  "alpha_lay": 0.4626500520252115,
+  "alpha_humans_plus_phi4": 0.48893282075976074,
+  "mean_rho_human_human": 0.6513554007717429,
+  "mean_rho_judge_human": 0.7606107508023637,
+  "rho_phi4_vs_human_mean": 0.8599564409078941,
+  "mean_pairwise_choice_agreement": 0.7142857142857143,
+  "fleiss_kappa_choice": 0.4909090909090909
+}

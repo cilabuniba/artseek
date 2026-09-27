@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "Q3937425",
+    "tier": "indexed_lowprofile",
+    "title": "Portrait of the Court Jester Gonella",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a portrait of a jester or a court fool, likely from the Northern Renaissance period. The subject is dressed in a costume with heraldic colors, including yellow, red, and green stripes, which is typical of jesters.\n\n2. **FIGURES**: The figure in the painting is a jester, identifiable by his red hat and the red and green outfit. The red hat is a common attribute of jesters, and the way he is positioned, with his head tilted and hands crossed, is atypical for portraits of nobility, suggesting his low social status.\n\n3. **PLACEMENT**: The work belongs to the Northern Renaissance tradition, as indicated by the detailed rendering of the subject's facial features and clothing. The use of oil on wood is also typical of this period. The style is consistent with the Northern Renaissance, and the artist Hans Memling is known for his portraits in this style.\n\n4. **EVIDENCE**: \n   - **Portrait of the Court Jester Gonella**: This document provides information about the attire and positioning of a jester, which is consistent with the subject in the painting.\n   - **Hans Memling**: The artist is known for his Northern Renaissance portraits, and the style of this painting is consistent with his work.\n   - **Northern Renaissance Portraits**: The detailed rendering of the subject's facial features and clothing is typical of Northern Renaissance portraits, providing further evidence of the painting's placement in this tradition.",
+    "reasoning": "The painting depicts a man in a red hat and a red and green outfit, which is characteristic of a jester or a court fool. The man's attire and the way he is positioned suggest that he is a jester. The Northern Renaissance style is evident in the detailed rendering of the man's facial features and clothing. The use of oil on wood is also typical of this period. The artist Hans Memling is known for his Northern Renaissance portraits, and the style of this painting is consistent with his work.",
+    "card": {
+      "artist": [
+        [
+          "hans-memling",
+          0.6310102939605713
+        ]
+      ],
+      "genre": [
+        [
+          "portrait",
+          0.9983783960342407
+        ]
+      ],
+      "media": [
+        [
+          "oak",
+          0.6963475942611694
+        ],
+        [
+          "oil",
+          0.9846668243408203
+        ],
+        [
+          "wood",
+          0.4801168441772461
+        ]
+      ],
+      "style": [
+        [
+          "northern renaissance",
+          0.9983116388320923
+        ]
+      ],
+      "tag": [
+        [
+          "Alexander-Nevsky",
+          0.44043847918510437
+        ],
+        [
+          "Giovanni-Arnolfini",
+          0.5156279802322388
+        ],
+        [
+          "Rabbi",
+          0.46892601251602173
+        ],
+        [
+          "Vladimir-Dal",
+          0.47130993008613586
+        ],
+        [
+          "John the Merciful",
+          0.42936649918556213
+        ],
+        [
+          "Jacobus-Blauw",
+          0.6593499183654785
+        ],
+        [
+          "Philip-IV",
+          0.4707993268966675
+        ],
+        [
+          "self-portrait",
+          0.5171746611595154
+        ],
+        [
+          "male-portraits",
+          0.8830508589744568
+        ],
+        [
+          "Alexander-Bruloff",
+          0.5272062420845032
+        ],
+        [
+          "Johannes-Bugenhagen",
+          0.7050420641899109
+        ],
+        [
+          "Pieter-Bruegel-the-Elder",
+          0.4666702151298523
+        ],
+        [
+          "Michelangelo",
+          0.4871639609336853
+        ],
+        [
+          "Baldwin-I-of-Jerusalem",
+          0.586657702922821
+        ],
+        [
+          "Fra-Martin-de-Vizcaya",
+          0.42323431372642517
+        ],
+        [
+          "Bolesław-II-the-Generous",
+          0.5584020614624023
+        ],
+        [
+          "Pope-Saint-Pius-V",
+          0.5171953439712524
+        ],
+        [
+          "Friedrich-III-the-Wise-(Saxony)",
+          0.46994951367378235
+        ],
+        [
+          "Milarepa",
+          0.44542986154556274
+        ],
+        [
+          "Alfred-Bruyas",
+          0.5973312854766846
+        ],
+        [
+          "William-II-Prince-of-Orange",
+          0.4692155420780182
+        ],
+        [
+          "Francois-Marius-Granet",
+          0.4806162714958191
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      4984782,
+      2628808,
+      3772663,
+      5753550,
+      6414676,
+      2841841,
+      7102883,
+      5456369,
+      6400660,
+      2220362,
+      5375230,
+      5748737,
+      1410730,
+      2174426,
+      6280618
+    ],
+    "tool_queries": [
+      {
+        "query": "northern renaissance portrait a portrait of a man, likely a noble or a figure of | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a portrait of a man, likely a noble or a figure of",
+    "seed_queries": [
+      {
+        "query": "northern renaissance portrait a portrait of a man, likely a noble or a figure of",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 23.598599288612604
+  },
+  {
+    "id": "Q3213753",
+    "tier": "indexed_lowprofile",
+    "title": "Madonna del Sacco (Perugino)",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts the \"Madonna del Sacco\" (Madonna of the Bag), a religious scene showing the Virgin Mary with the Christ Child and the infant John the Baptist.\n\n2. **FIGURES**: The figures are the Virgin Mary, identifiable by her red dress and blue mantle, the Christ Child, and the infant John the Baptist. The Virgin Mary is holding the Christ Child, while John the Baptist is depicted as a young child with a halo, kneeling and holding a small object, possibly a cross or a book.\n\n3. **PLACEMENT**: The work belongs to the High Renaissance tradition, likely from the Italian school, around 1495–1500. This is indicated by the serene and harmonious composition, the use of oil as the medium, and the style of the figures and background.\n\n4. **EVIDENCE**: \n   - **Madonna del Sacco (Perugino)**: This specific artwork by Perugino matches the description and the artist's known works.\n   - **High Renaissance Religious Paintings**: The style and composition are consistent with other High Renaissance religious paintings, such as those by Botticelli and Cima da Conegliano.\n   - **Italian Renaissance Painters**: The artist Pietro Perugino is known for his contributions to the High Renaissance, and his works often feature religious themes with a focus on harmony and balance.",
+    "reasoning": "The artwork card suggests that the artist might be Pietro Perugino, and the genre is a religious painting. The style is identified as High Renaissance. The painting depicts a religious scene with the Virgin Mary and two children, likely Jesus. The figures are identified as the Virgin Mary, the Christ Child, and the infant John the Baptist. The background features a landscape with a serene and harmonious composition, typical of High Renaissance art. The use of oil as the medium is also consistent with the period. The painting is likely from the High Renaissance period, around 1495–1500, based on the style and the artist's known works. The specific artwork is identified as \"Madonna del Sacco\" by Perugino, which matches the description and the artist's style.",
+    "card": {
+      "artist": [
+        [
+          "pietro-perugino",
+          0.8369485139846802
+        ]
+      ],
+      "genre": [
+        [
+          "religious painting",
+          0.9987272620201111
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9988768696784973
+        ]
+      ],
+      "style": [
+        [
+          "high renaissance",
+          0.9838900566101074
+        ]
+      ],
+      "tag": [
+        [
+          "Virgin-and-Child",
+          0.7667073607444763
+        ],
+        [
+          "Christianity",
+          0.6094058752059937
+        ],
+        [
+          "Mythology",
+          0.4465922713279724
+        ],
+        [
+          "Child",
+          0.4636242687702179
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      1309025,
+      3698659,
+      2507556,
+      5436976,
+      1329016,
+      851367,
+      1494773,
+      2894739,
+      4317836,
+      7991826,
+      3858085,
+      1328986,
+      3286834,
+      1022716,
+      535499
+    ],
+    "tool_queries": [
+      {
+        "query": "pietro perugino high renaissance religious painting | high renaissance religious painting a religious scene with the Virgin Mary and two children, likely Jesus | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a religious scene with the Virgin Mary and two children, likely Jesus",
+    "seed_queries": [
+      {
+        "query": "pietro perugino high renaissance religious painting",
+        "requires_image": true
+      },
+      {
+        "query": "high renaissance religious painting a religious scene with the Virgin Mary and two children, likely Jesus",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 24.18477422837168
+  },
+  {
+    "id": "Q18223127",
+    "tier": "indexed_lowprofile",
+    "title": "Christ in Glory with Saints and Odoardo Farnese",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a celestial scene with a central figure surrounded by clouds, flanked by other figures. The central figure could be Christ or another divine being, and the scene likely represents a heavenly or divine event, possibly the Assumption of the Virgin or a similar religious event.\n\n2. **FIGURES**: The central figure is likely Christ or another divine being, identifiable by the celestial setting and the presence of clouds. The other figures appear to be saints or apostles, identifiable by their attire and the context of the scene. The figures are depicted in a mannerist style, with elongated proportions and dynamic poses.\n\n3. **PLACEMENT**: The work belongs to the Mannerist (Late Renaissance) tradition, as indicated by the style and subject matter. The use of oil as the medium is consistent with the period and style. The artwork card suggests that the artist might be Jacopo Bassano, and the genre is religious painting.\n\n4. **EVIDENCE**: The reading rests on the artwork card and the retrieved documents. The artwork card provides information about the artist, genre, style, and tags. The documents provide examples of similar artworks and artists, which are relevant to the analysis of the painting. Specifically, the documents about Jacopo Bassano, mannerism (late renaissance), and religious painting are most relevant.",
+    "reasoning": "The painting depicts a celestial scene with a central figure surrounded by clouds, flanked by other figures. The style and subject matter suggest a religious theme, likely from the Mannerist or Late Renaissance period. The figures appear to be saints or apostles, and the central figure could be Christ or another divine being. The presence of clouds and the celestial setting indicate a heavenly or divine event. The use of oil as the medium is consistent with the period and style. The artwork card suggests that the artist might be Jacopo Bassano, and the genre is religious painting. The style is mannerism (late renaissance), and the tag indicates a connection to Christianity and mythology. The figures are likely saints or apostles, and the attributes, symbols, or details that identify them are not explicitly mentioned in the artwork card. The tradition, school, and approximate period of the work are mannerism (late renaissance), and the picture indicates this through its style and subject matter. The evidence rests on the artwork card and the retrieved documents, which provide information about the artist, genre, style, and tags. The documents also provide examples of similar artworks and artists, which are relevant to the analysis of the painting.",
+    "card": {
+      "artist": [
+        [
+          "jacopo-bassano",
+          0.39082953333854675
+        ]
+      ],
+      "genre": [
+        [
+          "religious painting",
+          0.9988988637924194
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9929410219192505
+        ]
+      ],
+      "style": [
+        [
+          "mannerism (late renaissance)",
+          0.6176680326461792
+        ]
+      ],
+      "tag": [
+        [
+          "Christianity",
+          0.653313159942627
+        ],
+        [
+          "Mythology",
+          0.8917515873908997
+        ],
+        [
+          "saints-and-apostles",
+          0.5174725651741028
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      3999297,
+      8099699,
+      7252318,
+      5030445,
+      3350965,
+      494916,
+      856016,
+      5427317,
+      4009556,
+      1027870,
+      1558689,
+      3161087,
+      2801123,
+      3821208,
+      4152537
+    ],
+    "tool_queries": [
+      {
+        "query": "mannerism (late renaissance) religious painting a celestial scene with a central figure surrounded by clouds, flanked by | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a celestial scene with a central figure surrounded by clouds, flanked by",
+    "seed_queries": [
+      {
+        "query": "mannerism (late renaissance) religious painting a celestial scene with a central figure surrounded by clouds, flanked by",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 20.082921641878784
+  },
+  {
+    "id": "Q3210764",
+    "tier": "indexed_lowprofile",
+    "title": "Monomaniac of Envy",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a portrait of an elderly woman with a somber expression, wearing a white bonnet and a dark green shawl. The subject is likely an ordinary woman, and the painting captures her character and emotions in a realistic style.\n\n2. **FIGURES**: The figure is an elderly woman with a somber expression, wearing a white bonnet and a dark green shawl. The bonnet is a common headgear in the 19th century, and the shawl suggests a modest and practical attire. The woman's facial features, including her wrinkles and the somber expression, indicate her advanced age and the serious mood of the painting.\n\n3. **PLACEMENT**: The work belongs to the realism tradition, likely from the 19th century. The detailed depiction of the woman's facial features and the use of dark colors suggest a traditional portrait style, emphasizing the subject's character and emotions. The realism style and the use of oil on canvas are consistent with the artwork card.\n\n4. **EVIDENCE**:\n   - **Document 1: Poffer**: This document provides information about the type of bonnet worn by the woman, which was common in the 19th century.\n   - **Document 7: Portrait",
+    "reasoning": "The painting depicts an elderly woman with a somber expression, wearing a white bonnet and a dark green shawl. The realism style and the detailed depiction of the woman's facial features suggest that this is a portrait from the 19th century. The use of dark colors and the somber expression indicate a serious or contemplative mood. The woman's attire, including the bonnet and shawl, is consistent with the fashion of the time, particularly in Europe. The dark background and the focus on the woman's face suggest a traditional portrait style, emphasizing the subject's character and emotions.\n\nThe artwork card suggests that the artist might be Vincent van Gogh, and the genre is a portrait. The media is oil on canvas, and the style is realism. The tag \"female-portraits\" indicates that the subject is a woman, and the tag \"Headgear\" suggests that the woman is wearing a bonnet or similar headgear. The tag \"Turban\" is uncertain, as the headgear appears to be a bonnet rather than a turban.\n\nThe document \"Poffer\" provides information about the type of bonnet worn by the woman, which was common in the 19th century. The document \"Portrait of an Elderly Woman\" by Hans Memling provides a comparison with another portrait of an elderly woman, emphasizing the detailed depiction of the subject's facial features and the use of dark colors. The document \"The Ugly Duchess\" by Quentin Matsys provides a comparison with another portrait of an elderly woman, highlighting the realistic depiction of the subject's facial features and the use of dark colors.\n\nThe document \"Portrait of a Woman (van Vliet)\" provides a comparison with another portrait of a woman, emphasizing the detailed depiction of the subject's facial features and the use of dark colors. The document \"Peter Michal Bohúň\" provides a comparison with another portrait of a woman, emphasizing the detailed depiction of the subject's facial features and the use of dark colors. The document \"Más Notícias\" provides a comparison with another portrait of a woman, emphasizing the detailed depiction of the subject's facial features and the use of dark colors.",
+    "card": {
+      "artist": [
+        [
+          "vincent-van-gogh",
+          0.7401125431060791
+        ]
+      ],
+      "genre": [
+        [
+          "portrait",
+          0.9993368983268738
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9936988353729248
+        ],
+        [
+          "canvas",
+          0.9987249970436096
+        ]
+      ],
+      "style": [
+        [
+          "realism",
+          0.9939044117927551
+        ]
+      ],
+      "tag": [
+        [
+          "female-portraits",
+          0.8536667823791504
+        ],
+        [
+          "Mme-de-la-Rochefoucauld",
+          0.41699928045272827
+        ],
+        [
+          "Headgear",
+          0.5567389726638794
+        ],
+        [
+          "Turban",
+          0.6068092584609985
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      2797008,
+      737720,
+      6408195,
+      3293200,
+      2638449,
+      2697667,
+      3642081,
+      5513769,
+      1352957,
+      367985,
+      3605328,
+      2615241,
+      4595232,
+      3276485,
+      6287937
+    ],
+    "tool_queries": [
+      {
+        "query": "realism portrait an elderly woman with a somber expression, wearing a white bonnet and | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "an elderly woman with a somber expression, wearing a white bonnet and",
+    "seed_queries": [
+      {
+        "query": "realism portrait an elderly woman with a somber expression, wearing a white bonnet and",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 27.013067272491753
+  },
+  {
+    "id": "Q7727732",
+    "tier": "indexed_lowprofile",
+    "title": "The Cotton Pickers",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts two African-American women harvesting cotton in a field, a scene titled \"The Cotton Pickers\" by Winslow Homer, capturing the labor of cotton picking in the post-Civil War era.\n\n2. **FIGURES**: The figures are two African-American women, identifiable by their traditional rural attire, including bonnets and simple dresses. One carries a basket, and the other holds a sack of cotton, clearly engaged in the act of cotton picking.\n\n3. **PLACEMENT**: The work belongs to the realism tradition, likely from the 19th century, as indicated by the detailed depiction of rural life and the focus on the everyday labor of cotton pickers. The realistic portrayal of the women and the cotton field suggests a period when realism was prominent in American art.\n\n4. **EVIDENCE**:\n   - **The Cotton Pickers by Winslow Homer**: This artwork is directly relevant as it is the painting in question, providing the subject and context.\n   - **Jean-François Millet's The Gleaners**: This painting is relevant as it also depicts rural laborers, showcasing the realism style and the focus on everyday life.\n   - **Haymaking by Jules Bastien-Lepage**: This artwork is relevant as it also portrays rural workers in a realistic style, emphasizing the depiction of labor and the natural environment.",
+    "reasoning": "The painting depicts two African-American women in a cotton field, harvesting cotton. This is consistent with the information provided in the artwork card and the relevant documents. The figures are clearly identifiable as cotton pickers based on their attire and the context of the scene. The style and subject matter suggest that this work belongs to the realism tradition, likely from the 19th century, as indicated by the detailed depiction of the rural scene and the focus on everyday life.",
+    "card": {
+      "artist": [
+        [
+          "frederic-remington",
+          0.44475314021110535
+        ]
+      ],
+      "genre": [
+        [
+          "genre painting",
+          0.9975778460502625
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9989392161369324
+        ],
+        [
+          "canvas",
+          0.9913687109947205
+        ]
+      ],
+      "style": [
+        [
+          "realism",
+          0.9838390350341797
+        ]
+      ],
+      "tag": [
+        [
+          "harvesting",
+          0.47716963291168213
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      4172869,
+      2218117,
+      3645563,
+      1551063,
+      2134963,
+      686288,
+      4374304,
+      4172870,
+      6379647,
+      3341732,
+      3156903,
+      5022873,
+      117567,
+      4176093,
+      6379644
+    ],
+    "tool_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "",
+    "seed_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 12.259676781482995
+  },
+  {
+    "id": "Q61996527",
+    "tier": "indexed_lowprofile",
+    "title": "Love Among the Ruins (Burne-Jones)",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a romantic scene between a man and a woman, likely a moment of affection or intimacy. The setting is a lush, natural environment, suggesting a private and serene moment. The man is seated, holding a book, while the woman leans towards him, indicating a tender interaction.\n\n2. **FIGURES**: The figures are a man and a woman, both dressed in elaborate, period-specific attire. The man is seated, holding a book, which suggests a scholarly or contemplative nature. The woman is leaning towards the man, indicating affection or intimacy. The details in their clothing and the setting suggest a romantic or pre-Raphaelite influence.\n\n3. **PLACEMENT**: The work belongs to the romanticism tradition, as indicated by the emotional and symbolic elements in the scene. The style and media suggest it is a genre painting, likely created in the 19th century. The detailed, vibrant colors and the lush, natural setting are characteristic of romantic art.\n\n4. **EVIDENCE**: \n   - **Dante Gabriel Rossetti**: Known for his romantic and symbolic paintings, his works often depict intimate and emotional scenes, similar to the one in this painting.\n   - **Pre-Raphaelite Brotherhood**: The style and elements in the painting are consistent with the works of other pre-Raphaelite artists, such as John Everett Millais and William Holman Hunt, who were known for their detailed, vibrant, and symbolic art.\n   - **Romanticism**: The overall theme and style of the painting align with the romantic movement, which emphasized emotion, nature, and intimate moments, as seen in the lush setting and the tender interaction between the figures.",
+    "reasoning": "The painting depicts a romantic scene between two figures, likely a man and a woman, based on their attire and positioning. The setting and style suggest a romantic or pre-Raphaelite influence. The figures are engaged in a tender moment, with the woman leaning towards the man, who is seated and holding a book. The lush, natural surroundings and the detailed, vibrant colors are characteristic of romantic art. The artwork card indicates that the artist might be Dante Gabriel Rossetti, who was known for his romantic and symbolic paintings. The genre is genre painting, and the style is romanticism, which is evident from the emotional and symbolic elements in the scene. The media is likely oil, as suggested by the artwork card, and the period is the 19th century, which aligns with Rossetti's active years. The specific artworks and artists that support this reading include Rossetti's other works, such as \"The Beloved\" and \"The Year's at the Spring,\" which share similar themes and styles. Additionally, the romantic and symbolic elements in the painting are consistent with the works of other pre-Raphaelite artists, such as John Everett Millais and William Holman Hunt.",
+    "card": {
+      "artist": [
+        [
+          "dante-gabriel-rossetti",
+          0.7446563243865967
+        ]
+      ],
+      "genre": [
+        [
+          "genre painting",
+          0.9818828105926514
+        ]
+      ],
+      "media": [
+        [
+          "gouache",
+          0.5337197780609131
+        ],
+        [
+          "oil",
+          0.8960920572280884
+        ]
+      ],
+      "style": [
+        [
+          "romanticism",
+          0.9965795874595642
+        ]
+      ],
+      "tag": [
+        [
+          "Lady",
+          0.6223270893096924
+        ],
+        [
+          "female-portraits",
+          0.42187952995300293
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      497369,
+      3910960,
+      484143,
+      209769,
+      7651084,
+      266107,
+      6379644,
+      3975004,
+      7290004,
+      3702405,
+      3857650,
+      7605291,
+      3321212,
+      1910111,
+      1137403
+    ],
+    "tool_queries": [
+      {
+        "query": "romanticism genre painting \"Har | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "\"Har",
+    "seed_queries": [
+      {
+        "query": "romanticism genre painting \"Har",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 19.546789874322712
+  },
+  {
+    "id": "Q1571959",
+    "tier": "indexed_lowprofile",
+    "title": "The Shortening Winter's Day is near a Close",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a winter scene with a shepherd and his flock of sheep in a snowy landscape. The title could be \"Shepherd and Flock in Winter\" or a similar variation.\n\n2. **FIGURES**: The figures in the painting include a shepherd, identifiable by his attire and posture, and a flock of sheep. The shepherd is dressed in warm clothing suitable for the cold weather, and the sheep are depicted with thick wool, indicating their adaptation to the winter environment. The presence of the shepherd and his flock in a rural setting is a common theme in pastoral scenes.\n\n3. **PLACEMENT**: The work belongs to the realism tradition, as indicated by the detailed and naturalistic depiction of the sheep and the environment. The painting likely dates to the 19th century, a period when pastoral scenes and animal paintings were popular, especially as a reaction to the Industrial Revolution. The use of light and shadow, as well as the detailed depiction of the sheep and the environment, suggest a focus on naturalism and attention to detail.\n\n4. **EVIDENCE**:\n   - **Joseph Farquharson**: Known for his realistic animal paintings, Farquharson's style and subject matter align with the realism genre. His focus on naturalism and attention to detail is evident in the painting.\n   - **Frederick William Hulme**: Hulme's \"Sheep Resting in a Woodland Glade\" (1865) provides context for the pastoral scene and the depiction of sheep in a natural setting.\n   - **Cornelius Van Leemputten**: Van Leemputten's landscapes with sheep, similar in style to those of Charles Jacque, suggest a focus on naturalism and attention to detail, which is consistent with the painting in question.\n\nThis reading is based on the provided artwork card and the relevant documents, which provide context for the style, subject matter, and period of the painting.",
+    "reasoning": "The painting depicts a winter scene with a shepherd and his flock of sheep in a snowy landscape. The artist, Joseph Farquharson, is known for his realistic animal paintings, and the style and subject matter align with the realism genre. The use of light and shadow, as well as the detailed depiction of the sheep and the environment, suggest a focus on naturalism and attention to detail. The presence of a shepherd and his flock in a rural setting is a common theme in pastoral scenes, which were popular during the 19th century as a reaction to the Industrial Revolution. The specific artworks and artists mentioned in the documents provide context for the style and subject matter of the painting.",
+    "card": {
+      "artist": [
+        [
+          "joseph-farquharson",
+          0.8604287505149841
+        ]
+      ],
+      "genre": [
+        [
+          "animal painting",
+          0.9898573160171509
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9985361099243164
+        ]
+      ],
+      "style": [
+        [
+          "realism",
+          0.792168915271759
+        ]
+      ],
+      "tag": [
+        [
+          "Frost",
+          0.6227015256881714
+        ],
+        [
+          "Tree",
+          0.7167869806289673
+        ],
+        [
+          "Freezing",
+          0.49577006697654724
+        ],
+        [
+          "Winter storm",
+          0.6110982298851013
+        ],
+        [
+          "Blizzard",
+          0.6439382433891296
+        ],
+        [
+          "Battle",
+          0.45527946949005127
+        ],
+        [
+          "snow-and-blizzard",
+          0.4322395920753479
+        ],
+        [
+          "Community",
+          0.6212452054023743
+        ],
+        [
+          "Snow",
+          0.8797635436058044
+        ],
+        [
+          "Europe",
+          0.41119951009750366
+        ],
+        [
+          "Sky",
+          0.40636470913887024
+        ],
+        [
+          "winter",
+          0.8554036021232605
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      5356323,
+      7123305,
+      5210667,
+      3101566,
+      1938331,
+      1088509,
+      3136277,
+      7077132,
+      1824129,
+      4159493,
+      5210666,
+      6069251,
+      2804333,
+      5414370,
+      6974230
+    ],
+    "tool_queries": [
+      {
+        "query": "joseph farquharson realism animal painting | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "",
+    "seed_queries": [
+      {
+        "query": "joseph farquharson realism animal painting",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 17.884146632626653
+  },
+  {
+    "id": "Q16152096",
+    "tier": "indexed_lowprofile",
+    "title": "Agony in the Garden (Blake)",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a mythological scene involving a satyr and a nymph, likely representing a moment of seduction or abduction, possibly related to the story of Jupiter and Antiope.\n\n2. **FIGURES**: The figures are a satyr, identifiable by its goat-like features such as horns and a tail, and a nymph, depicted as a nude female figure. The satyr's aggressive pose and the nymph's vulnerable position suggest a scene of seduction or abduction.\n\n3. **PLACEMENT**: The work belongs to the Symbolist tradition, indicated by the use of dark, mysterious colors and the depiction of mythological themes. The intimate and dramatic portrayal of the satyr and nymph is characteristic of Symbolist art, which often explored mythological and allegorical subjects.\n\n4. **EVIDENCE**:\n   - **William-Adolphe Bouguereau's \"Nymphs and Satyr\" (1873)**: This painting by Bouguereau depicts a similar scene of nymphs and a satyr, providing a direct comparison in terms of subject matter and style.\n   - **Max Klinger's \"Judgment of Paris\" (1885–1887)**: Klinger's work is noted for its Symbolist style and its exploration of mythological themes, offering a parallel in terms of artistic approach and subject matter.\n   - **Document on Jupiter and Antiope (Watteau)**: This document provides context for the mythological story of Jupiter and Antiope, which could be the specific scene depicted in the painting, given the intimate and aggressive pose of the satyr towards the nymph.",
+    "reasoning": "The painting depicts a mythological scene involving a satyr and a nymph, likely representing a moment of seduction or abduction. The satyr is identifiable by its goat-like features, such as the horns and the tail, while the nymph is depicted as a nude female figure. The dark, forested background and the intimate pose of the figures suggest a scene from Greek mythology. The symbolism of the satyr and nymph, along with the dark, mysterious setting, indicates that this work belongs to the Symbolist movement, which often drew inspiration from mythological themes. The use of dark colors and the dramatic lighting further support this placement. The artwork card suggests that the artist might be William Holman Hunt, and the style is consistent with Symbolism. The mythological subject matter and the depiction of a satyr and nymph are common themes in Symbolist art, as seen in works by artists like William-Adolphe Bouguereau and Max Klinger. The specific scene depicted could be related to the story of Jupiter and Antiope, where Zeus, in the form of a satyr, seduces Antiope, leading to the birth of Amphion and Zethus. This interpretation is supported by the intimate and somewhat aggressive pose of the satyr towards the nymph, as well as the dark, forested setting which is typical of such mythological encounters.",
+    "card": {
+      "artist": [
+        [
+          "william-holman-hunt",
+          0.5757995247840881
+        ]
+      ],
+      "genre": [
+        [
+          "mythological painting",
+          0.9606317281723022
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9986625909805298
+        ],
+        [
+          "panel",
+          0.402490496635437
+        ]
+      ],
+      "style": [
+        [
+          "symbolism",
+          0.9746446013450623
+        ]
+      ],
+      "tag": [
+        [
+          "Mythology",
+          0.7496610879898071
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      3677084,
+      8076398,
+      2478084,
+      4960621,
+      4960624,
+      7426951,
+      8076399,
+      3350968,
+      2082135,
+      3831537,
+      1468731,
+      1627061,
+      5104055,
+      6579711,
+      7873330
+    ],
+    "tool_queries": [
+      {
+        "query": "symbolism mythological painting a mythological scene involving a satyr and a nymph, likely representing a | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a mythological scene involving a satyr and a nymph, likely representing a",
+    "seed_queries": [
+      {
+        "query": "symbolism mythological painting a mythological scene involving a satyr and a nymph, likely representing a",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 23.133395611308515
+  },
+  {
+    "id": "Q7735910",
+    "tier": "indexed_lowprofile",
+    "title": "The Gate of Calais",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a lively scene outside a gate or entrance, possibly during a public celebration or festival. The figures are engaged in various activities, such as drinking, socializing, and interacting with each other, suggesting a communal and festive atmosphere.\n\n2. **FIGURES**: The figures in the painting are dressed in 18th-century attire, indicating a historical setting. The clothing includes elements such as hats, coats, and breeches, typical of the Rococo period. The presence of a woman in a bonnet and a man in a tricorn hat helps identify the time period. The interaction between the figures, such as drinking and socializing, suggests they are part of a lower or middle-class social group.\n\n3. **PLACEMENT**: The work belongs to the Rococo tradition, as indicated by the artist's style and the genre painting classification. The Rococo style is characterized by its lightness, ornateness, and focus on themes of love, leisure, and social life. The painting's setting and the figures' attire align with the Rococo period, which flourished in the 18th century. The attention to detail and the depiction of everyday life are typical of genre paintings from this era.\n\n4. **EVIDENCE**: \n   - **William Hogarth**: Known for his genre paintings and satirical works, Hogarth often depicted scenes of everyday life with a focus on social commentary. His style and subject matter align with the painting's characteristics.\n   - **Rococo Style**: The lightness and ornateness of the scene, along with the focus on social interaction, are indicative of the Rococo style. The clothing and setting further support this placement.\n   - **Genre Painting**: The depiction of everyday life and social activities is a hallmark of genre painting. The painting's focus on a public celebration or festival is consistent with this genre.\n\nThis reading is based on the artwork card and the retrieved documents, which provide context for the artist, style, and genre of the painting. The scene is likely a public celebration or festival, with figures engaged in social activities typical of the 18th century.",
+    "reasoning": "The artwork card indicates that the artist is likely William Hogarth, and the genre is a genre painting in the Rococo style. The scene depicted appears to be a lively, possibly festive or celebratory event, with people engaged in various activities. The presence of a gate or entrance suggests a public or communal setting. The clothing and setting suggest a historical context, likely in the 18th century. Based on the documents retrieved, I will provide a detailed response.",
+    "card": {
+      "artist": [
+        [
+          "william-hogarth",
+          0.853227972984314
+        ]
+      ],
+      "genre": [
+        [
+          "genre painting",
+          0.9982094764709473
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9942232966423035
+        ],
+        [
+          "canvas",
+          0.9988300204277039
+        ]
+      ],
+      "style": [
+        [
+          "rococo",
+          0.9108814597129822
+        ]
+      ],
+      "tag": [
+        [
+          "celebrations-and-festivals",
+          0.5394516587257385
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      3722763,
+      3722761,
+      3715933,
+      4096656,
+      4343796,
+      2854016,
+      3817038,
+      1481235,
+      5104577,
+      1884022,
+      3417880,
+      2285896,
+      8102697,
+      3715937,
+      2797584
+    ],
+    "tool_queries": [
+      {
+        "query": "william hogarth rococo genre painting | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "",
+    "seed_queries": [
+      {
+        "query": "william hogarth rococo genre painting",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 20.87538385670632
+  },
+  {
+    "id": "Q16984914",
+    "tier": "indexed_lowprofile",
+    "title": "The Banks of the Marne (Gleizes)",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a sunset over the sea, with a cottage and a boat visible in the foreground. The scene captures the tranquil beauty of nature during the golden hour, emphasizing the interplay of light and color.\n\n2. **FIGURES**: The figures in the painting are abstract and non-representational. The cottage and the boat are depicted with simple, bold shapes and colors, serving as symbols of human presence in the natural landscape. The use of color and form rather than detailed realism suggests a focus on emotional expression rather than realistic representation.\n\n3. **PLACEMENT**: The work belongs to the Fauvism movement, which is characterized by the use of bold colors and non-naturalistic representation. The painting's style, with its emphasis on color and form, indicates that it was created during the early 20th century, a period when Fauvism was prominent. The abstract and expressive use of color is a hallmark of this movement.\n\n4. **EVIDENCE**:\n   - **Georges Braque**: The artist Georges Braque is known for his contributions to Cubism and Fauvism. His works often feature bold colors and abstract forms, which align with the style of this painting.\n   - **Fauvism**: The painting's use of vibrant, non-naturalistic colors and abstract forms is indicative of the Fauvism movement. This style is characterized by its emphasis on color over realistic representation, which is evident in the painting.\n   - **Landscape with a View of the Sea at Sunset**: This document provides a description of a painting that shares similarities with the subject matter of the current painting, suggesting a connection to the theme of sunset over the sea. The use of bold colors and the depiction of a landscape with a cottage and a boat are consistent with the style and subject of the current painting.",
+    "reasoning": "The painting depicts a landscape scene with a sunset over the sea. The use of bold colors and the abstract representation of the landscape suggest a connection to Fauvism. The artist's style and the subject matter are consistent with the works of Georges Braque, as indicated by the artwork card.",
+    "card": {
+      "artist": [
+        [
+          "georges-braque",
+          0.575783908367157
+        ]
+      ],
+      "genre": [
+        [
+          "landscape",
+          0.994789719581604
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9989225268363953
+        ],
+        [
+          "canvas",
+          0.9874383807182312
+        ]
+      ],
+      "style": [
+        [
+          "fauvism",
+          0.69471275806427
+        ]
+      ],
+      "tag": []
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      6779586,
+      6779587,
+      1502931,
+      7829972,
+      6779589,
+      3510275,
+      4469895,
+      6823755,
+      5867660,
+      7650194,
+      5135311,
+      5988025,
+      4472150,
+      2443580,
+      366507
+    ],
+    "tool_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "",
+    "seed_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 12.759968912228942
+  },
+  {
+    "id": "devanna-188",
+    "tier": "gallery",
+    "title": "Estasi di Santa Teresa d’Avila",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a saint, likely a nun, experiencing a mystical or divine moment, possibly a vision or an ecstasy, as indicated by the presence of two angels. The scene suggests a moment of spiritual significance, possibly a divine visitation or a moment of divine favor.\n\n2. **FIGURES**: The central figure is a nun, identifiable by her habit and serene expression, suggesting a moment of spiritual enlightenment or ecstasy. The two figures flanking her are angels, identifiable by their wings and ethereal appearance. The angel on the left holds a staff, a symbol often associated with divine authority or protection, while the angel on the right gazes down at the nun, possibly guiding or comforting her.\n\n3. **PLACEMENT**: The work belongs to the Baroque tradition, as indicated by the dramatic use of light and shadow (chiaroscuro), the emotional intensity of the scene, and the realistic depiction of the figures. The style and subject matter suggest it was created in the 17th or early 18th century, a period when Baroque art was prominent, especially in religious paintings.\n\n4. **EVIDENCE**:\n   - **\"St Mary Magdalene in Ecstasy\" by Peter Paul Rubens**: This painting shows Mary Magdalene supported by two angels, a similar composition to the current painting, indicating a common theme in Baroque religious art.\n   - **\"Maria Magdalen in ecstasy\" by Melchior de la Mars**: This Flemish Baroque painting also depicts a saint in a moment of ecstasy, supported by an angel, reinforcing the Baroque style and subject matter.\n   - **\"Saint Cecilia and the Angels\" by Paul Delaroche**: This painting depicts Saint Cecilia accompanied by two angels, further supporting the theme of saints experiencing divine moments, which is a common motif in Baroque religious art.\n\nThese artworks and artists provide evidence of the Baroque style and the common themes of divine intervention and mystical experiences in religious paintings of the period.",
+    "reasoning": "The painting depicts a religious scene involving a saint and two angels, which is characteristic of Baroque religious art. The presence of the saint in a nun's habit and the two angels with wings suggests a scene of divine intervention or a mystical experience. The use of chiaroscuro and the dramatic lighting are typical of the Baroque style. The artist, Sebastiano Conca, is known for his religious paintings, which aligns with the style and subject matter of this work.",
+    "card": {
+      "artist": [
+        [
+          "sebastiano-conca",
+          0.7306578159332275
+        ]
+      ],
+      "genre": [
+        [
+          "religious painting",
+          0.9988679885864258
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9985520243644714
+        ]
+      ],
+      "style": [
+        [
+          "baroque",
+          0.8382843732833862
+        ]
+      ],
+      "tag": [
+        [
+          "Picture frame",
+          0.7736067771911621
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      3563125,
+      2617906,
+      2221459,
+      5233882,
+      7316403,
+      4151030,
+      2170459,
+      4870470,
+      4241425,
+      4975012,
+      6683202,
+      1978415,
+      4479230,
+      6445829,
+      1558689
+    ],
+    "tool_queries": [
+      {
+        "query": "baroque religious painting a religious scene involving a saint and two angels, with one angel | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a religious scene involving a saint and two angels, with one angel",
+    "seed_queries": [
+      {
+        "query": "baroque religious painting a religious scene involving a saint and two angels, with one angel",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 29.630018711090088
+  },
+  {
+    "id": "devanna-085",
+    "tier": "gallery",
+    "title": "Madonna con Bambino e i santi Ignazio di Loyola, Guglielmo d’Aquitania e Michele Arcangelo",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts the Adoration of the Christ Child, a scene where the Virgin Mary and the infant Jesus are venerated by saints and apostles. This is a common theme in religious art, symbolizing the recognition of Jesus' divinity and the Virgin Mary's role as the Mother of God.\n\n2. **FIGURES**: The central figures are the Virgin Mary, identifiable by her blue robe and the Christ Child, who is depicted as an infant. The surrounding figures are likely saints or apostles, identifiable by their halos and the gestures of reverence they display towards the Virgin and Child. The presence of multiple figures in prayerful poses reinforces the scene's devotional nature.\n\n3. **PLACEMENT**: The work belongs to the Mannerist (Late Renaissance) tradition, as indicated by the style, use of light and shadow, and the subject matter. The dark background and the emphasis on the central figures are characteristic of Mannerist religious paintings. The use of copper as a medium is also consistent with the period, as it was a popular choice for religious artworks during the Renaissance and Mannerist periods.\n\n4. **EVIDENCE**: \n   - **Adoration of the Christ Child (Lotto, Kraków)**: This artwork by Lorenzo Lotto, a Mannerist painter, features a similar scene with the Virgin Mary and the Christ Child surrounded by saints. The use of light and the devotional nature of the scene are comparable.\n   - **Mannerism (Late Renaissance)**: The style of the painting, including the use of light, shadow, and the emphasis on the central figures, aligns with the Mannerist period, which is known for its spiritual and dramatic depictions.\n   - **Religious Painting**: The subject matter, including the Virgin Mary, the Christ Child, and the surrounding saints, is typical of religious paintings from the Renaissance and Mannerist periods, emphasizing the veneration of holy figures.",
+    "reasoning": "The painting depicts a religious scene with a central figure holding a child, surrounded by other figures. The style and subject matter suggest it is a Mannerist (Late Renaissance) religious painting. The figures appear to be saints or apostles, and the central figure is likely the Virgin Mary with the Christ Child. The use of copper and oil as media is consistent with the period. The artwork card suggests the artist might be Alonzo Cano, and the style and subject matter align with the Mannerist period. The presence of the Christ Child and the Virgin Mary, along with the surrounding saints, indicates a scene of veneration or adoration. The dark background and the use of light to highlight the central figures are typical of Mannerist paintings, emphasizing the spiritual and divine nature of the scene.",
+    "card": {
+      "artist": [
+        [
+          "alonzo-cano",
+          0.5074724555015564
+        ]
+      ],
+      "genre": [
+        [
+          "religious painting",
+          0.9990059733390808
+        ]
+      ],
+      "media": [
+        [
+          "copper",
+          0.40939992666244507
+        ],
+        [
+          "oil",
+          0.9845477938652039
+        ]
+      ],
+      "style": [
+        [
+          "mannerism (late renaissance)",
+          0.7379369735717773
+        ]
+      ],
+      "tag": [
+        [
+          "Jesus-Christ",
+          0.492195725440979
+        ],
+        [
+          "Virgin-Mary",
+          0.4996984004974365
+        ],
+        [
+          "Christianity",
+          0.9417465925216675
+        ],
+        [
+          "saints-and-apostles",
+          0.7662726640701294
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      5324958,
+      2887356,
+      3821208,
+      6840159,
+      2889250,
+      3858085,
+      3827136,
+      1494773,
+      3350965,
+      4151030,
+      1329016,
+      4643202,
+      843492,
+      1558689,
+      4695897
+    ],
+    "tool_queries": [
+      {
+        "query": "mannerism (late renaissance) religious painting a religious scene with a central figure holding a child, surrounded by | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a religious scene with a central figure holding a child, surrounded by",
+    "seed_queries": [
+      {
+        "query": "mannerism (late renaissance) religious painting a religious scene with a central figure holding a child, surrounded by",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 19.181550297886133
+  },
+  {
+    "id": "devanna-048",
+    "tier": "gallery",
+    "title": "Venere Marte e Cupido",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts the scene of Cupid and Psyche, a mythological story where Psyche is depicted in a state of vulnerability, possibly during a moment of intimacy or awakening, with Cupid, the god of love, interacting with her.\n\n2. **FIGURES**: The figures in the painting are Cupid and Psyche. Cupid is identifiable by his small stature, wings, and the presence of a bow and arrow, which are his attributes. Psyche is depicted as a nude woman, symbolizing her purity and vulnerability. The presence of a small child-like figure could represent a symbolic element related to their mythological story.\n\n3. **PLACEMENT**: The work belongs to the Baroque tradition, as indicated by the dramatic use of light and shadow (chiaroscuro), the emotional intensity of the scene, and the realistic depiction of the figures. The dark, intimate setting and the focus on the human form are characteristic of Baroque art, particularly in mythological paintings.\n\n4. **EVIDENCE**:\n   - **\"Cupid and Psyche\" by Anthony van Dyck**: This painting is a well-known Baroque depiction of the same mythological subject, showing the influence of the Baroque style on the current artwork.\n   - **Trophime Bigot**: Known for his Baroque paintings, particularly those involving mythological themes and the use of chiaroscuro, his works provide a stylistic parallel to the current painting.\n   - **European printmaking in the 18th century**: The description of the Baroque style and its transition into Rococo and Neoclassicism provides a historical context for the painting's style and period.",
+    "reasoning": "The painting depicts a mythological scene involving Cupid and Psyche, a popular subject in Baroque art. The figures are identifiable by their attributes, such as Cupid's wings and Psyche's nudity. The dark background and the use of chiaroscuro are typical of Baroque paintings. The artwork card suggests that the artist might be Nicolas Tournier, and the style is consistent with Baroque mythological paintings.",
+    "card": {
+      "artist": [
+        [
+          "nicolas-tournier",
+          0.5616639852523804
+        ]
+      ],
+      "genre": [
+        [
+          "mythological painting",
+          0.9768519997596741
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.999496340751648
+        ],
+        [
+          "canvas",
+          0.8186721205711365
+        ]
+      ],
+      "style": [
+        [
+          "baroque",
+          0.9716854095458984
+        ]
+      ],
+      "tag": [
+        [
+          "Picture frame",
+          0.9361310005187988
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      3278661,
+      3076739,
+      5974134,
+      6831475,
+      2403876,
+      615751,
+      5353671,
+      4522671,
+      7009051,
+      7290004,
+      2475608,
+      7884433,
+      5357379,
+      2556453,
+      8130286
+    ],
+    "tool_queries": [
+      {
+        "query": "baroque mythological painting \"Cupid's | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "\"Cupid's",
+    "seed_queries": [
+      {
+        "query": "baroque mythological painting \"Cupid's",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 26.095111639238894
+  },
+  {
+    "id": "devanna-186",
+    "tier": "gallery",
+    "title": "Pan e Siringa",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a mythological scene involving a male figure interacting with nymphs or other supernatural beings in a natural setting. The scene suggests a narrative of interaction between a mortal or god and nymphs, possibly a depiction of a mythological story.\n\n2. **FIGURES**: The figures include a man wearing a hat and two women who are partially clothed. The man's attire and posture suggest he could be a mortal or a god, while the women's attire and the setting indicate they might be nymphs or other mythological beings.\n\n3. **PLACEMENT**: The work belongs to the Baroque tradition, as indicated by the artwork card. The use of copper as a medium and the style of the painting, including the dramatic lighting and the interaction between the figures, are typical of Baroque art. The mythological subject matter is also consistent with the Baroque period.\n\n4. **EVIDENCE**: The reading rests on the following specific artworks, artists, or sources:\n   - **Hylas and the Nymphs (painting)**: This source is relevant because it depicts a similar scene with a male figure interacting with nymphs, providing a parallel to the interaction in the current painting.\n   - **Mattia Preti**: The artwork card suggests that the artist might be Mattia Preti, who was active during the Baroque period and known for his mythological paintings.\n   - **Baroque Style**: The style of the painting, including the use of copper and the dramatic composition, is consistent with the Baroque period, providing a context for the artwork.",
+    "reasoning": "The painting depicts a mythological scene with a man and two women in a natural setting. The man appears to be interacting with the women, who are partially clothed. The setting and the interaction suggest a narrative involving a mythological figure and nymphs or other supernatural beings. The style and composition are consistent with Baroque art, as indicated by the artwork card. The use of copper as a medium is also a characteristic of Baroque paintings.\n\nThe figures in the painting include a man and two women. The man is wearing a hat and appears to be interacting with the women, who are partially clothed. The women's attire and the setting suggest they might be nymphs or other mythological beings. The man's attire and posture indicate he could be a mortal or a god interacting with the nymphs.\n\nThe painting belongs to the Baroque tradition, as indicated by the artwork card. The use of copper as a medium and the style of the painting, including the dramatic lighting and the interaction between the figures, are typical of Baroque art. The mythological subject matter is also consistent with the Baroque period, which often featured such themes.\n\nThe reading rests on the following specific artworks, artists, or sources:\n1. **Hylas and the Nymphs (painting)**: This source is relevant because it depicts a similar scene with a male figure interacting with nymphs, providing a parallel to the interaction in the current painting.\n2. **Mattia Preti**: The artwork card suggests that the artist might be Mattia Preti, who was active during the Baroque period and known for his mythological paintings.\n3. **Baroque Style**: The style of the painting, including the use of copper and the dramatic composition, is consistent with the Baroque period, providing a context for the artwork.",
+    "card": {
+      "artist": [
+        [
+          "mattia-preti",
+          0.4715694785118103
+        ]
+      ],
+      "genre": [
+        [
+          "mythological painting",
+          0.842063307762146
+        ]
+      ],
+      "media": [
+        [
+          "copper",
+          0.4393165111541748
+        ],
+        [
+          "oil",
+          0.9963330030441284
+        ]
+      ],
+      "style": [
+        [
+          "baroque",
+          0.9792650938034058
+        ]
+      ],
+      "tag": [
+        [
+          "Stock photography",
+          0.5086356401443481
+        ],
+        [
+          "Picture frame",
+          0.962894856929779
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      5147026,
+      6381364,
+      3341732,
+      6368468,
+      497369,
+      6379644,
+      2233880,
+      3082572,
+      6392117,
+      6478939,
+      3975004,
+      3857650,
+      659309,
+      1137403,
+      5399642
+    ],
+    "tool_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "",
+    "seed_queries": [
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 18.38826305512339
+  },
+  {
+    "id": "devanna-010",
+    "tier": "gallery",
+    "title": "Annunciazione",
+    "system": "artseek_multiquery",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "answer": "1. **SUBJECT**: The painting depicts a quiet, serene interior scene with a table, a chair, and a fireplace. The scene is likely a still life, focusing on everyday objects and the tranquil atmosphere of a domestic setting.\n\n2. **FIGURES**: The figures in the painting are not human but rather everyday objects such as a table, a chair, and a fireplace. The attributes that identify them include their placement and the way they are depicted with attention to detail and realism. The table is positioned in the foreground, the chair is to the left, and the fireplace is in the background, all contributing to the sense of a peaceful, lived-in space.\n\n3. **PLACEMENT**: The work belongs to the realism tradition, school, and approximate period, as indicated by the attention to detail, the use of light and shadow, and the focus on everyday objects. The still life genre is also evident, as the painting captures a domestic scene with a table, chair, and fireplace.\n\n4. **EVIDENCE**:\n   - **Fannie Eliza Duvall's \"Interior\"**: This painting also depicts a still life with everyday objects, suggesting a similar focus on realism and domestic scenes.\n   - **Isaac van Duynen's \"Kitchen interior with a maid\"**: This artwork shows a similar attention to detail and realism, focusing on everyday objects and domestic settings.\n   - **Barend van der Meer's \"Still life with bacon, fruit, and metallic objects on a table covered with an oriental carpet\"**: This painting further supports the classification of the work as a still life, with its focus on everyday objects and the use of realism to capture the scene.\n\nThe artist might be Danielson-Gambogi Elin, based on the artwork card, and the painting is likely a still life from the realism tradition, focusing on everyday objects and the tranquil atmosphere of a domestic setting.",
+    "reasoning": "The painting depicts a quiet, serene interior scene with a table, a chair, and a fireplace. The realism style and the attention to detail suggest that it belongs to the realism tradition. The artist might be Danielson-Gambogi Elin, based on the artwork card. The still life genre is also indicated by the card. The use of light and shadow, as well as the attention to detail, are characteristic of realism. The presence of a fireplace and a framed picture on the wall suggest a domestic setting, which is common in still life paintings. The artist's focus on everyday objects and the tranquil atmosphere further support the classification of this work as a still life.",
+    "card": {
+      "artist": [
+        [
+          "danielson-gambogi-elin",
+          0.5590283870697021
+        ]
+      ],
+      "genre": [
+        [
+          "still life",
+          0.5482304096221924
+        ]
+      ],
+      "media": [
+        [
+          "oil",
+          0.9955724477767944
+        ]
+      ],
+      "style": [
+        [
+          "realism",
+          0.8020884990692139
+        ]
+      ],
+      "tag": [
+        [
+          "Picture frame",
+          0.9302098155021667
+        ],
+        [
+          "Fireplace",
+          0.5791240334510803
+        ]
+      ]
+    },
+    "card_shown_to_model": true,
+    "retrieved_doc_ids": [
+      7675194,
+      5188832,
+      3562370,
+      265997,
+      5691195,
+      4327555,
+      3833820,
+      1094264,
+      7039746,
+      7842980,
+      5767488,
+      1299873,
+      5066238,
+      6397571,
+      4049452
+    ],
+    "tool_queries": [
+      {
+        "query": "realism still life a quiet, serene interior scene with a table, a chair, and a | What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "num_tool_calls": 1,
+    "hypothesis": "a quiet, serene interior scene with a table, a chair, and a",
+    "seed_queries": [
+      {
+        "query": "realism still life a quiet, serene interior scene with a table, a chair, and a",
+        "requires_image": true
+      },
+      {
+        "query": "What is depicted in this painting?",
+        "requires_image": true
+      }
+    ],
+    "seconds": 26.304016404785216
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "per_variant": {
+    "full_classify": {
+      "n": 562,
+      "mean_evidence_recall": 0.4074199288256228,
+      "pct_present": 32.028469750889684,
+      "pct_absent": 51.42348754448398
+    },
+    "full_noclassify": {
+      "n": 567,
+      "mean_evidence_recall": 0.38760141093474426,
+      "pct_present": 30.687830687830687,
+      "pct_absent": 53.96825396825397
+    },
+    "full_systemprompt": {
+      "n": 568,
+      "mean_evidence_recall": 0.36047535211267606,
+      "pct_present": 26.936619718309856,
+      "pct_absent": 55.28169014084507
+    },
+    "full_classify_noartist": {
+      "n": 545,
+      "mean_evidence_recall": 0.3898532110091743,
+      "pct_present": 30.275229357798167,
+      "pct_absent": 52.84403669724771
+    },
+    "full_alwaysretrieve": {
+      "n": 649,
+      "mean_evidence_recall": 0.38747303543913714,
+      "pct_present": 30.0462249614792,
+      "pct_absent": 53.312788906009246
+    }
+  },
+  "paired": {
+    "full_systemprompt->full_classify|evidence_recall": {
+      "n": 507,
+      "n_clusters": 316,
+      "mean": 0.04037475345167653,
+      "ci_low": 0.00395303326810176,
+      "ci_high": 0.07803809523809524,
+      "cohens_dz": 0.09575347760436619,
+      "significant": true
+    },
+    "full_systemprompt->full_classify|evidence_present": {
+      "n": 507,
+      "n_clusters": 316,
+      "mean": 0.07495069033530571,
+      "ci_low": 0.0020242914979757085,
+      "ci_high": 0.14980544747081712,
+      "cohens_dz": 0.08921223695274423,
+      "significant": true
+    },
+    "full_alwaysretrieve->full_classify|evidence_recall": {
+      "n": 562,
+      "n_clusters": 324,
+      "mean": 0.00044483985765124553,
+      "ci_low": -0.015404929577464789,
+      "ci_high": 0.016216216216216217,
+      "cohens_dz": 0.0023095329283675877,
+      "significant": false
+    },
+    "full_alwaysretrieve->full_classify|evidence_present": {
+      "n": 562,
+      "n_clusters": 324,
+      "mean": 0.0,
+      "ci_low": -0.03197158081705151,
+      "ci_high": 0.031914893617021274,
+      "cohens_dz": 0.0,
+      "significant": false
+    },
+    "full_noclassify->full_classify|evidence_recall": {
+      "n": 526,
+      "n_clusters": 324,
+      "mean": 0.017490494296577945,
+      "ci_low": -0.013769531250000001,
+      "ci_high": 0.04869646182495344,
+      "cohens_dz": 0.04864225916497572,
+      "significant": false
+    },
+    "full_noclassify->full_classify|evidence_present": {
+      "n": 526,
+      "n_clusters": 324,
+      "mean": 0.034220532319391636,
+      "ci_low": -0.028142589118198873,
+      "ci_high": 0.09724770642201835,
+      "cohens_dz": 0.047596417859314136,
+      "significant": false
+    },
+    "full_classify_noartist->full_classify|evidence_recall": {
+      "n": 525,
+      "n_clusters": 319,
+      "mean": 0.02666666666666667,
+      "ci_low": -0.0014423076923076924,
+      "ci_high": 0.05480769230769231,
+      "cohens_dz": 0.08102985572140961,
+      "significant": false
+    },
+    "full_classify_noartist->full_classify|evidence_present": {
+      "n": 525,
+      "n_clusters": 319,
+      "mean": 0.049523809523809526,
+      "ci_low": -0.0073937153419593345,
+      "ci_high": 0.10556621880998081,
+      "cohens_dz": 0.0756251392578218,
+      "significant": false
+    }
+  }
+}

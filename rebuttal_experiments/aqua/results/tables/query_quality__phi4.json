@@ -1,0 +1,37 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "per_variant": {
+    "full_classify": {
+      "n": 533,
+      "mean_evidence_recall": 0.17105065666041275,
+      "pct_present": 15.75984990619137,
+      "pct_absent": 81.61350844277673
+    },
+    "full_systemprompt": {
+      "n": 561,
+      "mean_evidence_recall": 0.14884135472370766,
+      "pct_present": 13.725490196078432,
+      "pct_absent": 83.9572192513369
+    }
+  },
+  "paired": {
+    "full_systemprompt->full_classify|evidence_recall": {
+      "n": 472,
+      "n_clusters": 319,
+      "mean": 0.009533898305084746,
+      "ci_low": -0.030042918454935622,
+      "ci_high": 0.04938271604938271,
+      "cohens_dz": 0.022481281744016344,
+      "significant": false
+    },
+    "full_systemprompt->full_classify|evidence_present": {
+      "n": 472,
+      "n_clusters": 319,
+      "mean": 0.019067796610169493,
+      "ci_low": -0.060085836909871244,
+      "ci_high": 0.09876543209876543,
+      "cohens_dz": 0.022481281744016344,
+      "significant": false
+    }
+  }
+}

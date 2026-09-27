@@ -1,0 +1,421 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "counts": {
+    "base": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_gemma3": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_mistral3": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_seeded": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_mistral3": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_gemma3": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify": {
+      "image_download_failure": 26,
+      "context_length_overflow": 1,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_noclassify": {
+      "image_download_failure": 26,
+      "context_length_overflow": 4,
+      "answer_truncated_empty": 3,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_systemprompt": {
+      "image_download_failure": 26,
+      "context_length_overflow": 10,
+      "answer_truncated_empty": 23,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_noartist": {
+      "image_download_failure": 26,
+      "context_length_overflow": 2,
+      "answer_truncated_empty": 4,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_notags": {
+      "image_download_failure": 26,
+      "context_length_overflow": 2,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_reliable": {
+      "image_download_failure": 26,
+      "context_length_overflow": 2,
+      "answer_truncated_empty": 2,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_gated": {
+      "image_download_failure": 26,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_alwaysretrieve": {
+      "image_download_failure": 26,
+      "context_length_overflow": 1,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    }
+  },
+  "crosstab": {
+    "base": {
+      "lost_visual": 0,
+      "lost_contextual": 1,
+      "mean_ref_words_lost": 31.0,
+      "mean_ref_words_kept": 25.00614439324117,
+      "n_lost": 1,
+      "n_kept": 651
+    },
+    "base_gemma3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.015337423312882,
+      "n_lost": 0,
+      "n_kept": 652
+    },
+    "base_mistral3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.015337423312882,
+      "n_lost": 0,
+      "n_kept": 652
+    },
+    "full_seeded": {
+      "lost_visual": 1,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 42.0,
+      "mean_ref_words_kept": 24.989247311827956,
+      "n_lost": 1,
+      "n_kept": 651
+    },
+    "full_mistral3": {
+      "lost_visual": 1,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 18.0,
+      "mean_ref_words_kept": 25.026113671274963,
+      "n_lost": 1,
+      "n_kept": 651
+    },
+    "full_gemma3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.015337423312882,
+      "n_lost": 0,
+      "n_kept": 652
+    },
+    "full_classify": {
+      "lost_visual": 0,
+      "lost_contextual": 1,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.00921658986175,
+      "n_lost": 1,
+      "n_kept": 651
+    },
+    "full_noclassify": {
+      "lost_visual": 1,
+      "lost_contextual": 6,
+      "mean_ref_words_lost": 26.0,
+      "mean_ref_words_kept": 25.015503875968992,
+      "n_lost": 7,
+      "n_kept": 645
+    },
+    "full_systemprompt": {
+      "lost_visual": 7,
+      "lost_contextual": 26,
+      "mean_ref_words_lost": 24.652173913043477,
+      "mean_ref_words_kept": 25.04523424878837,
+      "n_lost": 33,
+      "n_kept": 619
+    },
+    "full_classify_noartist": {
+      "lost_visual": 0,
+      "lost_contextual": 6,
+      "mean_ref_words_lost": 18.75,
+      "mean_ref_words_kept": 25.091331269349844,
+      "n_lost": 6,
+      "n_kept": 646
+    },
+    "full_classify_notags": {
+      "lost_visual": 0,
+      "lost_contextual": 2,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.02769230769231,
+      "n_lost": 2,
+      "n_kept": 650
+    },
+    "full_classify_reliable": {
+      "lost_visual": 0,
+      "lost_contextual": 4,
+      "mean_ref_words_lost": 29.5,
+      "mean_ref_words_kept": 25.037037037037038,
+      "n_lost": 4,
+      "n_kept": 648
+    },
+    "full_classify_gated": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.015337423312882,
+      "n_lost": 0,
+      "n_kept": 652
+    },
+    "full_alwaysretrieve": {
+      "lost_visual": 0,
+      "lost_contextual": 1,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 25.00921658986175,
+      "n_lost": 1,
+      "n_kept": 651
+    }
+  },
+  "worst_case_imputation": {
+    "base": {
+      "n_universe": 652,
+      "n_observed": 651,
+      "observed_recall": 0.2709062980030722,
+      "observed_correctness": 0.5345622119815668,
+      "imputed_recall": 0.2704907975460123,
+      "imputed_correctness": 0.5337423312883436
+    },
+    "base_gemma3": {
+      "n_universe": 652,
+      "n_observed": 652,
+      "observed_recall": 0.27659509202453986,
+      "observed_correctness": 0.5352760736196319,
+      "imputed_recall": 0.27659509202453986,
+      "imputed_correctness": 0.5352760736196319
+    },
+    "base_mistral3": {
+      "n_universe": 652,
+      "n_observed": 652,
+      "observed_recall": 0.21765337423312883,
+      "observed_correctness": 0.4217791411042945,
+      "imputed_recall": 0.21765337423312883,
+      "imputed_correctness": 0.4217791411042945
+    },
+    "full_seeded": {
+      "n_universe": 652,
+      "n_observed": 651,
+      "observed_recall": 0.40986175115207374,
+      "observed_correctness": 0.7849462365591398,
+      "imputed_recall": 0.4092331288343558,
+      "imputed_correctness": 0.7837423312883436
+    },
+    "full_mistral3": {
+      "n_universe": 652,
+      "n_observed": 651,
+      "observed_recall": 0.36196620583717354,
+      "observed_correctness": 0.695852534562212,
+      "imputed_recall": 0.36141104294478527,
+      "imputed_correctness": 0.6947852760736196
+    },
+    "full_gemma3": {
+      "n_universe": 652,
+      "n_observed": 652,
+      "observed_recall": 0.39042944785276074,
+      "observed_correctness": 0.75920245398773,
+      "imputed_recall": 0.39042944785276074,
+      "imputed_correctness": 0.75920245398773
+    },
+    "full_classify": {
+      "n_universe": 652,
+      "n_observed": 651,
+      "observed_recall": 0.36849462365591396,
+      "observed_correctness": 0.7219662058371735,
+      "imputed_recall": 0.3679294478527607,
+      "imputed_correctness": 0.7208588957055214
+    },
+    "full_noclassify": {
+      "n_universe": 652,
+      "n_observed": 645,
+      "observed_recall": 0.3963875968992248,
+      "observed_correctness": 0.7736434108527132,
+      "imputed_recall": 0.3921319018404908,
+      "imputed_correctness": 0.7653374233128835
+    },
+    "full_systemprompt": {
+      "n_universe": 652,
+      "n_observed": 619,
+      "observed_recall": 0.3545395799676898,
+      "observed_correctness": 0.6865912762520194,
+      "imputed_recall": 0.3365950920245399,
+      "imputed_correctness": 0.651840490797546
+    },
+    "full_classify_noartist": {
+      "n_universe": 652,
+      "n_observed": 646,
+      "observed_recall": 0.37558823529411767,
+      "observed_correctness": 0.7352941176470589,
+      "imputed_recall": 0.3721319018404908,
+      "imputed_correctness": 0.7285276073619632
+    },
+    "full_classify_notags": {
+      "n_universe": 652,
+      "n_observed": 650,
+      "observed_recall": 0.38976923076923076,
+      "observed_correctness": 0.76,
+      "imputed_recall": 0.38857361963190185,
+      "imputed_correctness": 0.7576687116564417
+    },
+    "full_classify_reliable": {
+      "n_universe": 652,
+      "n_observed": 648,
+      "observed_recall": 0.3849537037037037,
+      "observed_correctness": 0.7453703703703703,
+      "imputed_recall": 0.3825920245398773,
+      "imputed_correctness": 0.74079754601227
+    },
+    "full_classify_gated": {
+      "n_universe": 652,
+      "n_observed": 652,
+      "observed_recall": 0.38503067484662573,
+      "observed_correctness": 0.75920245398773,
+      "imputed_recall": 0.38503067484662573,
+      "imputed_correctness": 0.75920245398773
+    },
+    "full_alwaysretrieve": {
+      "n_universe": 652,
+      "n_observed": 651,
+      "observed_recall": 0.38976958525345623,
+      "observed_correctness": 0.7680491551459293,
+      "imputed_recall": 0.3891717791411043,
+      "imputed_correctness": 0.7668711656441718
+    }
+  },
+  "ranking_observed": [
+    "full_seeded",
+    "full_noclassify",
+    "full_alwaysretrieve",
+    "full_classify_notags",
+    "full_gemma3",
+    "full_classify_gated",
+    "full_classify_reliable",
+    "full_classify_noartist",
+    "full_classify",
+    "full_mistral3",
+    "full_systemprompt",
+    "base_gemma3",
+    "base",
+    "base_mistral3"
+  ],
+  "ranking_worst_case": [
+    "full_seeded",
+    "full_alwaysretrieve",
+    "full_noclassify",
+    "full_gemma3",
+    "full_classify_gated",
+    "full_classify_notags",
+    "full_classify_reliable",
+    "full_classify_noartist",
+    "full_classify",
+    "full_mistral3",
+    "full_systemprompt",
+    "base_gemma3",
+    "base",
+    "base_mistral3"
+  ],
+  "ranking_preserved": false,
+  "n_universe": 652
+}

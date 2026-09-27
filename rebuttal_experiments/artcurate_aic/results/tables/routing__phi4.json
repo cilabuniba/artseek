@@ -1,0 +1,136 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "subset": "all",
+  "routing": {
+    "base_gemma3": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": NaN,
+      "recall": NaN,
+      "f1": NaN,
+      "balanced_accuracy": NaN,
+      "mcc": NaN
+    },
+    "base_mistral3": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": NaN,
+      "recall": NaN,
+      "f1": NaN,
+      "balanced_accuracy": NaN,
+      "mcc": NaN
+    },
+    "full_classify": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": NaN,
+      "recall": NaN,
+      "f1": NaN,
+      "balanced_accuracy": NaN,
+      "mcc": NaN
+    },
+    "full_noclassify": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": NaN,
+      "recall": NaN,
+      "f1": NaN,
+      "balanced_accuracy": NaN,
+      "mcc": NaN
+    },
+    "full_systemprompt": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": NaN,
+      "recall": NaN,
+      "f1": NaN,
+      "balanced_accuracy": NaN,
+      "mcc": NaN
+    }
+  },
+  "calls": {
+    "base_gemma3": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      }
+    },
+    "base_mistral3": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      }
+    },
+    "full_classify": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      }
+    },
+    "full_noclassify": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      }
+    },
+    "full_systemprompt": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "max": 0,
+        "pct_zero": NaN
+      }
+    }
+  },
+  "visual_retrieved_vs_skipped": {},
+  "difficulty_controls": {},
+  "justified_skip": {}
+}

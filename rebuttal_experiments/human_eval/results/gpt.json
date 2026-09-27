@@ -1,0 +1,482 @@
+[
+  {
+    "id": "Q3937425",
+    "tier": "indexed_lowprofile",
+    "title": "Portrait of the Court Jester Gonella",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:31:15.406382+00:00",
+    "answer": "1. **SUBJECT** - A comic or satirical half-length image of a grinning fool or rustic trickster, probably a Netherlandish “fool” type rather than a specific narrative scene.\n\n2. **FIGURES** - One elderly man with sly smile, red fur-trimmed cap, motley-colored clothing, crossed arms, and exaggerated features; these mark him as a fool, clown, or low-life comic character.\n\n3. **PLACEMENT** - Early Netherlandish/Northern Renaissance, c. 1500–1530. The sharp physiognomy, grotesque realism, dark ground, and moral-satirical tone point to the circle of Quentin Massys or related Antwerp painting.\n\n4. **EVIDENCE** - Quentin Massys, *Ill-Matched Lovers*: comic old lecher types; Massys, *The Ugly Duchess*: grotesque physiognomy; Bosch/bruegelesque fool imagery: moral satire through distorted rustic faces and costume.",
+    "finish_reason": "stop",
+    "seconds": 17.798299217996828,
+    "usage": {
+      "completion_tokens": 723,
+      "prompt_tokens": 1054,
+      "total_tokens": 1777,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q3213753",
+    "tier": "indexed_lowprofile",
+    "title": "Madonna del Sacco (Perugino)",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:39:32.033750+00:00",
+    "answer": "1. **SUBJECT** - The Virgin adoring the Christ Child, attended by an angel and the infant Saint John the Baptist: a devotional Holy Infancy scene, not a narrative episode.\n\n2. **FIGURES** - Mary stands praying in red and blue with a halo; an angel with wings supports the nude Christ Child; the kneeling child at right is John the Baptist, identified by his reed cross and penitential pose.\n\n3. **PLACEMENT** - Umbrian / early High Renaissance, c. 1490–1510, Perugino or Raphael circle. The serene faces, soft landscape, balanced pyramidal grouping, and devotional calm point to that tradition.\n\n4. **EVIDENCE** - Perugino, *Madonna and Child with St John and an Angel*—closest type; Raphael, *Madonna del Prato*—Virgin, Christ and Baptist in landscape; Perugino’s altarpieces—same calm Umbrian figures and luminous distance.",
+    "finish_reason": "stop",
+    "seconds": 14.087202538998099,
+    "usage": {
+      "completion_tokens": 722,
+      "prompt_tokens": 1476,
+      "total_tokens": 2198,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q18223127",
+    "tier": "indexed_lowprofile",
+    "title": "Christ in Glory with Saints and Odoardo Farnese",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:31:34.207476+00:00",
+    "answer": "1. **SUBJECT** - A devotional “Glory of Saint Cecilia” scene: Christ in heaven appears to Cecilia, Valerian, Tiburtius and Pope Urban I in Rome (uncertain).\n\n2. **FIGURES** - Above: Christ, Saint Peter with keys, and probably Saint John/Evangelist with book/eagle (uncertain). Below: Cecilia, the crowned martyr Valerian, another martyr companion, and Pope Urban in red clerical dress.\n\n3. **PLACEMENT** - Italian Counter-Reformation, probably Bolognese/Roman early Baroque, c.1600–30: classicizing figures, soft Correggesque clouds, clear saintly attributes, and Rome/St Peter’s in the background.\n\n4. **EVIDENCE** - Raphael, *Ecstasy of Saint Cecilia*: Cecilia with companion saints. Cecilia’s *Passio*/Golden Legend: Valerian, Tiburtius, Urban. Carracci/Domenichino tradition: similar Roman-Baroque cloud-borne sacred visions and lucid devotional composition.",
+    "finish_reason": "stop",
+    "seconds": 33.01393519499834,
+    "usage": {
+      "completion_tokens": 1772,
+      "prompt_tokens": 1112,
+      "total_tokens": 2884,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1536,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q3210764",
+    "tier": "indexed_lowprofile",
+    "title": "Monomaniac of Envy",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:32:08.222864+00:00",
+    "answer": "1. SUBJECT - A bust-length character study/portrait of an elderly peasant woman in a white cap, not a narrative scene; likely a study of rural poverty and age.\n\n2. FIGURES - One old woman, identified by wrinkled face, sunken eyes, white linen bonnet, dark shawl and plain red bodice—markers of a Dutch peasant sitter.\n\n3. PLACEMENT - Dutch Post-Impressionist/Nuenen-period realism, c. 1884–85; dark earth palette, rough brushwork, frontal peasant type and sombre psychology point strongly to early Van Gogh.\n\n4. EVIDENCE - Van Gogh, *The Potato Eaters*: same peasant physiognomies and dark tonality. Van Gogh’s Nuenen “heads of peasants”: direct comparison. Rembrandt’s tronies: precedent for expressive, non-idealized old heads.",
+    "finish_reason": "stop",
+    "seconds": 8.517695499998808,
+    "usage": {
+      "completion_tokens": 377,
+      "prompt_tokens": 1284,
+      "total_tokens": 1661,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 185,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q7727732",
+    "tier": "indexed_lowprofile",
+    "title": "The Cotton Pickers",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:39:47.123601+00:00",
+    "answer": "1. **SUBJECT** - Two Black women picking cotton in a Southern field after the American Civil War: a Reconstruction-era scene of agricultural labor, most likely Winslow Homer’s *The Cotton Pickers*.\n\n2. **FIGURES** - The women are cotton pickers, identified by the cotton field, basket, head coverings, work clothes, and the large sack of harvested cotton; their grave, monumental presence suggests dignity amid hard labor.\n\n3. **PLACEMENT** - American Realism, Reconstruction-era United States, c. 1870s. The broad natural setting, unsentimental labor subject, muted palette, and socially charged treatment of Black rural workers point to Winslow Homer’s postwar work.\n\n4. **EVIDENCE** - Winslow Homer, *The Cotton Pickers*—matches subject and composition; Homer’s *A Visit from the Old Mistress*—similar Reconstruction concerns; Jean-François Millet, *The Gleaners*—precedent for monumentalizing poor rural laborers.",
+    "finish_reason": "stop",
+    "seconds": 7.973112974999822,
+    "usage": {
+      "completion_tokens": 414,
+      "prompt_tokens": 1054,
+      "total_tokens": 1468,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 198,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q61996527",
+    "tier": "indexed_lowprofile",
+    "title": "Love Among the Ruins (Burne-Jones)",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:32:17.741917+00:00",
+    "answer": "1. **SUBJECT** - Edward Burne-Jones’s **_Love among the Ruins_**: two lovers sheltering together in an overgrown ruined palace, inspired by Robert Browning’s poem of the same name.\n\n2. **FIGURES** - A young man with a lyre and a woman in blue embrace. The lyre, roses, crumbling architecture, and dreamlike stillness identify them as poetic lovers rather than specific historical figures.\n\n3. **PLACEMENT** - English **Pre-Raphaelite / Aesthetic movement**, late Victorian, c. 1870s–1890s. Indicated by medievalizing ruins, intense blues, linear detail, melancholy romance, and decorative naturalism.\n\n4. **EVIDENCE** - **Burne-Jones, _Love among the Ruins_**: direct match. **Robert Browning, “Love Among the Ruins”**: literary source. **Burne-Jones’s _Briar Rose_ series**: similar enchanted ruins, roses, and languid figures.",
+    "finish_reason": "stop",
+    "seconds": 13.050643024005694,
+    "usage": {
+      "completion_tokens": 707,
+      "prompt_tokens": 1054,
+      "total_tokens": 1761,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 483,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q1571959",
+    "tier": "indexed_lowprofile",
+    "title": "The Shortening Winter's Day is near a Close",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:32:31.793989+00:00",
+    "answer": "1. **SUBJECT** - A winter pastoral: a shepherd tending sheep in snowy woodland at sunset, likely Joseph Farquharson’s *The Shortening Winter’s Day Is Near a Close* (uncertain).\n\n2. **FIGURES** - A dark-clad shepherd stands by a fence among sheep. The flock, snow-laden trees, tracks, and low golden sun identify an ordinary rural winter scene, not a religious or mythological subject.\n\n3. **PLACEMENT** - Scottish/British late Victorian or Edwardian naturalist landscape, c.1890–1910. Indicated by meticulous snow effects, sentimental pastoral subject, dramatic sunset light, and Farquharson-like sheep in wintry Deeside scenery.\n\n4. **EVIDENCE** - Joseph Farquharson, *The Shortening Winter’s Day Is Near a Close*: very close motif. Farquharson’s other snow-and-sheep landscapes: same formula. Robert Burns’s “The shortening winter-day is near a close”: source of the title.",
+    "finish_reason": "stop",
+    "seconds": 12.698199724000006,
+    "usage": {
+      "completion_tokens": 548,
+      "prompt_tokens": 1092,
+      "total_tokens": 1640,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 325,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q16152096",
+    "tier": "indexed_lowprofile",
+    "title": "Agony in the Garden (Blake)",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:32:45.493809+00:00",
+    "answer": "1. **SUBJECT** - A Symbolist mythological scene, probably **The Sphinx and the Chimera**: a fatal encounter between monstrous female hybrids, an allegory of desire, death and imagination (uncertain).\n\n2. **FIGURES** - The upper winged, leonine female is the **Sphinx**; the lower writhing hybrid is likely the **Chimera**. Wings, animal body, taloned limbs, forest gloom and predatory embrace identify them.\n\n3. **PLACEMENT** - **French Symbolism, late 19th century**, close to Gustave Moreau: dark jewel-like surface, mythic hybrid women, dreamlike setting, and literary rather than naturalistic storytelling.\n\n4. **EVIDENCE** - **Gustave Moreau, *The Sphinx and the Chimera***: near subject and mood. **Moreau, *Oedipus and the Sphinx***: iconic femme-sphinx type. **Flaubert, *Temptation of Saint Anthony***: Symbolist source for Sphinx/Chimera allegory.",
+    "finish_reason": "stop",
+    "seconds": 29.764444653999817,
+    "usage": {
+      "completion_tokens": 1783,
+      "prompt_tokens": 1131,
+      "total_tokens": 2914,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1536,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q7735910",
+    "tier": "indexed_lowprofile",
+    "title": "The Gate of Calais",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:39:56.098794+00:00",
+    "answer": "1. **SUBJECT** - William Hogarth’s *O the Roast Beef of Old England* / *The Gate of Calais*: a satirical scene of a huge English beef joint entering Calais, mocking French poverty, militarism and Catholic clergy.\n\n2. **FIGURES** - A cook carries the beef; a Capuchin friar eagerly touches/blesses it; ragged French soldiers, beggars and fishwives crowd around. A chained Highland/Jacobite prisoner appears at right (uncertain); heraldic arms crown the Calais gate.\n\n3. **PLACEMENT** - British satirical genre painting, mid-18th century, Hogarthian school. The caricatured faces, topical anti-French/anti-Catholic humour, theatrical grouping and moral-political anecdote point to Hogarth around the 1740s.\n\n4. **EVIDENCE** - Hogarth, *The Gate of Calais*—same composition and subject. Patriotic song “The Roast Beef of Old England”—source of the title/symbol. Hogarth, *The March to Finchley*—similar comic military satire and anti-Jacobite context.",
+    "finish_reason": "stop",
+    "seconds": 33.53044401299849,
+    "usage": {
+      "completion_tokens": 1796,
+      "prompt_tokens": 1284,
+      "total_tokens": 3080,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1536,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "Q16984914",
+    "tier": "indexed_lowprofile",
+    "title": "The Banks of the Marne (Gleizes)",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:40:30.631768+00:00",
+    "answer": "1. **SUBJECT** - A twilight fjord or lakeside landscape, probably Åsgårdstrand: a road leading to a small boathouse or cottage by the water under a blood-red evening sky.\n\n2. **FIGURES** - No clear narrative figures; the dark shapes near the building may be small human silhouettes (uncertain). Identifying details are the shore, moored boat, pale house, black trees, and intense reflected sunset.\n\n3. **PLACEMENT** - Scandinavian Symbolist / early Expressionist, late 19th century. The simplified forms, emotional colour, red-purple sky, and nervous brushwork strongly suggest Edvard Munch’s circle.\n\n4. **EVIDENCE** - Edvard Munch, *The Scream*—similar red fjord sky; Munch, *Melancholy*—Åsgårdstrand shore and mood; Munch, *Moonlight*—dark trees, pale house, simplified nocturnal landscape.",
+    "finish_reason": "stop",
+    "seconds": 13.433084204996703,
+    "usage": {
+      "completion_tokens": 719,
+      "prompt_tokens": 878,
+      "total_tokens": 1597,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "devanna-188",
+    "tier": "gallery",
+    "title": "Estasi di Santa Teresa d’Avila",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:54:32.195916+00:00",
+    "answer": "1. **SUBJECT** - The Transverberation, or Ecstasy, of Saint Teresa of Ávila: the Carmelite mystic swoons as an angel pierces her heart with divine love.\n\n2. **FIGURES** - Teresa wears the Carmelite habit, black veil and white mantle, holding a small crucifix. Winged angels attend her; one thrusts an arrow or dart toward her breast.\n\n3. **PLACEMENT** - Catholic Baroque devotional painting, probably Italian/Roman-Bolognese, late 17th century (uncertain): indicated by ecstatic mysticism, soft idealized faces, warm chiaroscuro and theatrical angelic grouping.\n\n4. **EVIDENCE** - Bernini, *Ecstasy of Saint Teresa*: same transverberation theme. Teresa’s *Life*, ch. 29: fiery dart vision. Guido Reni/Carlo Maratti tradition: comparable soft Baroque angelic piety.",
+    "finish_reason": "stop",
+    "seconds": 13.812346452003112,
+    "usage": {
+      "completion_tokens": 717,
+      "prompt_tokens": 1092,
+      "total_tokens": 1809,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "devanna-085",
+    "tier": "gallery",
+    "title": "Madonna con Bambino e i santi Ignazio di Loyola, Guglielmo d’Aquitania e Michele Arcangelo",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:33:58.646062+00:00",
+    "answer": "1. **SUBJECT** - The *Madonna della Cintola* / Our Lady of Consolation: the Virgin and Child appear in glory to Saints Augustine and Monica, bestowing the Augustinian girdle (uncertain).\n\n2. **FIGURES** - Mary in red and blue holds Christ; putti surround them. Below: St Monica in dark widow’s/Augustinian habit; St Augustine in pale episcopal vestments, kneeling. The girdle or band near the Child suggests the cult.\n\n3. **PLACEMENT** - Venetian Rococo, probably Tiepolo school, c.1730–50: loose oil-sketch handling, dramatic cloud-borne diagonals, warm chiaroscuro, and theatrical devotional staging.\n\n4. **EVIDENCE** - G. B. Tiepolo, *Virgin Appearing to St Augustine and St Monica*—close subject/type. Augustinian *Madonna della Cintola* iconography—girdle, Augustine, Monica. Venetian settecento modelli—similar sketchy, luminous handling.",
+    "finish_reason": "stop",
+    "seconds": 57.81063812100183,
+    "usage": {
+      "completion_tokens": 3330,
+      "prompt_tokens": 862,
+      "total_tokens": 4192,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 3073,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "devanna-048",
+    "tier": "gallery",
+    "title": "Venere Marte e Cupido",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:54:47.011461+00:00",
+    "answer": "1. **SUBJECT** - Mars and Venus in a bedchamber, probably **Venus disarming Mars** or the lovers after their union, with Cupid presiding.\n\n2. **FIGURES** - The nude male is **Mars**, identified by discarded armor, helmet, shield and sword. The nude woman is **Venus**. The winged infant above is **Cupid/Eros**, with love’s arrow and bed-curtain.\n\n3. **PLACEMENT** - **French Rococo mythological painting, mid-18th century (uncertain)**: erotic classical subject, soft flesh, pink silk drapery, boudoir setting, and theatrical darkness suggest Boucher/Lagrenée-circle taste.\n\n4. **EVIDENCE** - **Ovid, *Metamorphoses***: Venus-Mars love myth. **Boucher’s Venus/Mars subjects**: erotic Rococo handling. **Poussin/Rubens “Venus disarming Mars” tradition**: Mars’s weapons abandoned under Venus’s power.",
+    "finish_reason": "stop",
+    "seconds": 12.532322216997272,
+    "usage": {
+      "completion_tokens": 733,
+      "prompt_tokens": 1092,
+      "total_tokens": 1825,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "devanna-186",
+    "tier": "gallery",
+    "title": "Pan e Siringa",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:34:57.458337+00:00",
+    "answer": "1. **SUBJECT** - The sacrifice of Polyxena at Achilles’ tomb (uncertain): the Trojan princess is about to be killed after Troy’s fall.\n\n2. **FIGURES** - Polyxena kneels, bare-breasted, in pale drapery; Neoptolemus/Pyrrhus at left prepares the sacrifice with blade/torch; mourning women, likely Hecuba and Trojan attendants, cluster behind.\n\n3. **PLACEMENT** - Late Baroque/Rococo mythological oil sketch, probably Venetian or French, early–mid 18th century: loose brushwork, warm reddish palette, dramatic diagonals, classical subject in a decorative round format.\n\n4. **EVIDENCE** - Ovid, *Metamorphoses* XIII: Polyxena bares her breast for sacrifice. Pittoni/Tiepolo sacrifice scenes: similar Venetian theatricality. Rubens/Poussin classical histories: precedent for compact, emotional multi-figure myth scenes.",
+    "finish_reason": "stop",
+    "seconds": 60.377081695995,
+    "usage": {
+      "completion_tokens": 3831,
+      "prompt_tokens": 1092,
+      "total_tokens": 4923,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 3582,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  },
+  {
+    "id": "devanna-010",
+    "tier": "gallery",
+    "title": "Annunciazione",
+    "system": "gpt",
+    "model": "gpt-5.5-2026-04-23",
+    "prompt": "Look at this painting and answer in four short numbered parts.\n\n1. SUBJECT - What event, story or scene is depicted? Name it as specifically as you can. (at most 40 words)\n2. FIGURES - Who or what are the figures, and which attributes, symbols or details identify them? (at most 50 words)\n3. PLACEMENT - What tradition, school and approximate period does the work belong to, and what in the picture indicates that? (at most 40 words)\n4. EVIDENCE - Name up to three specific artworks, artists or sources your reading rests on, and say in a few words why each is relevant. (at most 50 words)\n\nGive your best reading even if you do not recognise the work: commit to your most likely answer rather than declining. Mark anything you are unsure of with \"(uncertain)\". Do not refuse and do not answer only that you cannot identify the work. Keep to the four numbered parts.",
+    "prompt_version": "v3-structured",
+    "run_utc": "2026-08-27T17:55:00.553631+00:00",
+    "answer": "1. **SUBJECT** - A quiet architectural interior: an empty vaulted room or vestibule, possibly a museum, academy, or bourgeois house, arranged as a study-like space rather than a narrative event.\n\n2. **FIGURES** - No living figures appear. The “figures” are furnishings: a dark table, framed pictures, a classical bust on a pedestal with red drapery, arched plaster vaults and wooden wainscoting.\n\n3. **PLACEMENT** - Northern European interior painting, probably Danish or German Biedermeier/early realist, mid-19th century (uncertain). The sober empty room, warm tonal light, precise architecture and quiet domestic-cultural atmosphere suggest this.\n\n4. **EVIDENCE** - Vilhelm Hammershøi: empty Danish interiors, though later. Christen Købke: Danish Golden Age architectural clarity. Pieter de Hooch/Hoogstraten tradition: carefully staged interiors with depth, arches and stillness.",
+    "finish_reason": "stop",
+    "seconds": 13.932616195001174,
+    "usage": {
+      "completion_tokens": 723,
+      "prompt_tokens": 1092,
+      "total_tokens": 1815,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 512,
+        "rejected_prediction_tokens": 0,
+        "text_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "image_tokens": null,
+        "text_tokens": null
+      }
+    }
+  }
+]

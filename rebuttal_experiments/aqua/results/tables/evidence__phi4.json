@@ -1,0 +1,107 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "subset": "all",
+  "evidence_quality": {
+    "full_classify": {
+      "all": {
+        "n": 533,
+        "mean_evidence_recall": 0.17105065666041275,
+        "pct_absent": 81.61350844277673,
+        "pct_partial": 2.6266416510318953,
+        "pct_present": 15.75984990619137
+      },
+      "visual": {
+        "n": 223,
+        "mean_evidence_recall": 0.19506726457399104,
+        "pct_absent": 78.47533632286996,
+        "pct_partial": 4.0358744394618835,
+        "pct_present": 17.48878923766816
+      },
+      "contextual": {
+        "n": 310,
+        "mean_evidence_recall": 0.1537741935483871,
+        "pct_absent": 83.87096774193549,
+        "pct_partial": 1.6129032258064515,
+        "pct_present": 14.516129032258066
+      }
+    },
+    "full_systemprompt": {
+      "all": {
+        "n": 561,
+        "mean_evidence_recall": 0.14884135472370766,
+        "pct_absent": 83.9572192513369,
+        "pct_partial": 2.3172905525846703,
+        "pct_present": 13.725490196078432
+      },
+      "visual": {
+        "n": 254,
+        "mean_evidence_recall": 0.1279527559055118,
+        "pct_absent": 86.61417322834646,
+        "pct_partial": 1.1811023622047243,
+        "pct_present": 12.204724409448819
+      },
+      "contextual": {
+        "n": 307,
+        "mean_evidence_recall": 0.16612377850162866,
+        "pct_absent": 81.75895765472313,
+        "pct_partial": 3.257328990228013,
+        "pct_present": 14.983713355048861
+      }
+    }
+  },
+  "joint": {
+    "full_classify": {
+      "absent|wrong": 258,
+      "absent|correct": 150,
+      "no retrieval|wrong": 56,
+      "no retrieval|correct": 54,
+      "absent|partial": 27,
+      "present|wrong": 22,
+      "present|correct": 58,
+      "no retrieval|partial": 9,
+      "partial|correct": 9,
+      "partial|wrong": 3,
+      "present|partial": 4,
+      "partial|partial": 2,
+      "_total": 652
+    },
+    "full_systemprompt": {
+      "absent|wrong": 293,
+      "absent|correct": 144,
+      "present|correct": 55,
+      "absent|partial": 34,
+      "no retrieval|wrong": 31,
+      "present|wrong": 20,
+      "no retrieval|correct": 38,
+      "partial|correct": 9,
+      "partial|wrong": 4,
+      "present|partial": 2,
+      "no retrieval|partial": 1,
+      "_total": 631
+    }
+  },
+  "conditional": {
+    "full_classify": {
+      "acc_given_present": 1.4285714285714286,
+      "pct_correct_given_present": 69.04761904761905,
+      "acc_given_atleast_partial": 1.4285714285714286,
+      "acc_given_absent": 0.7517241379310344,
+      "n_wrong": 339,
+      "wrong_no_retrieval": 56,
+      "wrong_evidence_absent": 258,
+      "wrong_evidence_present": 25,
+      "n_no_retrieval": 119
+    },
+    "full_systemprompt": {
+      "acc_given_present": 1.4545454545454546,
+      "pct_correct_given_present": 71.42857142857143,
+      "acc_given_atleast_partial": 1.4444444444444444,
+      "acc_given_absent": 0.6836518046709129,
+      "n_wrong": 348,
+      "wrong_no_retrieval": 31,
+      "wrong_evidence_absent": 293,
+      "wrong_evidence_present": 24,
+      "n_no_retrieval": 70
+    }
+  }
+}

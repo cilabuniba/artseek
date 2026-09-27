@@ -1,0 +1,78 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "rate": {
+    "base": {
+      "n_runs": 762,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "base_gemma3": {
+      "n_runs": 762,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "base_mistral3": {
+      "n_runs": 762,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_classify": {
+      "n_runs": 762,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_noclassify": {
+      "n_runs": 755,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_systemprompt": {
+      "n_runs": 762,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_classify_noartist": {
+      "n_runs": 761,
+      "n_nonanswer": 1,
+      "pct": 0.1314060446780552
+    }
+  },
+  "sensitivity": {
+    "full_systemprompt->full_classify|as judged (non-answers dropped)": {
+      "n": 762,
+      "n_clusters": 260,
+      "mean": 0.06036745406824147,
+      "ci_low": 0.032175032175032175,
+      "ci_high": 0.08914728682170543,
+      "cohens_dz": 0.14537510682666202,
+      "significant": true
+    },
+    "full_systemprompt->full_classify|non-answers scored 0": {
+      "n": 762,
+      "n_clusters": 260,
+      "mean": 0.06036745406824147,
+      "ci_low": 0.032175032175032175,
+      "ci_high": 0.08914728682170543,
+      "cohens_dz": 0.14537510682666202,
+      "significant": true
+    },
+    "full_noclassify->full_classify|as judged (non-answers dropped)": {
+      "n": 755,
+      "n_clusters": 260,
+      "mean": 0.11788079470198676,
+      "ci_low": 0.05290322580645161,
+      "ci_high": 0.18479685452162517,
+      "cohens_dz": 0.12556783951472264,
+      "significant": true
+    },
+    "full_noclassify->full_classify|non-answers scored 0": {
+      "n": 755,
+      "n_clusters": 260,
+      "mean": 0.11788079470198676,
+      "ci_low": 0.05290322580645161,
+      "ci_high": 0.18479685452162517,
+      "cohens_dz": 0.12556783951472264,
+      "significant": true
+    }
+  }
+}

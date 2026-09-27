@@ -1,0 +1,184 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "subset": "all",
+  "n_boot": 10000,
+  "families": {
+    "retrieval_vs_base": {
+      "title": "Retrieval vs. `base`",
+      "n_tests_aggregate": 3,
+      "alpha_aggregate": 0.016666666666666666,
+      "n_tests_split": 6,
+      "alpha_split": 0.008333333333333333,
+      "results": [
+        {
+          "n": 1486,
+          "n_clusters": 251,
+          "mean": -0.033647375504710635,
+          "ci_low": -0.07123655913978495,
+          "ci_high": 0.002686366689053056,
+          "cohens_dz": -0.045890898542269944,
+          "p_ttest": 0.07709357632502459,
+          "p_wilcoxon": 0.10476573905701825,
+          "a": "base",
+          "b": "full_classify",
+          "field": "correctness",
+          "question_type": "all",
+          "significant": false
+        },
+        {
+          "n": 1477,
+          "n_clusters": 251,
+          "mean": -0.052132701421800945,
+          "ci_low": -0.08801624915368991,
+          "ci_high": -0.01688048615800135,
+          "cohens_dz": -0.0735780834462752,
+          "p_ttest": 0.004751154345656436,
+          "p_wilcoxon": 0.011301365634922345,
+          "a": "base",
+          "b": "full_noclassify",
+          "field": "correctness",
+          "question_type": "all",
+          "significant": true
+        },
+        {
+          "n": 1451,
+          "n_clusters": 251,
+          "mean": -0.21709166092350105,
+          "ci_low": -0.26035911602209943,
+          "ci_high": -0.17479108635097493,
+          "cohens_dz": -0.27040237838134024,
+          "p_ttest": 4.6377087578237176e-24,
+          "p_wilcoxon": 0.0,
+          "a": "base",
+          "b": "full_systemprompt",
+          "field": "correctness",
+          "question_type": "all",
+          "significant": true
+        },
+        {
+          "n": 1486,
+          "n_clusters": 251,
+          "mean": -0.02291386271870794,
+          "ci_low": -0.04211409395973154,
+          "ci_high": -0.0040322580645161315,
+          "cohens_dz": -0.06204532214870707,
+          "p_ttest": 0.01689136078453858,
+          "p_wilcoxon": 0.020408603426714578,
+          "a": "base",
+          "b": "full_classify",
+          "field": "recall",
+          "question_type": "all",
+          "significant": true
+        },
+        {
+          "n": 1477,
+          "n_clusters": 251,
+          "mean": -0.03202437373053487,
+          "ci_low": -0.050033489618218296,
+          "ci_high": -0.013909520594193103,
+          "cohens_dz": -0.0904035440913001,
+          "p_ttest": 0.0005268740487152315,
+          "p_wilcoxon": 0.0004272401968421491,
+          "a": "base",
+          "b": "full_noclassify",
+          "field": "recall",
+          "question_type": "all",
+          "significant": true
+        },
+        {
+          "n": 1451,
+          "n_clusters": 251,
+          "mean": -0.11340454858718126,
+          "ci_low": -0.13607681755829906,
+          "ci_high": -0.09155172413793101,
+          "cohens_dz": -0.27799034448093746,
+          "p_ttest": 2.7288618560933527e-25,
+          "p_wilcoxon": 0.0,
+          "a": "base",
+          "b": "full_systemprompt",
+          "field": "recall",
+          "question_type": "all",
+          "significant": true
+        }
+      ]
+    },
+    "policy": {
+      "title": "Tool-calling policy: ICL shot vs. system prompt",
+      "n_tests_aggregate": 1,
+      "alpha_aggregate": 0.05,
+      "n_tests_split": null,
+      "alpha_split": null,
+      "results": [
+        {
+          "n": 1451,
+          "n_clusters": 251,
+          "mean": 0.18676774638180565,
+          "ci_low": 0.1483021483021483,
+          "ci_high": 0.22518822724161533,
+          "cohens_dz": 0.26683248493660544,
+          "p_ttest": 1.718580574168728e-23,
+          "p_wilcoxon": 0.0,
+          "a": "full_systemprompt",
+          "b": "full_classify",
+          "field": "correctness",
+          "question_type": "all",
+          "significant": true
+        },
+        {
+          "n": 1451,
+          "n_clusters": 251,
+          "mean": 0.09190213645761543,
+          "ci_low": 0.07164024810475532,
+          "ci_high": 0.11187542778918548,
+          "cohens_dz": 0.25466288805085086,
+          "p_ttest": 1.336425209099521e-21,
+          "p_wilcoxon": 0.0,
+          "a": "full_systemprompt",
+          "b": "full_classify",
+          "field": "recall",
+          "question_type": "all",
+          "significant": true
+        }
+      ]
+    },
+    "classification": {
+      "title": "Classification / artist-field ablation",
+      "n_tests_aggregate": 1,
+      "alpha_aggregate": 0.05,
+      "n_tests_split": null,
+      "alpha_split": null,
+      "results": [
+        {
+          "n": 1477,
+          "n_clusters": 251,
+          "mean": -0.02098849018280298,
+          "ci_low": -0.05718175629680054,
+          "ci_high": 0.014844804318488529,
+          "cohens_dz": -0.03237473402317185,
+          "p_ttest": 0.21361690885454854,
+          "p_wilcoxon": 0.2688993188080149,
+          "a": "full_classify",
+          "b": "full_noclassify",
+          "field": "correctness",
+          "question_type": "all",
+          "significant": false
+        },
+        {
+          "n": 1477,
+          "n_clusters": 251,
+          "mean": -0.01103588354773189,
+          "ci_low": -0.02905634758995249,
+          "ci_high": 0.0071476510067114045,
+          "cohens_dz": -0.034029479301238806,
+          "p_ttest": 0.19114049636898411,
+          "p_wilcoxon": 0.15924017448954908,
+          "a": "full_classify",
+          "b": "full_noclassify",
+          "field": "recall",
+          "question_type": "all",
+          "significant": false
+        }
+      ]
+    }
+  }
+}

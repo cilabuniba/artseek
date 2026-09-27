@@ -1,0 +1,447 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "composition": {
+    "n_paintings_probed": 326,
+    "n_obscure": 180,
+    "pct_obscure": 55.21472392638037,
+    "title_top1": 22.392638036809817,
+    "artist_top1": 37.423312883435585,
+    "both_correct": 15.030674846625766
+  },
+  "widening": {
+    "full_seeded": {
+      "obscure": {
+        "n": 359,
+        "n_clusters": 180,
+        "mean": 0.3064066852367688,
+        "ci_low": 0.2222222222222222,
+        "ci_high": 0.3955431754874652,
+        "cohens_dz": 0.3694126123718787
+      },
+      "non-obscure": {
+        "n": 291,
+        "n_clusters": 146,
+        "mean": 0.17869415807560138,
+        "ci_low": 0.07560137457044673,
+        "ci_high": 0.2837370242214533,
+        "cohens_dz": 0.20300193584740214
+      },
+      "widening": 0.1277125271611674,
+      "widening_ci": [
+        -0.008050234997941969,
+        0.2631443298969072
+      ],
+      "widening_significant": false
+    },
+    "full_mistral3": {
+      "obscure": {
+        "n": 360,
+        "n_clusters": 180,
+        "mean": 0.20555555555555555,
+        "ci_low": 0.11944444444444445,
+        "ci_high": 0.2916666666666667,
+        "cohens_dz": 0.23844739055358574
+      },
+      "non-obscure": {
+        "n": 290,
+        "n_clusters": 146,
+        "mean": 0.10344827586206896,
+        "ci_low": -0.003472222222222222,
+        "ci_high": 0.20833333333333334,
+        "cohens_dz": 0.11573466387046169
+      },
+      "widening": 0.10210727969348658,
+      "widening_ci": [
+        -0.032122260668973474,
+        0.23908045977011494
+      ],
+      "widening_significant": false
+    },
+    "full_gemma3": {
+      "obscure": {
+        "n": 360,
+        "n_clusters": 180,
+        "mean": 0.25277777777777777,
+        "ci_low": 0.16944444444444445,
+        "ci_high": 0.3388888888888889,
+        "cohens_dz": 0.2947721419425211
+      },
+      "non-obscure": {
+        "n": 291,
+        "n_clusters": 146,
+        "mean": 0.18900343642611683,
+        "ci_low": 0.08934707903780069,
+        "ci_high": 0.2842465753424658,
+        "cohens_dz": 0.21769018161038572
+      },
+      "widening": 0.06377434135166093,
+      "widening_ci": [
+        -0.06351403306420608,
+        0.1950744558991982
+      ],
+      "widening_significant": false
+    },
+    "full_classify": {
+      "obscure": {
+        "n": 360,
+        "n_clusters": 180,
+        "mean": 0.2,
+        "ci_low": 0.11666666666666667,
+        "ci_high": 0.2861111111111111,
+        "cohens_dz": 0.24793669099132148
+      },
+      "non-obscure": {
+        "n": 290,
+        "n_clusters": 146,
+        "mean": 0.16896551724137931,
+        "ci_low": 0.06228373702422145,
+        "ci_high": 0.27526132404181186,
+        "cohens_dz": 0.19422363154902766
+      },
+      "widening": 0.031034482758620696,
+      "widening_ci": [
+        -0.10518069973087274,
+        0.1700191570881226
+      ],
+      "widening_significant": false
+    },
+    "full_noclassify": {
+      "obscure": {
+        "n": 356,
+        "n_clusters": 180,
+        "mean": 0.20786516853932585,
+        "ci_low": 0.12359550561797752,
+        "ci_high": 0.2937853107344633,
+        "cohens_dz": 0.251440023864505
+      },
+      "non-obscure": {
+        "n": 288,
+        "n_clusters": 146,
+        "mean": 0.2708333333333333,
+        "ci_low": 0.1672473867595819,
+        "ci_high": 0.3732876712328767,
+        "cohens_dz": 0.31746790923782753
+      },
+      "widening": -0.06296816479400746,
+      "widening_ci": [
+        -0.19820498766785424,
+        0.07119514472455649
+      ],
+      "widening_significant": false
+    },
+    "full_systemprompt": {
+      "obscure": {
+        "n": 339,
+        "n_clusters": 180,
+        "mean": 0.1504424778761062,
+        "ci_low": 0.06547619047619048,
+        "ci_high": 0.23684210526315788,
+        "cohens_dz": 0.18761672565912704
+      },
+      "non-obscure": {
+        "n": 279,
+        "n_clusters": 146,
+        "mean": 0.14695340501792115,
+        "ci_low": 0.03985507246376811,
+        "ci_high": 0.2536231884057971,
+        "cohens_dz": 0.1686889542226151
+      },
+      "widening": 0.0034890728581850605,
+      "widening_ci": [
+        -0.1383277246777263,
+        0.13990348031559133
+      ],
+      "widening_significant": false
+    },
+    "full_classify_noartist": {
+      "obscure": {
+        "n": 357,
+        "n_clusters": 180,
+        "mean": 0.22128851540616246,
+        "ci_low": 0.1392757660167131,
+        "ci_high": 0.3055555555555556,
+        "cohens_dz": 0.26646613458697105
+      },
+      "non-obscure": {
+        "n": 288,
+        "n_clusters": 146,
+        "mean": 0.18055555555555555,
+        "ci_low": 0.07560137457044673,
+        "ci_high": 0.2847222222222222,
+        "cohens_dz": 0.20501157663566338
+      },
+      "widening": 0.040732959850606903,
+      "widening_ci": [
+        -0.09276651837205468,
+        0.17516294227188078
+      ],
+      "widening_significant": false
+    },
+    "full_classify_notags": {
+      "obscure": {
+        "n": 359,
+        "n_clusters": 180,
+        "mean": 0.24233983286908078,
+        "ci_low": 0.15833333333333333,
+        "ci_high": 0.33055555555555555,
+        "cohens_dz": 0.2888936971667633
+      },
+      "non-obscure": {
+        "n": 290,
+        "n_clusters": 146,
+        "mean": 0.20344827586206896,
+        "ci_low": 0.10273972602739725,
+        "ci_high": 0.30584192439862545,
+        "cohens_dz": 0.2369827030875104
+      },
+      "widening": 0.03889155700701183,
+      "widening_ci": [
+        -0.09433028919330291,
+        0.17322451317296678
+      ],
+      "widening_significant": false
+    },
+    "full_classify_reliable": {
+      "obscure": {
+        "n": 358,
+        "n_clusters": 180,
+        "mean": 0.20670391061452514,
+        "ci_low": 0.12044817927170869,
+        "ci_high": 0.29444444444444445,
+        "cohens_dz": 0.24376231110595925
+      },
+      "non-obscure": {
+        "n": 289,
+        "n_clusters": 146,
+        "mean": 0.21453287197231835,
+        "ci_low": 0.10689655172413794,
+        "ci_high": 0.3170731707317073,
+        "cohens_dz": 0.2439669485817193
+      },
+      "widening": -0.007828961357793207,
+      "widening_ci": [
+        -0.14575530586766544,
+        0.13033903216458997
+      ],
+      "widening_significant": false
+    },
+    "full_classify_gated": {
+      "obscure": {
+        "n": 360,
+        "n_clusters": 180,
+        "mean": 0.22777777777777777,
+        "ci_low": 0.14722222222222223,
+        "ci_high": 0.3111111111111111,
+        "cohens_dz": 0.27332419730115415
+      },
+      "non-obscure": {
+        "n": 291,
+        "n_clusters": 146,
+        "mean": 0.21993127147766323,
+        "ci_low": 0.11379310344827587,
+        "ci_high": 0.3230240549828179,
+        "cohens_dz": 0.2502852612300064
+      },
+      "widening": 0.007846506300114547,
+      "widening_ci": [
+        -0.12545662100456623,
+        0.1420091324200913
+      ],
+      "widening_significant": false
+    },
+    "full_alwaysretrieve": {
+      "obscure": {
+        "n": 360,
+        "n_clusters": 180,
+        "mean": 0.2638888888888889,
+        "ci_low": 0.18333333333333332,
+        "ci_high": 0.35,
+        "cohens_dz": 0.3227940709192383
+      },
+      "non-obscure": {
+        "n": 290,
+        "n_clusters": 146,
+        "mean": 0.19655172413793104,
+        "ci_low": 0.0896551724137931,
+        "ci_high": 0.3013698630136986,
+        "cohens_dz": 0.22138704644566692
+      },
+      "widening": 0.06733716475095786,
+      "widening_ci": [
+        -0.06692618223760088,
+        0.20138888888888887
+      ],
+      "widening_significant": false
+    }
+  },
+  "by_stratum": {
+    "base": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.4666666666666667,
+        "recall": 0.23805555555555558
+      },
+      "non-obscure": {
+        "n": 291,
+        "correctness": 0.6185567010309279,
+        "recall": 0.3115463917525773
+      }
+    },
+    "base_gemma3": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.46111111111111114,
+        "recall": 0.23416666666666666
+      },
+      "non-obscure": {
+        "n": 292,
+        "correctness": 0.6267123287671232,
+        "recall": 0.3289041095890411
+      }
+    },
+    "base_mistral3": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.39166666666666666,
+        "recall": 0.20205555555555554
+      },
+      "non-obscure": {
+        "n": 292,
+        "correctness": 0.4589041095890411,
+        "recall": 0.23688356164383562
+      }
+    },
+    "full_seeded": {
+      "obscure": {
+        "n": 359,
+        "correctness": 0.7743732590529248,
+        "recall": 0.40041782729805014
+      },
+      "non-obscure": {
+        "n": 292,
+        "correctness": 0.797945205479452,
+        "recall": 0.421472602739726
+      }
+    },
+    "full_mistral3": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.6722222222222223,
+        "recall": 0.34908333333333336
+      },
+      "non-obscure": {
+        "n": 291,
+        "correctness": 0.7250859106529209,
+        "recall": 0.37790378006872855
+      }
+    },
+    "full_gemma3": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.7194444444444444,
+        "recall": 0.36641666666666667
+      },
+      "non-obscure": {
+        "n": 292,
+        "correctness": 0.8082191780821918,
+        "recall": 0.4200342465753425
+      }
+    },
+    "full_classify": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.6666666666666666,
+        "recall": 0.3369166666666667
+      },
+      "non-obscure": {
+        "n": 291,
+        "correctness": 0.7903780068728522,
+        "recall": 0.40756013745704467
+      }
+    },
+    "full_noclassify": {
+      "obscure": {
+        "n": 356,
+        "correctness": 0.6769662921348315,
+        "recall": 0.3414325842696629
+      },
+      "non-obscure": {
+        "n": 289,
+        "correctness": 0.8927335640138409,
+        "recall": 0.464083044982699
+      }
+    },
+    "full_systemprompt": {
+      "obscure": {
+        "n": 339,
+        "correctness": 0.6224188790560472,
+        "recall": 0.3253392330383481
+      },
+      "non-obscure": {
+        "n": 280,
+        "correctness": 0.7642857142857142,
+        "recall": 0.38989285714285715
+      }
+    },
+    "full_classify_noartist": {
+      "obscure": {
+        "n": 357,
+        "correctness": 0.680672268907563,
+        "recall": 0.3430532212885154
+      },
+      "non-obscure": {
+        "n": 289,
+        "correctness": 0.8027681660899654,
+        "recall": 0.41577854671280273
+      }
+    },
+    "full_classify_notags": {
+      "obscure": {
+        "n": 359,
+        "correctness": 0.7103064066852368,
+        "recall": 0.36086350974930365
+      },
+      "non-obscure": {
+        "n": 291,
+        "correctness": 0.8213058419243986,
+        "recall": 0.4254295532646048
+      }
+    },
+    "full_classify_reliable": {
+      "obscure": {
+        "n": 358,
+        "correctness": 0.6703910614525139,
+        "recall": 0.34189944134078215
+      },
+      "non-obscure": {
+        "n": 290,
+        "correctness": 0.8379310344827586,
+        "recall": 0.43810344827586206
+      }
+    },
+    "full_classify_gated": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.6944444444444444,
+        "recall": 0.3521388888888889
+      },
+      "non-obscure": {
+        "n": 292,
+        "correctness": 0.839041095890411,
+        "recall": 0.4255821917808219
+      }
+    },
+    "full_alwaysretrieve": {
+      "obscure": {
+        "n": 360,
+        "correctness": 0.7305555555555555,
+        "recall": 0.36774999999999997
+      },
+      "non-obscure": {
+        "n": 291,
+        "correctness": 0.8144329896907216,
+        "recall": 0.4170103092783505
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "rate": {
+    "base": {
+      "n_runs": 652,
+      "n_nonanswer": 1,
+      "pct": 0.15337423312883436
+    },
+    "base_gemma3": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "base_mistral3": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_seeded": {
+      "n_runs": 652,
+      "n_nonanswer": 1,
+      "pct": 0.15337423312883436
+    },
+    "full_mistral3": {
+      "n_runs": 652,
+      "n_nonanswer": 1,
+      "pct": 0.15337423312883436
+    },
+    "full_gemma3": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_classify": {
+      "n_runs": 651,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_noclassify": {
+      "n_runs": 648,
+      "n_nonanswer": 3,
+      "pct": 0.4629629629629629
+    },
+    "full_systemprompt": {
+      "n_runs": 642,
+      "n_nonanswer": 23,
+      "pct": 3.582554517133956
+    },
+    "full_classify_noartist": {
+      "n_runs": 650,
+      "n_nonanswer": 4,
+      "pct": 0.6153846153846154
+    },
+    "full_classify_notags": {
+      "n_runs": 650,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_classify_reliable": {
+      "n_runs": 650,
+      "n_nonanswer": 2,
+      "pct": 0.3076923076923077
+    },
+    "full_classify_gated": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_alwaysretrieve": {
+      "n_runs": 651,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    }
+  },
+  "sensitivity": {
+    "full_systemprompt->full_classify|as judged (non-answers dropped)": {
+      "n": 618,
+      "n_clusters": 326,
+      "mean": 0.05663430420711974,
+      "ci_low": 0.003257328990228013,
+      "ci_high": 0.11201298701298701,
+      "cohens_dz": 0.08218170554881056,
+      "significant": true
+    },
+    "full_systemprompt->full_classify|non-answers scored 0": {
+      "n": 641,
+      "n_clusters": 326,
+      "mean": 0.0655226209048362,
+      "ci_low": 0.01263823064770932,
+      "ci_high": 0.11993769470404984,
+      "cohens_dz": 0.09582207770042413,
+      "significant": true
+    },
+    "full_noclassify->full_classify|as judged (non-answers dropped)": {
+      "n": 645,
+      "n_clusters": 326,
+      "mean": -0.046511627906976744,
+      "ci_low": -0.09861325115562404,
+      "ci_high": 0.007763975155279503,
+      "cohens_dz": -0.06972087947017694,
+      "significant": false
+    },
+    "full_noclassify->full_classify|non-answers scored 0": {
+      "n": 648,
+      "n_clusters": 326,
+      "mean": -0.044753086419753084,
+      "ci_low": -0.09692307692307692,
+      "ci_high": 0.009259259259259259,
+      "cohens_dz": -0.06711252376352637,
+      "significant": false
+    }
+  }
+}

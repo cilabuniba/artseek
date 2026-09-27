@@ -1,0 +1,260 @@
+{
+  "per_stage": {
+    "base": {
+      "n": 762,
+      "classification": 0.0,
+      "generation_total": 5.610795079382733,
+      "reasoning_est": 5.236797498464704,
+      "answer_est": 0.37399758091802887,
+      "retrieval": 0.0,
+      "total": 5.610795079382733
+    },
+    "base_gemma3": {
+      "n": 762,
+      "classification": 0.0,
+      "generation_total": 2.8856431381126715,
+      "reasoning_est": 2.6694738369304036,
+      "answer_est": 0.2161693011822677,
+      "retrieval": 0.0,
+      "total": 2.8856431381126715
+    },
+    "base_mistral3": {
+      "n": 762,
+      "classification": 0.0,
+      "generation_total": 2.47685483816444,
+      "reasoning_est": 2.2420310620543202,
+      "answer_est": 0.23482377611012004,
+      "retrieval": 0.0,
+      "total": 2.47685483816444
+    },
+    "full_classify": {
+      "n": 762,
+      "classification": 0.11771512525938353,
+      "generation_total": 3.547776402196703,
+      "reasoning_est": 1.4795791164475671,
+      "answer_est": 0.9482519145641878,
+      "retrieval": 3.222695742934219,
+      "total": 6.888187270390305
+    },
+    "full_noclassify": {
+      "n": 755,
+      "classification": 0.0,
+      "generation_total": 7.087520538293294,
+      "reasoning_est": 2.145020658203235,
+      "answer_est": 1.7164610515109295,
+      "retrieval": 4.98832595092337,
+      "total": 12.075846489216664
+    },
+    "full_systemprompt": {
+      "n": 762,
+      "classification": 0.12035985680766345,
+      "generation_total": 4.428518595420841,
+      "reasoning_est": 2.7010487674557946,
+      "answer_est": 0.5518028537614784,
+      "retrieval": 4.598206590396643,
+      "total": 9.147085042625147
+    },
+    "full_classify_noartist": {
+      "n": 760,
+      "classification": 0.11960527745051015,
+      "generation_total": 4.2230539798540505,
+      "reasoning_est": 1.6789666391836728,
+      "answer_est": 1.070836097047257,
+      "retrieval": 2.9317224009636496,
+      "total": 7.27438165826821
+    }
+  },
+  "end_to_end": {
+    "base": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 762,
+        "mean": 5.610795079382733,
+        "p50": 5.4845419325865805,
+        "p95": 7.238384594093075
+      }
+    },
+    "base_gemma3": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 762,
+        "mean": 2.8856431381126715,
+        "p50": 2.7451620614156127,
+        "p95": 4.502138554025441
+      }
+    },
+    "base_mistral3": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 762,
+        "mean": 2.47685483816444,
+        "p50": 2.441553163807839,
+        "p95": 3.5792940138373512
+      }
+    },
+    "full_classify": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 762,
+        "mean": 6.888187270390305,
+        "p50": 6.440354143735021,
+        "p95": 15.643404840631398
+      }
+    },
+    "full_noclassify": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 755,
+        "mean": 12.075846489216664,
+        "p50": 10.335096410941333,
+        "p95": 23.444439007155598
+      }
+    },
+    "full_systemprompt": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 762,
+        "mean": 9.147085042625147,
+        "p50": 2.529702759347856,
+        "p95": 26.81705704955382
+      }
+    },
+    "full_classify_noartist": {
+      "visual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "contextual": {
+        "n": 0,
+        "mean": NaN,
+        "p50": NaN,
+        "p95": NaN
+      },
+      "all": {
+        "n": 760,
+        "mean": 7.27438165826821,
+        "p50": 6.306031115818769,
+        "p95": 18.453950573923056
+      }
+    }
+  },
+  "per_call": {
+    "base": {
+      "mean_calls": 0.0,
+      "mean_per_call_s": NaN,
+      "implied_retrieval_s": 0.0,
+      "observed_retrieval_s": 0.0,
+      "pct_of_end_to_end": 0.0
+    },
+    "base_gemma3": {
+      "mean_calls": 0.0,
+      "mean_per_call_s": NaN,
+      "implied_retrieval_s": 0.0,
+      "observed_retrieval_s": 0.0,
+      "pct_of_end_to_end": 0.0
+    },
+    "base_mistral3": {
+      "mean_calls": 0.0,
+      "mean_per_call_s": NaN,
+      "implied_retrieval_s": 0.0,
+      "observed_retrieval_s": 0.0,
+      "pct_of_end_to_end": 0.0
+    },
+    "full_classify": {
+      "mean_calls": 0.6482939632545932,
+      "mean_per_call_s": 4.971040801853997,
+      "implied_retrieval_s": 3.2226957429342185,
+      "observed_retrieval_s": 3.222695742934219,
+      "pct_of_end_to_end": 46.78583227240875
+    },
+    "full_noclassify": {
+      "mean_calls": 1.2847682119205297,
+      "mean_per_call_s": 3.8596038951805194,
+      "implied_retrieval_s": 4.958696395132588,
+      "observed_retrieval_s": 4.98832595092337,
+      "pct_of_end_to_end": 41.30829217958163
+    },
+    "full_systemprompt": {
+      "mean_calls": 0.4881889763779528,
+      "mean_per_call_s": 9.439408080520066,
+      "implied_retrieval_s": 4.608214968442867,
+      "observed_retrieval_s": 4.598206590396643,
+      "pct_of_end_to_end": 50.269638567577935
+    },
+    "full_classify_noartist": {
+      "mean_calls": 0.6592105263157895,
+      "mean_per_call_s": 4.456413228826439,
+      "implied_retrieval_s": 2.9377145100553235,
+      "observed_retrieval_s": 2.9317224009636496,
+      "pct_of_end_to_end": 40.302015190959835
+    }
+  }
+}

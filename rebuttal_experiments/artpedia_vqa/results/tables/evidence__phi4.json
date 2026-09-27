@@ -1,0 +1,253 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "subset": "all",
+  "evidence_quality": {
+    "full_classify": {
+      "all": {
+        "n": 562,
+        "mean_evidence_recall": 0.4074199288256228,
+        "pct_absent": 51.42348754448398,
+        "pct_partial": 16.548042704626333,
+        "pct_present": 32.028469750889684
+      },
+      "visual": {
+        "n": 241,
+        "mean_evidence_recall": 0.3940663900414938,
+        "pct_absent": 51.45228215767634,
+        "pct_partial": 19.08713692946058,
+        "pct_present": 29.460580912863072
+      },
+      "contextual": {
+        "n": 321,
+        "mean_evidence_recall": 0.4174454828660436,
+        "pct_absent": 51.4018691588785,
+        "pct_partial": 14.641744548286603,
+        "pct_present": 33.95638629283489
+      }
+    },
+    "full_noclassify": {
+      "all": {
+        "n": 567,
+        "mean_evidence_recall": 0.38760141093474426,
+        "pct_absent": 53.96825396825397,
+        "pct_partial": 15.343915343915343,
+        "pct_present": 30.687830687830687
+      },
+      "visual": {
+        "n": 249,
+        "mean_evidence_recall": 0.34445783132530117,
+        "pct_absent": 59.036144578313255,
+        "pct_partial": 13.654618473895583,
+        "pct_present": 27.309236947791167
+      },
+      "contextual": {
+        "n": 318,
+        "mean_evidence_recall": 0.42138364779874216,
+        "pct_absent": 50.0,
+        "pct_partial": 16.666666666666664,
+        "pct_present": 33.33333333333333
+      }
+    },
+    "full_systemprompt": {
+      "all": {
+        "n": 568,
+        "mean_evidence_recall": 0.36047535211267606,
+        "pct_absent": 55.28169014084507,
+        "pct_partial": 17.781690140845072,
+        "pct_present": 26.936619718309856
+      },
+      "visual": {
+        "n": 270,
+        "mean_evidence_recall": 0.3055555555555556,
+        "pct_absent": 59.25925925925925,
+        "pct_partial": 20.74074074074074,
+        "pct_present": 20.0
+      },
+      "contextual": {
+        "n": 298,
+        "mean_evidence_recall": 0.41023489932885904,
+        "pct_absent": 51.67785234899329,
+        "pct_partial": 15.100671140939598,
+        "pct_present": 33.22147651006711
+      }
+    },
+    "full_classify_noartist": {
+      "all": {
+        "n": 545,
+        "mean_evidence_recall": 0.3898532110091743,
+        "pct_absent": 52.84403669724771,
+        "pct_partial": 16.88073394495413,
+        "pct_present": 30.275229357798167
+      },
+      "visual": {
+        "n": 230,
+        "mean_evidence_recall": 0.36834782608695654,
+        "pct_absent": 53.47826086956522,
+        "pct_partial": 20.0,
+        "pct_present": 26.521739130434785
+      },
+      "contextual": {
+        "n": 315,
+        "mean_evidence_recall": 0.40555555555555556,
+        "pct_absent": 52.38095238095239,
+        "pct_partial": 14.603174603174605,
+        "pct_present": 33.01587301587301
+      }
+    },
+    "full_alwaysretrieve": {
+      "all": {
+        "n": 649,
+        "mean_evidence_recall": 0.38747303543913714,
+        "pct_absent": 53.312788906009246,
+        "pct_partial": 16.640986132511557,
+        "pct_present": 30.0462249614792
+      },
+      "visual": {
+        "n": 324,
+        "mean_evidence_recall": 0.3617901234567901,
+        "pct_absent": 55.24691358024691,
+        "pct_partial": 17.901234567901234,
+        "pct_present": 26.851851851851855
+      },
+      "contextual": {
+        "n": 325,
+        "mean_evidence_recall": 0.41307692307692306,
+        "pct_absent": 51.38461538461539,
+        "pct_partial": 15.384615384615385,
+        "pct_present": 33.23076923076923
+      }
+    }
+  },
+  "joint": {
+    "full_classify": {
+      "partial|wrong": 21,
+      "absent|wrong": 227,
+      "present|correct": 104,
+      "absent|partial": 57,
+      "present|wrong": 24,
+      "no retrieval|wrong": 34,
+      "no retrieval|partial": 50,
+      "present|partial": 52,
+      "absent|correct": 5,
+      "no retrieval|correct": 5,
+      "partial|partial": 61,
+      "partial|correct": 11,
+      "_total": 651
+    },
+    "full_noclassify": {
+      "absent|wrong": 223,
+      "absent|correct": 9,
+      "present|correct": 115,
+      "present|wrong": 18,
+      "no retrieval|partial": 42,
+      "absent|partial": 74,
+      "no retrieval|wrong": 30,
+      "partial|partial": 52,
+      "partial|correct": 15,
+      "no retrieval|correct": 6,
+      "partial|wrong": 20,
+      "present|partial": 41,
+      "_total": 645
+    },
+    "full_systemprompt": {
+      "absent|wrong": 242,
+      "absent|partial": 70,
+      "present|wrong": 11,
+      "no retrieval|partial": 31,
+      "partial|wrong": 39,
+      "present|correct": 98,
+      "partial|correct": 8,
+      "no retrieval|correct": 5,
+      "absent|correct": 2,
+      "present|partial": 44,
+      "partial|partial": 54,
+      "no retrieval|wrong": 15,
+      "_total": 619
+    },
+    "full_classify_noartist": {
+      "absent|wrong": 222,
+      "absent|partial": 59,
+      "present|correct": 105,
+      "present|wrong": 21,
+      "no retrieval|partial": 52,
+      "absent|correct": 7,
+      "no retrieval|wrong": 40,
+      "partial|wrong": 27,
+      "partial|partial": 47,
+      "partial|correct": 18,
+      "no retrieval|correct": 9,
+      "present|partial": 39,
+      "_total": 646
+    },
+    "full_alwaysretrieve": {
+      "partial|wrong": 25,
+      "absent|wrong": 244,
+      "present|correct": 122,
+      "absent|partial": 94,
+      "present|wrong": 23,
+      "present|partial": 50,
+      "absent|correct": 8,
+      "partial|partial": 70,
+      "partial|correct": 13,
+      "unjudged|wrong": 2,
+      "_total": 651
+    }
+  },
+  "conditional": {
+    "full_classify": {
+      "acc_given_present": 1.4444444444444444,
+      "pct_correct_given_present": 57.77777777777777,
+      "acc_given_atleast_partial": 1.2564102564102564,
+      "acc_given_absent": 0.23183391003460208,
+      "n_wrong": 306,
+      "wrong_no_retrieval": 34,
+      "wrong_evidence_absent": 227,
+      "wrong_evidence_present": 45,
+      "n_no_retrieval": 89
+    },
+    "full_noclassify": {
+      "acc_given_present": 1.5574712643678161,
+      "pct_correct_given_present": 66.0919540229885,
+      "acc_given_atleast_partial": 1.3524904214559388,
+      "acc_given_absent": 0.3006535947712418,
+      "n_wrong": 291,
+      "wrong_no_retrieval": 30,
+      "wrong_evidence_absent": 223,
+      "wrong_evidence_present": 38,
+      "n_no_retrieval": 78
+    },
+    "full_systemprompt": {
+      "acc_given_present": 1.5686274509803921,
+      "pct_correct_given_present": 64.05228758169935,
+      "acc_given_atleast_partial": 1.220472440944882,
+      "acc_given_absent": 0.2356687898089172,
+      "n_wrong": 307,
+      "wrong_no_retrieval": 15,
+      "wrong_evidence_absent": 242,
+      "wrong_evidence_present": 50,
+      "n_no_retrieval": 51
+    },
+    "full_classify_noartist": {
+      "acc_given_present": 1.509090909090909,
+      "pct_correct_given_present": 63.63636363636363,
+      "acc_given_atleast_partial": 1.2918287937743191,
+      "acc_given_absent": 0.2534722222222222,
+      "n_wrong": 310,
+      "wrong_no_retrieval": 40,
+      "wrong_evidence_absent": 222,
+      "wrong_evidence_present": 48,
+      "n_no_retrieval": 101
+    },
+    "full_alwaysretrieve": {
+      "acc_given_present": 1.5076923076923077,
+      "pct_correct_given_present": 62.56410256410256,
+      "acc_given_atleast_partial": 1.2871287128712872,
+      "acc_given_absent": 0.3179190751445087,
+      "n_wrong": 294,
+      "wrong_no_retrieval": 0,
+      "wrong_evidence_absent": 244,
+      "wrong_evidence_present": 48,
+      "n_no_retrieval": 0
+    }
+  }
+}

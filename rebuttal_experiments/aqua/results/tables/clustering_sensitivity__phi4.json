@@ -1,0 +1,240 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "paired": {
+    "base->full_classify": {
+      "mean": -0.024539877300613498,
+      "item_ci": [
+        -0.0950920245398773,
+        0.04447852760736196
+      ],
+      "cluster_ci": [
+        -0.0950920245398773,
+        0.046012269938650305
+      ],
+      "width_item": 0.13957055214723926,
+      "width_cluster": 0.14110429447852763,
+      "width_ratio": 1.0109890109890112,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "base->full_noclassify": {
+      "mean": -0.013975155279503106,
+      "item_ci": [
+        -0.08385093167701864,
+        0.05745341614906832
+      ],
+      "cluster_ci": [
+        -0.0859375,
+        0.05709876543209876
+      ],
+      "width_item": 0.14130434782608697,
+      "width_cluster": 0.14303626543209877,
+      "width_ratio": 1.0122566476733141,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "base->full_systemprompt": {
+      "mean": -0.08399366085578447,
+      "item_ci": [
+        -0.15530903328050713,
+        -0.011093502377179081
+      ],
+      "cluster_ci": [
+        -0.15822784810126583,
+        -0.011093502377179081
+      ],
+      "width_item": 0.14421553090332806,
+      "width_cluster": 0.14713434572408676,
+      "width_ratio": 1.0202392544164698,
+      "significant_item": true,
+      "significant_cluster": true,
+      "verdict_changed": false
+    },
+    "base->full_alwaysretrieve": {
+      "mean": -0.024615384615384615,
+      "item_ci": [
+        -0.09384615384615384,
+        0.04461538461538461
+      ],
+      "cluster_ci": [
+        -0.09355828220858896,
+        0.046153846153846156
+      ],
+      "width_item": 0.13846153846153847,
+      "width_cluster": 0.13971212836243513,
+      "width_ratio": 1.0090320381731426,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "full_systemprompt->full_classify": {
+      "mean": 0.05388272583201268,
+      "item_ci": [
+        -0.009508716323296355,
+        0.11727416798732171
+      ],
+      "cluster_ci": [
+        -0.009523809523809525,
+        0.11532385466034756
+      ],
+      "width_item": 0.12678288431061807,
+      "width_cluster": 0.12484766418415708,
+      "width_ratio": 0.9847359512525389,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "full_classify->full_noclassify": {
+      "mean": 0.009316770186335404,
+      "item_ci": [
+        -0.05434782608695652,
+        0.07298136645962733
+      ],
+      "cluster_ci": [
+        -0.056074766355140186,
+        0.07430340557275542
+      ],
+      "width_item": 0.12732919254658384,
+      "width_cluster": 0.1303781719278956,
+      "width_ratio": 1.023945642945912,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "full_alwaysretrieve->full_classify": {
+      "mean": 0.0,
+      "item_ci": [
+        -0.04923076923076923,
+        0.05076923076923077
+      ],
+      "cluster_ci": [
+        -0.05069124423963134,
+        0.04923076923076923
+      ],
+      "width_item": 0.1,
+      "width_cluster": 0.09992201347040057,
+      "width_ratio": 0.9992201347040056,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    }
+  },
+  "single_variant": {
+    "base": {
+      "mean": 0.9202453987730062,
+      "item_ci": [
+        0.8466257668711656,
+        0.9938650306748467
+      ],
+      "cluster_ci": [
+        0.8496932515337423,
+        0.99079754601227
+      ],
+      "width_ratio": 0.9583333333333336
+    },
+    "base_gemma3": {
+      "mean": 0.9662576687116564,
+      "item_ci": [
+        0.8941717791411042,
+        1.0414110429447854
+      ],
+      "cluster_ci": [
+        0.8926380368098159,
+        1.039877300613497
+      ],
+      "width_ratio": 0.9999999999999992
+    },
+    "base_mistral3": {
+      "mean": 0.8064516129032258,
+      "item_ci": [
+        0.7342549923195084,
+        0.880184331797235
+      ],
+      "cluster_ci": [
+        0.7346625766871165,
+        0.8819018404907976
+      ],
+      "width_ratio": 1.0089764288020668
+    },
+    "full_classify": {
+      "mean": 0.8957055214723927,
+      "item_ci": [
+        0.8236196319018405,
+        0.9708588957055214
+      ],
+      "cluster_ci": [
+        0.8236196319018405,
+        0.9693251533742331
+      ],
+      "width_ratio": 0.9895833333333334
+    },
+    "full_noclassify": {
+      "mean": 0.9099378881987578,
+      "item_ci": [
+        0.8354037267080745,
+        0.9829192546583851
+      ],
+      "cluster_ci": [
+        0.8359133126934984,
+        0.9860031104199067
+      ],
+      "width_ratio": 1.017450839324283
+    },
+    "full_systemprompt": {
+      "mean": 0.838351822503962,
+      "item_ci": [
+        0.7654516640253566,
+        0.9128367670364501
+      ],
+      "cluster_ci": [
+        0.7666666666666667,
+        0.9111111111111111
+      ],
+      "width_ratio": 0.9800477897252085
+    },
+    "full_classify_notags": {
+      "mean": 0.8832565284178188,
+      "item_ci": [
+        0.8125960061443932,
+        0.9554531490015361
+      ],
+      "cluster_ci": [
+        0.8095238095238095,
+        0.9570552147239264
+      ],
+      "width_ratio": 1.0327198364008177
+    },
+    "full_alwaysretrieve": {
+      "mean": 0.8984615384615384,
+      "item_ci": [
+        0.8261538461538461,
+        0.9738461538461538
+      ],
+      "cluster_ci": [
+        0.8276923076923077,
+        0.9707692307692307
+      ],
+      "width_ratio": 0.9687499999999996
+    },
+    "full_singleretrieve": {
+      "mean": 0.8634969325153374,
+      "item_ci": [
+        0.7914110429447853,
+        0.9355828220858896
+      ],
+      "cluster_ci": [
+        0.7914110429447853,
+        0.9371165644171779
+      ],
+      "width_ratio": 1.0106382978723403
+    }
+  },
+  "summary": {
+    "paired_width_ratio_min": 0.9847359512525389,
+    "paired_width_ratio_max": 1.023945642945912,
+    "n_verdicts_changed": 0,
+    "verdicts_changed": []
+  }
+}

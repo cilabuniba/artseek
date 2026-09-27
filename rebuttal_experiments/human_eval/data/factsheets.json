@@ -1,0 +1,811 @@
+[
+  {
+    "id": "Q3937425",
+    "tier": "indexed_lowprofile",
+    "title": "Portrait of the Court Jester Gonella",
+    "artist": "Jean Fouquet",
+    "image": "images/Q3937425.jpg",
+    "year": "1447",
+    "wikipedia_title": "Portrait of the Court Jester Gonella",
+    "wikipedia_extract": "Portrait of the court jester Gonella is a painting attributed to Jean Fouquet. It is believed to depict Pietro Gonella, a jester at the court of Este in Ferrara. The painting was created around 1450 and is currently housed in the Vienna Kunsthistorisches Museum.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Portrait_of_the_Court_Jester_Gonella",
+    "wikidata": {
+      "inception": [
+        "1447-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Pietro Gonnella",
+        "man",
+        "smile"
+      ],
+      "genre": [
+        "portrait"
+      ],
+      "material": [
+        "oil paint",
+        "panel"
+      ],
+      "collection": [
+        "Kunsthistorisches Museum"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Pietro Gonnella, man, smile",
+      "Genre: portrait",
+      "Date: 1447",
+      "Collection: Kunsthistorisches Museum",
+      "Portrait of the court jester Gonella is a painting attributed to Jean Fouquet."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q3213753",
+    "tier": "indexed_lowprofile",
+    "title": "Madonna del Sacco (Perugino)",
+    "artist": "Pietro Perugino",
+    "image": "images/Q3213753.jpg",
+    "year": "1495",
+    "wikipedia_title": "Madonna del Sacco (Perugino)",
+    "wikipedia_extract": "Madonna del Sacco is an oil on panel painting by Perugino, dating to around 1495–1500. It shows the Madonna and Child with the infant John the Baptist and an angel. It is now in the Galleria Palatina in Florence.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Madonna_del_Sacco_(Perugino)",
+    "wikidata": {
+      "inception": [
+        "1495-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Child Saint John",
+        "Christ Child",
+        "Mary",
+        "boy",
+        "woman"
+      ],
+      "genre": [
+        "religious art"
+      ],
+      "movement": [
+        "Italian Renaissance"
+      ],
+      "material": [
+        "oil paint",
+        "panel"
+      ],
+      "collection": [
+        "Galleria Palatina"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Child Saint John, Christ Child, Mary, boy, woman",
+      "Genre: religious art",
+      "Movement: Italian Renaissance",
+      "Date: 1495",
+      "Collection: Galleria Palatina",
+      "Madonna del Sacco is an oil on panel painting by Perugino, dating to around 1495–1500."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q18223127",
+    "tier": "indexed_lowprofile",
+    "title": "Christ in Glory with Saints and Odoardo Farnese",
+    "artist": "Annibale Carracci",
+    "image": "images/Q18223127.jpg",
+    "year": "1597",
+    "wikipedia_title": "Christ in Glory with Saints and Odoardo Farnese",
+    "wikipedia_extract": "Christ in Glory with Saints and Odoardo Farnese or 'Christ in Glory with Odoardo Farnese and Saints Peter, John the Evangelist, Mary Magdalene, Hermenegild and Edward is a painting by the Italian Baroque painter Annibale Carracci. Placed in the Eremo di Camldoli either early in its life or straight after its creation, at the end of the 17th century Ferdinando II de' Medici moved it to the Galleria Palatina in Florence, where it still hangs.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Christ_in_Glory_with_Saints_and_Odoardo_Farnese",
+    "wikidata": {
+      "inception": [
+        "1597-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Jesus Christ",
+        "Odoardo Farnese"
+      ],
+      "genre": [
+        "religious art"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "Galleria Palatina"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Jesus Christ, Odoardo Farnese",
+      "Genre: religious art",
+      "Date: 1597",
+      "Collection: Galleria Palatina",
+      "Christ in Glory with Saints and Odoardo Farnese or 'Christ in Glory with Odoardo Farnese and Saints Peter, John the Evangelist, Mary Magdalene, Hermenegild and Edward is a painting by the Italian Baroque painter Annibale Carracci."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q3210764",
+    "tier": "indexed_lowprofile",
+    "title": "Monomaniac of Envy",
+    "artist": "Théodore Géricault",
+    "image": "images/Q3210764.jpg",
+    "year": "1819",
+    "wikipedia_title": "Monomaniac of Envy",
+    "wikipedia_extract": "Monomaniac of Envy, also known by the name of Hyena of Salpêtrière, Portrait of a Woman Suffering from Obsessive Envy, and Manic Envy, is an oil-on-canvas painting by the French Romantic artist Théodore Géricault. Painted as part of his series of ten portraits on the mentally ill, it is one of only five known to survive today. It is currently housed in the Museum of Fine Arts of Lyon, France.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Monomaniac_of_Envy",
+    "wikidata": {
+      "inception": [
+        "1819-01-01T00:00:00Z",
+        "1820-01-01T00:00:00Z",
+        "1821-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "1795–1820 in Western fashion",
+        "insanity",
+        "monomania",
+        "woman"
+      ],
+      "genre": [
+        "portrait"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "Museum of Fine Arts of Lyon"
+      ]
+    },
+    "key_facts": [
+      "Depicts: 1795–1820 in Western fashion, insanity, monomania, woman",
+      "Genre: portrait",
+      "Date: 1819, 1820, 1821",
+      "Collection: Museum of Fine Arts of Lyon",
+      "Monomaniac of Envy, also known by the name of Hyena of Salpêtrière, Portrait of a Woman Suffering from Obsessive Envy, and Manic Envy, is an oil-on-canvas painting by the French Romantic artist Théodore Géricault."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q7727732",
+    "tier": "indexed_lowprofile",
+    "title": "The Cotton Pickers",
+    "artist": "Winslow Homer",
+    "image": "images/Q7727732.jpg",
+    "year": "1876",
+    "wikipedia_title": "The Cotton Pickers",
+    "wikipedia_extract": "The Cotton Pickers is an 1876 oil painting by the American artist Winslow Homer. It depicts two young African-American women in a cotton field.\nStately, silent and with barely a flicker of sadness on their faces, the two black women in the painting are unmistakable in their disillusionment: they picked cotton before the war and they are still picking cotton afterward.\n",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Cotton_Pickers",
+    "wikidata": {
+      "inception": [
+        "1876-01-01T00:00:00Z"
+      ],
+      "genre": [
+        "genre art"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "Los Angeles County Museum of Art"
+      ],
+      "country": [
+        "United States"
+      ]
+    },
+    "key_facts": [
+      "Genre: genre art",
+      "Date: 1876",
+      "Collection: Los Angeles County Museum of Art",
+      "The Cotton Pickers is an 1876 oil painting by the American artist Winslow Homer."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q61996527",
+    "tier": "indexed_lowprofile",
+    "title": "Love Among the Ruins (Burne-Jones)",
+    "artist": "Edward Burne-Jones",
+    "image": "images/Q61996527.jpg",
+    "year": null,
+    "wikipedia_title": "Love Among the Ruins (Burne-Jones)",
+    "wikipedia_extract": "Love Among the Ruins is a painting by English artist Edward Burne-Jones which exists in two versions, a watercolour completed in 1873 and an oil painting completed in 1894. It depicts a man and a woman amid ruined architecture. The work is a synthesis of influences from the Pre-Raphaelite, Symbolist and Aesthetic art movements. The ambiguous scene without a clear narrative is considered one of Burne-Jones' best works.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Love_Among_the_Ruins_(Burne-Jones)",
+    "wikidata": {
+      "movement": [
+        "Aestheticism",
+        "Pre-Raphaelite Brotherhood"
+      ]
+    },
+    "key_facts": [
+      "Movement: Aestheticism, Pre-Raphaelite Brotherhood",
+      "Love Among the Ruins is a painting by English artist Edward Burne-Jones which exists in two versions, a watercolour completed in 1873 and an oil painting completed in 1894."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q1571959",
+    "tier": "indexed_lowprofile",
+    "title": "The Shortening Winter's Day is near a Close",
+    "artist": "Joseph Farquharson",
+    "image": "images/Q1571959.jpg",
+    "year": "1901",
+    "wikipedia_title": "The Shortening Winter's Day is near a Close",
+    "wikipedia_extract": "The Shortening Winter's Day is Near a Close (1903) and its replicas -- The Shortening Winter's Day is Near a Close and Beneath the Snow Encumbered Branches -- are three oil on canvas paintings by Scottish painter Joseph Farquharson. The iconic artworks depict a shepherd tending sheep with the evening sun shining through snowy trees.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Shortening_Winter's_Day_is_near_a_Close",
+    "wikidata": {
+      "inception": [
+        "1901-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Sun",
+        "contre-jour",
+        "daylight",
+        "fence",
+        "forest",
+        "hay",
+        "herd",
+        "light source",
+        "man",
+        "sheep",
+        "snow",
+        "tree",
+        "winter"
+      ],
+      "genre": [
+        "genre art",
+        "landscape painting"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "http://www.wikidata.org/.well-known/genid/423fc73b846ed5e9e21b4de55d0b39e3"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Sun, contre-jour, daylight, fence, forest, hay, herd, light source, man, sheep, snow, tree, winter",
+      "Genre: genre art, landscape painting",
+      "Date: 1901",
+      "Collection: http://www.wikidata.org/.well-known/genid/423fc73b846ed5e9e21b4de55d0b39e3",
+      "The Shortening Winter's Day is Near a Close (1903) and its replicas -- The Shortening Winter's Day is Near a Close and Beneath the Snow Encumbered Branches -- are three oil on canvas paintings by Scottish painter Joseph Farquharson."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q16152096",
+    "tier": "indexed_lowprofile",
+    "title": "Agony in the Garden (Blake)",
+    "artist": "William Blake",
+    "image": "images/Q16152096.jpg",
+    "year": "1799",
+    "wikipedia_title": "Agony in the Garden (Blake)",
+    "wikipedia_extract": "The Agony in the Garden is a small painting by William Blake, completed as part of his 1799–1800 series of Bible illustrations commissioned by his patron and friend Thomas Butts. The work illustrates a passage from the Gospel of Luke which describes Christ's turmoil in the Garden of Gethsemane before his arrest and Crucifixion following Judas's betrayal. In Blake's painting a brilliantly coloured and majestic angel breaks through the surrounding darkness and descends from a cloud to aid and physically support Jesus in his hour of agony. The work is dominated by vertical lines, formed both from the trees and from the two arms of the angel. Two inner lines converge on Christ's palms, evoking the nails driven through him during his crucifixion.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Agony_in_the_Garden_(Blake)",
+    "wikidata": {
+      "inception": [
+        "1799-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Agony in the Garden",
+        "angel"
+      ],
+      "genre": [
+        "religious art"
+      ],
+      "material": [
+        "iron",
+        "tempera"
+      ],
+      "collection": [
+        "National Gallery",
+        "Tate"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Agony in the Garden, angel",
+      "Genre: religious art",
+      "Date: 1799",
+      "Collection: National Gallery, Tate",
+      "The Agony in the Garden is a small painting by William Blake, completed as part of his 1799–1800 series of Bible illustrations commissioned by his patron and friend Thomas Butts."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q7735910",
+    "tier": "indexed_lowprofile",
+    "title": "The Gate of Calais",
+    "artist": "William Hogarth",
+    "image": "images/Q7735910.jpg",
+    "year": "1748",
+    "wikipedia_title": "The Gate of Calais",
+    "wikipedia_extract": "The Gate of Calais or O, the Roast Beef of Old England is a 1748 painting by William Hogarth, reproduced as a print from an engraving the next year. Hogarth produced the painting directly after his return from France, where he had been arrested as a spy while sketching in Calais. The scene depicts a side of beef being transported from the harbour to an English tavern in the port, while a group of undernourished, ragged French soldiers and a fat friar look on hungrily. Hogarth painted himself in the left corner with a \"soldier's hand upon my shoulder.\"",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Gate_of_Calais",
+    "wikidata": {
+      "inception": [
+        "1748-01-01T00:00:00Z"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "National Gallery",
+        "Tate"
+      ]
+    },
+    "key_facts": [
+      "Date: 1748",
+      "Collection: National Gallery, Tate",
+      "The Gate of Calais or O, the Roast Beef of Old England is a 1748 painting by William Hogarth, reproduced as a print from an engraving the next year."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "Q16984914",
+    "tier": "indexed_lowprofile",
+    "title": "The Banks of the Marne (Gleizes)",
+    "artist": "Albert Gleizes",
+    "image": "images/Q16984914.jpg",
+    "year": "1909",
+    "wikipedia_title": "The Banks of the Marne (Gleizes)",
+    "wikipedia_extract": "The Banks of the Marne is a proto-Cubist oil painting on canvas created in 1909 by the French artist Albert Gleizes. In this work can be seen a departure from the representation of the observable world. The development of Cubist and abstract art in the work of Gleizes was necessarily a transformation from the synthetic preoccupation with his subject matter. The passage of Gleizes' painting from an epic visionary figuration to total abstraction was foreshadowed during his proto-Cubist period. Bords de la Marne measures 54 × 65 cm, and is currently in the permanent collection of the Musée des Beaux-Arts de Lyon.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Banks_of_the_Marne_(Gleizes)",
+    "wikidata": {
+      "inception": [
+        "1909-01-01T00:00:00Z"
+      ],
+      "depicts": [
+        "Marne",
+        "bank",
+        "broad-leaved tree",
+        "landscape",
+        "péniche"
+      ],
+      "genre": [
+        "landscape painting"
+      ],
+      "movement": [
+        "Proto-Cubism"
+      ],
+      "material": [
+        "canvas",
+        "oil paint"
+      ],
+      "collection": [
+        "Museum of Fine Arts of Lyon"
+      ]
+    },
+    "key_facts": [
+      "Depicts: Marne, bank, broad-leaved tree, landscape, péniche",
+      "Genre: landscape painting",
+      "Movement: Proto-Cubism",
+      "Date: 1909",
+      "Collection: Museum of Fine Arts of Lyon",
+      "The Banks of the Marne is a proto-Cubist oil painting on canvas created in 1909 by the French artist Albert Gleizes."
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Wikidata claims + Wikipedia extract"
+  },
+  {
+    "id": "devanna-188",
+    "tier": "gallery",
+    "title": "Estasi di Santa Teresa d’Avila",
+    "artist": "Ignoto pittore dell’Italia centrale",
+    "image": "images/devanna-188.jpg",
+    "year": "1725-1749",
+    "iccd": {
+      "OGTD": {
+        "gloss": "object type",
+        "value": "dipinto"
+      },
+      "SGTI": {
+        "gloss": "subject / title",
+        "value": "estasi di Santa Teresa d'Avila"
+      },
+      "DTZG": {
+        "gloss": "century",
+        "value": "sec. XVII",
+        "value_en": "17th century."
+      },
+      "DTZS": {
+        "gloss": "part of century",
+        "value": "di secolo seconda metà"
+      },
+      "DTSI": {
+        "gloss": "dated from",
+        "value": "1650"
+      },
+      "DTSF": {
+        "gloss": "dated to",
+        "value": "1699"
+      },
+      "DTM": {
+        "gloss": "basis of dating",
+        "value": "analisi stilistica"
+      },
+      "MTC": {
+        "gloss": "materials and technique",
+        "value": "tela/ pittura a olio",
+        "value_en": "canvas/ oil painting"
+      },
+      "MISA": {
+        "gloss": "height (cm)",
+        "value": "119"
+      },
+      "MISL": {
+        "gloss": "width (cm)",
+        "value": "98"
+      },
+      "DESI": {
+        "gloss": "Iconclass code",
+        "value": "Iconclass 11 HH 11(TERESA)"
+      },
+      "DESS": {
+        "gloss": "subject notes",
+        "value": "Personaggi: Santa Teresa d'Avila",
+        "value_en": "Characters: Saint Teresa of Avila"
+      },
+      "LDCM": {
+        "gloss": "collection",
+        "value": "Galleria Nazionale della Puglia \"Girolamo e Rosaria Devanna\""
+      },
+      "STCC": {
+        "gloss": "condition",
+        "value": "buono"
+      }
+    },
+    "arco_uri": "https://w3id.org/arco/resource/HistoricOrArtisticProperty/1600211250",
+    "arco_label_en": "estasi di Santa Teresa d'Avila (dipinto) - ambito Italia centro-meridionale (seconda metà sec. XVII)",
+    "room": "Corridoio dei Santi",
+    "subject_category": "sacred_event",
+    "key_facts": [
+      "Subject: estasi di Santa Teresa d'Avila",
+      "Figures / subject notes: Characters: Saint Teresa of Avila",
+      "Iconclass: Iconclass 11 HH 11(TERESA)",
+      "Century: 17th century.",
+      "Materials: canvas/ oil painting",
+      "Dated: 1650-1699"
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "ICCD scheda"
+  },
+  {
+    "id": "devanna-085",
+    "tier": "gallery",
+    "title": "Madonna con Bambino e i santi Ignazio di Loyola, Guglielmo d’Aquitania e Michele Arcangelo",
+    "artist": "Francesco Narici",
+    "image": "images/devanna-085.jpg",
+    "year": "1775-1779",
+    "iccd": {
+      "OGTD": {
+        "gloss": "object type",
+        "value": "dipinto"
+      },
+      "SGTI": {
+        "gloss": "subject / title",
+        "value": "Madonna con Bambino e santi Ignazio di Loyola, Guglielmo d'Aquitania e Michele arcangelo",
+        "value_en": "Madonna with Child and Saints Ignatius of Loyola, William of Aquitaine, and Archangel Michael"
+      },
+      "AUTN": {
+        "gloss": "author (as catalogued)",
+        "value": "Narici Francesco"
+      },
+      "AUTA": {
+        "gloss": "author dates",
+        "value": "1719/ 1785"
+      },
+      "AUTM": {
+        "gloss": "basis of attribution",
+        "value": "analisi stilistica"
+      },
+      "DTZG": {
+        "gloss": "century",
+        "value": "sec. XVIII",
+        "value_en": "18th century."
+      },
+      "DTSI": {
+        "gloss": "dated from",
+        "value": "1775"
+      },
+      "DTSF": {
+        "gloss": "dated to",
+        "value": "1779"
+      },
+      "DTM": {
+        "gloss": "basis of dating",
+        "value": "analisi stilistica"
+      },
+      "MTC": {
+        "gloss": "materials and technique",
+        "value": "tela/ pittura a olio",
+        "value_en": "canvas/ oil painting"
+      },
+      "MISA": {
+        "gloss": "height (cm)",
+        "value": "43"
+      },
+      "MISL": {
+        "gloss": "width (cm)",
+        "value": "21"
+      },
+      "DESI": {
+        "gloss": "Iconclass code",
+        "value": "Iconclass 11 F 6 : 11 G 183 (MICHELE) : 11 H (IGNATIUS) : 11 H (GUGLIELMO D'AQUITANIA)"
+      },
+      "DESS": {
+        "gloss": "subject notes",
+        "value": "Personaggi: Madonna; Gesù Bambino; Santi carmelitani.",
+        "value_en": "Characters: Madonna; Child Jesus; Carmelite Saints."
+      },
+      "NSC": {
+        "gloss": "critical note",
+        "value": "Prodotto di ambito solimenesco, attribuito a Francesco Parisi, attivo a Napoli tra 1709 e 1743, artista di origine calabrese, noto soprattutto per i dipinti conservati in S. Giorgio Maggiore a Napoli, datati 1713. E' comunemente ritenuto uno dei piu' felici interpreti dei modo classicisti del Solimena, accanto a Giacomo del Po e al giovane Domenico Antonio Vaccaro. Cfr. N. Spinosa, Pittura napoletana del Settecento dal Barocco al rococo', Napoli 1986, pp. 46, 146.",
+        "value_en": "Product of Solimenesque milieu, attributed to Francesco Parisi, active in Naples between 1709 and 1743, artist of Calabrian origin, known especially for the paintings conserved in S. Giorgio Maggiore in Naples, dated 1713. He is commonly considered one of the most felicitous interpreters of the classicist modes of Solimena, alongside Giacomo del Po and the young Domenico Antonio Vaccaro. Cfr. N. Spinosa, Pittura napoletana del Settecento dal Barocco al rococo', Napoli 1986, pp. 46, 146."
+      },
+      "LDCM": {
+        "gloss": "collection",
+        "value": "Galleria Nazionale della Puglia \"Girolamo e Rosaria Devanna\""
+      },
+      "STCC": {
+        "gloss": "condition",
+        "value": "buono"
+      }
+    },
+    "arco_uri": "https://w3id.org/arco/resource/HistoricOrArtisticProperty/1600208714",
+    "arco_label_en": "Madonna con Bambino e santi Ignazio di Loyola, Guglielmo d'Aquitania e Michele arcangelo (dipinto) by Narici Francesco (sec. XVIII)",
+    "room": "Sala del Settecento",
+    "subject_category": "sacred_figure",
+    "key_facts": [
+      "Subject: Madonna with Child and Saints Ignatius of Loyola, William of Aquitaine, and Archangel Michael",
+      "Figures / subject notes: Characters: Madonna; Child Jesus; Carmelite Saints.",
+      "Iconclass: Iconclass 11 F 6 : 11 G 183 (MICHELE) : 11 H (IGNATIUS) : 11 H (GUGLIELMO D'AQUITANIA)",
+      "Century: 18th century.",
+      "Materials: canvas/ oil painting",
+      "Dated: 1775-1779"
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "ICCD scheda"
+  },
+  {
+    "id": "devanna-048",
+    "tier": "gallery",
+    "title": "Venere Marte e Cupido",
+    "artist": "Ignoto pittore olandese",
+    "image": "images/devanna-048.jpg",
+    "year": "1650-1699",
+    "iccd": {
+      "OGTD": {
+        "gloss": "object type",
+        "value": "dipinto"
+      },
+      "SGTI": {
+        "gloss": "subject / title",
+        "value": "Venere e Marte sorpresi da Cupido",
+        "value_en": "Venus and Mars Surprised by Cupid"
+      },
+      "DTZG": {
+        "gloss": "century",
+        "value": "sec. XVII",
+        "value_en": "17th century."
+      },
+      "DTZS": {
+        "gloss": "part of century",
+        "value": "di secolo metà"
+      },
+      "DTSI": {
+        "gloss": "dated from",
+        "value": "1640"
+      },
+      "DTSF": {
+        "gloss": "dated to",
+        "value": "1660"
+      },
+      "DTM": {
+        "gloss": "basis of dating",
+        "value": "bibliografia"
+      },
+      "MTC": {
+        "gloss": "materials and technique",
+        "value": "tela/ pittura a olio",
+        "value_en": "canvas/ oil painting"
+      },
+      "MISA": {
+        "gloss": "height (cm)",
+        "value": "54"
+      },
+      "MISL": {
+        "gloss": "width (cm)",
+        "value": "46.5"
+      },
+      "DESI": {
+        "gloss": "Iconclass code",
+        "value": "Iconclass 92 B 42 3(+)"
+      },
+      "DESS": {
+        "gloss": "subject notes",
+        "value": "Divinità.",
+        "value_en": "Divinity."
+      },
+      "NSC": {
+        "gloss": "critical note",
+        "value": "Raffinato prodotto di ambito probabilmente olandese e databile alla meta' del Seicento: cfr. Vocazioni d'amore. Tracce della pittura del Seicento, catalogo della mostra (Terni, febbraio 1997) a cura di G. Milantoni, Terni 1997, pp. 36-37. Il motivo del cane rimanda, ipoteticamente, ad un aut ore come Frans van Mieris I (Leiden 1635- 1681), particolarmente versato anche nella resa degli effetti dei tessuti serici e nella delicata modulazione degli effetti luministici.",
+        "value_en": "Refined product of a milieu probably Dutch and datable to the mid-17th century: cf. Vocazioni d'amore. Tracce della pittura del Seicento, catalogo della mostra (Terni, February 1997) a cura di G. Milantoni, Terni 1997, pp. 36-37. The motif of the dog hypothetically refers to an author such as Frans van Mieris I (Leiden 1635-1681), particularly skilled also in the rendering of the effects of silk fabrics and the delicate modulation of luminist effects."
+      },
+      "LDCM": {
+        "gloss": "collection",
+        "value": "Galleria Nazionale della Puglia \"Girolamo e Rosaria Devanna\""
+      },
+      "STCC": {
+        "gloss": "condition",
+        "value": "buono"
+      }
+    },
+    "arco_uri": "https://w3id.org/arco/resource/HistoricOrArtisticProperty/1600206167",
+    "arco_label_en": "Venere e Marte sorpresi da Cupido (dipinto) - ambito olandese (?) (metà sec. XVII)",
+    "room": "Sala della mitologia",
+    "subject_category": "mythological",
+    "key_facts": [
+      "Subject: Venus and Mars Surprised by Cupid",
+      "Figures / subject notes: Divinity.",
+      "Iconclass: Iconclass 92 B 42 3(+)",
+      "Century: 17th century.",
+      "Materials: canvas/ oil painting",
+      "Dated: 1640-1660"
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "ICCD scheda"
+  },
+  {
+    "id": "devanna-186",
+    "tier": "gallery",
+    "title": "Pan e Siringa",
+    "artist": "Giovanni Battista Spinelli",
+    "image": "images/devanna-186.jpg",
+    "year": "1640-1660",
+    "iccd": {
+      "OGTD": {
+        "gloss": "object type",
+        "value": "dipinto"
+      },
+      "SGTI": {
+        "gloss": "subject / title",
+        "value": "Pan e Siringa (?)",
+        "value_en": "Pan and Syrinx (?)"
+      },
+      "AUTN": {
+        "gloss": "author (as catalogued)",
+        "value": "Spinelli Giovan Battista"
+      },
+      "AUTA": {
+        "gloss": "author dates",
+        "value": "notizie 1630 ca.-1660 ca."
+      },
+      "AUTM": {
+        "gloss": "basis of attribution",
+        "value": "analisi stilistica"
+      },
+      "DTZG": {
+        "gloss": "century",
+        "value": "sec. XVII",
+        "value_en": "17th century."
+      },
+      "DTZS": {
+        "gloss": "part of century",
+        "value": "di secolo metà"
+      },
+      "DTSI": {
+        "gloss": "dated from",
+        "value": "1640"
+      },
+      "DTSF": {
+        "gloss": "dated to",
+        "value": "1660"
+      },
+      "DTM": {
+        "gloss": "basis of dating",
+        "value": "analisi stilistica"
+      },
+      "MTC": {
+        "gloss": "materials and technique",
+        "value": "tavola/ pittura a olio",
+        "value_en": "panel/ oil painting"
+      },
+      "DESI": {
+        "gloss": "Iconclass code",
+        "value": "Iconclass 92 L 32 : 92 L 5(+3)"
+      },
+      "DESS": {
+        "gloss": "subject notes",
+        "value": "Soggetti profani: Pan e Siringa.",
+        "value_en": "Secular subjects: Pan and Syrinx."
+      },
+      "NSC": {
+        "gloss": "critical note",
+        "value": "Opera di ambito napoletano, dubitativamente attribuibile a Giovan Battista Spinelli (notizie 1630 ca.- 1660 ca.), autore di origine bergamasca, presente a Chieti dal 1640 al 1646 e nel 1653, a Napoli tra 1651 e 1652 e nel 1655. Conosce le incisioni nordiche del primo Cinquecento (Luca di Leyda e Aldegrever, ma anche Goltzius, Matham, de Gheyn), oltre ai maestri del manierismo internazionale, Callot e Bellange. Negli ultimi anni di attivita' si pose prima sulla scia del Maestro dell'Annuncio ai Pastori ed i Stanzione, volgendo poi verso soluzioni accademiche di temperato classicismo. Su Spinelli cfr. D.M. Pagano, scheda in Civilta' del Seicento a Napoli, catalogo della mostra, Napoli 1984, v. I, pp. 176-177, 463-472, con bibliografia precedente; N. Spinosa, D.M. Pagano, Giovan Battista Spinelli, in I pittori bergamaschi dal XIII al XIX secolo: il Seicento, Bergamo 1987, pp. 1-55; A. Spinosa, s.v. Spinelli, Giovan Battista, in La pittura in Italia. Il Seicento, Milano 1989, v. II, p. 891, con bibliografia precedente.",
+        "value_en": "Work of Neapolitan milieu, dubitatively attributable to Giovan Battista Spinelli (information c.1630-c.1660), author of Bergamasque origin, present in Chieti from 1640 to 1646 and in 1653, in Naples between 1651 and 1652 and in 1655. He knew the Nordic engravings of the early sixteenth century (Lucas of Leyden and Aldegrever, but also Goltzius, Matham, de Gheyn), as well as the masters of international Mannerism, Callot and Bellange. In the last years of his activity, he first followed the trail of the Master of the Annunciation to the Shepherds and Stanzione, then turned towards academic solutions of tempered classicism. On Spinelli cfr. D.M. Pagano, entry in Civilta' del Seicento a Napoli, catalog of the exhibition, Naples 1984, v. I, pp. 176-177, 463-472, with previous bibliography; N. Spinosa, D.M. Pagano, Giovan Battista Spinelli, in I pittori bergamaschi dal XIII al XIX secolo: il Seicento, Bergamo 1987, pp. 1-55; A. Spinosa, s.v. Spinelli, Giovan Battista, in La pittura in Italia. Il Seicento, Milan 1989, v. II, p. 891, with previous bibliography."
+      },
+      "LDCM": {
+        "gloss": "collection",
+        "value": "Galleria Nazionale della Puglia \"Girolamo e Rosaria Devanna\""
+      },
+      "STCC": {
+        "gloss": "condition",
+        "value": "buono"
+      }
+    },
+    "arco_uri": "https://w3id.org/arco/resource/HistoricOrArtisticProperty/1600206199",
+    "arco_label_en": "Pan e Siringa (?) (dipinto) by Spinelli Giovan Battista (attribuito) - ambito napoletano (metà sec. XVII)",
+    "room": "Sala della mitologia",
+    "subject_category": "mythological",
+    "key_facts": [
+      "Subject: Pan and Syrinx (?)",
+      "Figures / subject notes: Secular subjects: Pan and Syrinx.",
+      "Iconclass: Iconclass 92 L 32 : 92 L 5(+3)",
+      "Century: 17th century.",
+      "Materials: panel/ oil painting",
+      "Dated: 1640-1660"
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "ICCD scheda"
+  },
+  {
+    "id": "devanna-010",
+    "tier": "gallery",
+    "title": "La Canonica",
+    "artist": "Giuseppe Ar",
+    "image": "images/devanna-010.jpg",
+    "year": "1930",
+    "room": "Deposito / Piano terra",
+    "subject_category": "interior",
+    "key_facts": [
+      "Subject: La Canonica (a presbytery interior)",
+      "Figures / subject notes: an architectural interior; no narrative figures",
+      "Century: 20th century.",
+      "Dated: 1930",
+      "Materials: oil on canvas",
+      "Dimensions: 65 x 48 cm",
+      "Artist: Giuseppe Ar"
+    ],
+    "traps": [],
+    "iconography_notes": "",
+    "validated_by_expert": false,
+    "key_facts_source": "Galleria Devanna inventory (no ICCD scheda for 010.010)"
+  }
+]

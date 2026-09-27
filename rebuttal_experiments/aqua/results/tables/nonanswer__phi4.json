@@ -1,0 +1,88 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "rate": {
+    "base": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "base_gemma3": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "base_mistral3": {
+      "n_runs": 652,
+      "n_nonanswer": 1,
+      "pct": 0.15337423312883436
+    },
+    "full_classify": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_noclassify": {
+      "n_runs": 646,
+      "n_nonanswer": 2,
+      "pct": 0.30959752321981426
+    },
+    "full_systemprompt": {
+      "n_runs": 644,
+      "n_nonanswer": 13,
+      "pct": 2.018633540372671
+    },
+    "full_classify_notags": {
+      "n_runs": 651,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_alwaysretrieve": {
+      "n_runs": 650,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    },
+    "full_singleretrieve": {
+      "n_runs": 652,
+      "n_nonanswer": 0,
+      "pct": 0.0
+    }
+  },
+  "sensitivity": {
+    "full_systemprompt->full_classify|as judged (non-answers dropped)": {
+      "n": 631,
+      "n_clusters": 326,
+      "mean": 0.05388272583201268,
+      "ci_low": -0.009523809523809525,
+      "ci_high": 0.11532385466034756,
+      "cohens_dz": 0.0669422588158372,
+      "significant": false
+    },
+    "full_systemprompt->full_classify|non-answers scored 0": {
+      "n": 644,
+      "n_clusters": 326,
+      "mean": 0.07142857142857142,
+      "ci_low": 0.00927357032457496,
+      "ci_high": 0.13322884012539185,
+      "cohens_dz": 0.08727358427497349,
+      "significant": true
+    },
+    "full_noclassify->full_classify|as judged (non-answers dropped)": {
+      "n": 644,
+      "n_clusters": 326,
+      "mean": -0.009316770186335404,
+      "ci_low": -0.07430340557275542,
+      "ci_high": 0.056074766355140186,
+      "cohens_dz": -0.011611812682944348,
+      "significant": false
+    },
+    "full_noclassify->full_classify|non-answers scored 0": {
+      "n": 646,
+      "n_clusters": 326,
+      "mean": -0.009287925696594427,
+      "ci_low": -0.07407407407407407,
+      "ci_high": 0.05598755832037325,
+      "cohens_dz": -0.01159384929445612,
+      "significant": false
+    }
+  }
+}

@@ -1,0 +1,812 @@
+[
+  {
+    "id": "Q3937425",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 1,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 2
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 0,
+        "evidence": 2
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description A correctly identifies the subject as a jester and the figures with appropriate attributes, despite some inaccuracies in the artist and period."
+  },
+  {
+    "id": "Q3937425",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "gpt": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 2,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C accurately identifies the subject, figures, and placement, aligning closely with the reference information."
+  },
+  {
+    "id": "Q3213753",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 0
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "gpt",
+    "why": "Description C accurately identifies the subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q3213753",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "gpt": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 0
+      },
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C accurately identifies the specific subject, figures, and provides relevant evidence, aligning closely with the reference information."
+  },
+  {
+    "id": "Q18223127",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 0
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description C correctly identifies the Baroque tradition and period, and provides a plausible interpretation of the figures and subject."
+  },
+  {
+    "id": "Q18223127",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description A correctly identifies the religious nature and Baroque period, despite inaccuracies in specific figures and subject."
+  },
+  {
+    "id": "Q3210764",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 2
+      },
+      "gpt": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description B provides the most relevant evidence with real artists and stylistic comparisons, despite incorrect placement."
+  },
+  {
+    "id": "Q3210764",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C correctly identifies the figures and placement, aligning with the 19th-century realism tradition."
+  },
+  {
+    "id": "Q7727732",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "gpt",
+    "why": "Description C provides the most specific and relevant evidence, including a direct reference to another work by Winslow Homer that shares similar themes."
+  },
+  {
+    "id": "Q7727732",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "gpt",
+    "why": "Description A provides the most specific and accurate identification of the subject, figures, placement, and evidence, aligning closely with the reference information."
+  },
+  {
+    "id": "Q61996527",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B accurately identifies the subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q61996527",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B accurately identifies the subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q1571959",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 1,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description A accurately identifies the specific subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q1571959",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "base": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 1,
+        "evidence": 1
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "gpt",
+    "why": "Description C accurately identifies the specific subject, figures, and provides relevant evidence, aligning closely with the reference information."
+  },
+  {
+    "id": "Q16152096",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 2
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C provides the most relevant evidence with specific real works and artists, despite incorrect subject and figures."
+  },
+  {
+    "id": "Q16152096",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description C is the least incorrect, as it at least attempts to describe a mythological scene, albeit the wrong one."
+  },
+  {
+    "id": "Q7735910",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B accurately identifies the subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q7735910",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B accurately identifies the subject, figures, placement, and provides relevant evidence."
+  },
+  {
+    "id": "Q16984914",
+    "tier": "indexed_lowprofile",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C correctly identifies the painting's movement and period, and partially captures the abstract nature of the figures."
+  },
+  {
+    "id": "Q16984914",
+    "tier": "indexed_lowprofile",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description C is the best as it correctly identifies the painting's period and style, even though it misidentifies the subject and figures."
+  },
+  {
+    "id": "devanna-188",
+    "tier": "gallery",
+    "reversed": false,
+    "scores": {
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description A accurately identifies the specific subject, figures, and placement, and provides relevant evidence."
+  },
+  {
+    "id": "devanna-188",
+    "tier": "gallery",
+    "reversed": true,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 2,
+        "evidence": 1
+      },
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 2
+      }
+    },
+    "best": "gpt",
+    "why": "Description C accurately identifies the specific subject, figures, and provides relevant evidence, closely matching the reference information."
+  },
+  {
+    "id": "devanna-085",
+    "tier": "gallery",
+    "reversed": false,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 2
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description A, despite inaccuracies, provides the most relevant context and evidence related to religious themes."
+  },
+  {
+    "id": "devanna-085",
+    "tier": "gallery",
+    "reversed": true,
+    "scores": {
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 1,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 2
+      }
+    },
+    "best": "base",
+    "why": "Description B is the most accurate in terms of figures and evidence, despite incorrect subject and placement."
+  },
+  {
+    "id": "devanna-048",
+    "tier": "gallery",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 0,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B correctly identifies the subject and figures, despite incorrect placement."
+  },
+  {
+    "id": "devanna-048",
+    "tier": "gallery",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 0,
+        "evidence": 2
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B correctly identifies the subject and figures, despite the incorrect placement."
+  },
+  {
+    "id": "devanna-186",
+    "tier": "gallery",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 1,
+        "placement": 2,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description C correctly identifies the subject and placement, aligning with the reference information."
+  },
+  {
+    "id": "devanna-186",
+    "tier": "gallery",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 2,
+        "figures": 2,
+        "placement": 2,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 1,
+        "evidence": 1
+      }
+    },
+    "best": "artseek_multiquery",
+    "why": "Description A correctly identifies the subject, figures, and placement, aligning closely with the reference information."
+  },
+  {
+    "id": "devanna-010",
+    "tier": "gallery",
+    "reversed": false,
+    "scores": {
+      "base": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "gpt": {
+        "subject": 1,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 2
+      },
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "gpt",
+    "why": "Description B correctly identifies the general category of the scene and provides relevant evidence, despite incorrect placement."
+  },
+  {
+    "id": "devanna-010",
+    "tier": "gallery",
+    "reversed": true,
+    "scores": {
+      "artseek_multiquery": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 0
+      },
+      "gpt": {
+        "subject": 0,
+        "figures": 0,
+        "placement": 0,
+        "evidence": 1
+      },
+      "base": {
+        "subject": 0,
+        "figures": 1,
+        "placement": 0,
+        "evidence": 1
+      }
+    },
+    "best": "base",
+    "why": "Description C is the best as it correctly identifies the presence of a classical statue, which aligns with the Annunciation theme's potential inclusion of religious iconography."
+  }
+]

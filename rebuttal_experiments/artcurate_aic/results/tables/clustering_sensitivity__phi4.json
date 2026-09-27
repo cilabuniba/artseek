@@ -1,0 +1,170 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "paired": {
+    "base->full_classify": {
+      "mean": -0.033647375504710635,
+      "item_ci": [
+        -0.07065948855989233,
+        0.004037685060565276
+      ],
+      "cluster_ci": [
+        -0.07123655913978495,
+        0.002686366689053056
+      ],
+      "width_item": 0.07469717362045761,
+      "width_cluster": 0.07392292582883801,
+      "width_ratio": 0.9896348448797593,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    },
+    "base->full_noclassify": {
+      "mean": -0.052132701421800945,
+      "item_ci": [
+        -0.08869329722410291,
+        -0.015572105619498984
+      ],
+      "cluster_ci": [
+        -0.08801624915368991,
+        -0.01688048615800135
+      ],
+      "width_item": 0.07312119160460392,
+      "width_cluster": 0.07113576299568856,
+      "width_ratio": 0.9728474254132594,
+      "significant_item": true,
+      "significant_cluster": true,
+      "verdict_changed": false
+    },
+    "base->full_systemprompt": {
+      "mean": -0.21709166092350105,
+      "item_ci": [
+        -0.2584424534803584,
+        -0.17574086836664368
+      ],
+      "cluster_ci": [
+        -0.26035911602209943,
+        -0.17479108635097493
+      ],
+      "width_item": 0.0827015851137147,
+      "width_cluster": 0.08556802967112451,
+      "width_ratio": 1.0346600921066802,
+      "significant_item": true,
+      "significant_cluster": true,
+      "verdict_changed": false
+    },
+    "full_systemprompt->full_classify": {
+      "mean": 0.18676774638180565,
+      "item_ci": [
+        0.1509303928325293,
+        0.22191592005513439
+      ],
+      "cluster_ci": [
+        0.1483021483021483,
+        0.22518822724161533
+      ],
+      "width_item": 0.0709855272226051,
+      "width_cluster": 0.07688607893946703,
+      "width_ratio": 1.083123306224919,
+      "significant_item": true,
+      "significant_cluster": true,
+      "verdict_changed": false
+    },
+    "full_classify->full_noclassify": {
+      "mean": -0.02098849018280298,
+      "item_ci": [
+        -0.05416384563303995,
+        0.012186865267433988
+      ],
+      "cluster_ci": [
+        -0.05718175629680054,
+        0.014844804318488529
+      ],
+      "width_item": 0.06635071090047394,
+      "width_cluster": 0.07202656061528907,
+      "width_ratio": 1.0855431635589996,
+      "significant_item": false,
+      "significant_cluster": false,
+      "verdict_changed": false
+    }
+  },
+  "single_variant": {
+    "base": {
+      "mean": 1.124916051040967,
+      "item_ci": [
+        1.0852921423774344,
+        1.1645399597044996
+      ],
+      "cluster_ci": [
+        1.0826115922718187,
+        1.1693440428380188
+      ],
+      "width_ratio": 1.0944459228226435
+    },
+    "base_gemma3": {
+      "mean": 1.1648793565683646,
+      "item_ci": [
+        1.1253351206434317,
+        1.2037533512064342
+      ],
+      "cluster_ci": [
+        1.1201079622132253,
+        1.2101010101010101
+      ],
+      "width_ratio": 1.1476036534066254
+    },
+    "base_mistral3": {
+      "mean": 1.0254691689008042,
+      "item_ci": [
+        0.9865951742627346,
+        1.0650134048257374
+      ],
+      "cluster_ci": [
+        0.9812206572769953,
+        1.0708980418636056
+      ],
+      "width_ratio": 1.1435782718224141
+    },
+    "full_classify": {
+      "mean": 1.0933512424445937,
+      "item_ci": [
+        1.0523841504365345,
+        1.132303559435863
+      ],
+      "cluster_ci": [
+        1.043859649122807,
+        1.1415157612340712
+      ],
+      "width_ratio": 1.2219323607871624
+    },
+    "full_noclassify": {
+      "mean": 1.0743243243243243,
+      "item_ci": [
+        1.0337837837837838,
+        1.114864864864865
+      ],
+      "cluster_ci": [
+        1.0261744966442954,
+        1.123725356900068
+      ],
+      "width_ratio": 1.2031272764878618
+    },
+    "full_systemprompt": {
+      "mean": 0.9126547455295736,
+      "item_ci": [
+        0.8713892709766162,
+        0.9552957359009628
+      ],
+      "cluster_ci": [
+        0.8635743519781719,
+        0.9619377162629758
+      ],
+      "width_ratio": 1.1722978005746298
+    }
+  },
+  "summary": {
+    "paired_width_ratio_min": 0.9728474254132594,
+    "paired_width_ratio_max": 1.0855431635589996,
+    "n_verdicts_changed": 0,
+    "verdicts_changed": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "against": "full_classify",
+  "n": 562,
+  "actual": {
+    "absent_pct": 51.42348754448398,
+    "present_pct": 32.028469750889684,
+    "mean_recall": 0.4074199288256228
+  },
+  "oracle": {
+    "absent_pct": 8.185053380782918,
+    "present_pct": 77.04626334519573,
+    "mean_recall": 0.8488434163701067
+  },
+  "misses": 289,
+  "unreachable": 38,
+  "reachable_but_missed": 251,
+  "reachable_share": 0.8685121107266436
+}

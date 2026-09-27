@@ -1,0 +1,278 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "subset": "all",
+  "overall": {
+    "base": {
+      "n": 652,
+      "avg_recall": 0.4662576687116564,
+      "avg_correctness": 0.9202453987730062,
+      "pct_wrong": 50.15337423312884,
+      "pct_partial": 7.668711656441718,
+      "pct_correct": 42.17791411042945,
+      "correctness_ci": [
+        0.8496932515337423,
+        0.99079754601227
+      ]
+    },
+    "base_gemma3": {
+      "n": 652,
+      "avg_recall": 0.4924079754601227,
+      "avg_correctness": 0.9662576687116564,
+      "pct_wrong": 48.00613496932515,
+      "pct_partial": 7.361963190184049,
+      "pct_correct": 44.6319018404908,
+      "correctness_ci": [
+        0.8926380368098159,
+        1.039877300613497
+      ]
+    },
+    "base_mistral3": {
+      "n": 651,
+      "avg_recall": 0.41244239631336405,
+      "avg_correctness": 0.8064516129032258,
+      "pct_wrong": 56.528417818740394,
+      "pct_partial": 6.29800307219662,
+      "pct_correct": 37.173579109062985,
+      "correctness_ci": [
+        0.7346625766871165,
+        0.8819018404907976
+      ]
+    },
+    "full_classify": {
+      "n": 652,
+      "avg_recall": 0.4666411042944785,
+      "avg_correctness": 0.8957055214723927,
+      "pct_wrong": 51.99386503067485,
+      "pct_partial": 6.441717791411043,
+      "pct_correct": 41.56441717791411,
+      "correctness_ci": [
+        0.8236196319018405,
+        0.9693251533742331
+      ]
+    },
+    "full_noclassify": {
+      "n": 644,
+      "avg_recall": 0.4720496894409938,
+      "avg_correctness": 0.9099378881987578,
+      "pct_wrong": 51.08695652173913,
+      "pct_partial": 6.832298136645963,
+      "pct_correct": 42.08074534161491,
+      "correctness_ci": [
+        0.8359133126934984,
+        0.9860031104199067
+      ]
+    },
+    "full_systemprompt": {
+      "n": 631,
+      "avg_recall": 0.4326465927099842,
+      "avg_correctness": 0.838351822503962,
+      "pct_wrong": 55.150554675118855,
+      "pct_partial": 5.863708399366086,
+      "pct_correct": 38.985736925515056,
+      "correctness_ci": [
+        0.7666666666666667,
+        0.9111111111111111
+      ]
+    },
+    "full_classify_notags": {
+      "n": 651,
+      "avg_recall": 0.4685099846390169,
+      "avg_correctness": 0.8832565284178188,
+      "pct_wrong": 51.30568356374808,
+      "pct_partial": 9.062980030721967,
+      "pct_correct": 39.63133640552996,
+      "correctness_ci": [
+        0.8095238095238095,
+        0.9570552147239264
+      ]
+    },
+    "full_alwaysretrieve": {
+      "n": 650,
+      "avg_recall": 0.4653846153846154,
+      "avg_correctness": 0.8984615384615384,
+      "pct_wrong": 52.0,
+      "pct_partial": 6.153846153846154,
+      "pct_correct": 41.84615384615385,
+      "correctness_ci": [
+        0.8276923076923077,
+        0.9707692307692307
+      ]
+    },
+    "full_singleretrieve": {
+      "n": 652,
+      "avg_recall": 0.444739263803681,
+      "avg_correctness": 0.8634969325153374,
+      "pct_wrong": 53.37423312883436,
+      "pct_partial": 6.901840490797547,
+      "pct_correct": 39.7239263803681,
+      "correctness_ci": [
+        0.7914110429447853,
+        0.9371165644171779
+      ]
+    }
+  },
+  "by_question_type": {
+    "base": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.5736196319018405,
+        "avg_correctness": 1.138036809815951,
+        "pct_wrong": 40.49079754601227,
+        "pct_partial": 5.214723926380368,
+        "pct_correct": 54.29447852760736
+      },
+      "contextual": {
+        "n": 326,
+        "avg_recall": 0.3588957055214724,
+        "avg_correctness": 0.7024539877300614,
+        "pct_wrong": 59.8159509202454,
+        "pct_partial": 10.122699386503067,
+        "pct_correct": 30.061349693251532
+      }
+    },
+    "base_gemma3": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.5684049079754602,
+        "avg_correctness": 1.1196319018404908,
+        "pct_wrong": 41.717791411042946,
+        "pct_partial": 4.601226993865031,
+        "pct_correct": 53.68098159509203
+      },
+      "contextual": {
+        "n": 326,
+        "avg_recall": 0.41641104294478526,
+        "avg_correctness": 0.8128834355828221,
+        "pct_wrong": 54.29447852760736,
+        "pct_partial": 10.122699386503067,
+        "pct_correct": 35.58282208588957
+      }
+    },
+    "base_mistral3": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.49233128834355827,
+        "avg_correctness": 0.9662576687116564,
+        "pct_wrong": 50.306748466257666,
+        "pct_partial": 2.7607361963190185,
+        "pct_correct": 46.93251533742331
+      },
+      "contextual": {
+        "n": 325,
+        "avg_recall": 0.3323076923076923,
+        "avg_correctness": 0.6461538461538462,
+        "pct_wrong": 62.76923076923077,
+        "pct_partial": 9.846153846153847,
+        "pct_correct": 27.384615384615387
+      }
+    },
+    "full_classify": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.6042944785276073,
+        "avg_correctness": 1.1595092024539877,
+        "pct_wrong": 39.263803680981596,
+        "pct_partial": 5.521472392638037,
+        "pct_correct": 55.21472392638037
+      },
+      "contextual": {
+        "n": 326,
+        "avg_recall": 0.3289877300613497,
+        "avg_correctness": 0.6319018404907976,
+        "pct_wrong": 64.7239263803681,
+        "pct_partial": 7.361963190184049,
+        "pct_correct": 27.914110429447852
+      }
+    },
+    "full_noclassify": {
+      "visual": {
+        "n": 325,
+        "avg_recall": 0.6061538461538462,
+        "avg_correctness": 1.1784615384615384,
+        "pct_wrong": 38.15384615384615,
+        "pct_partial": 5.846153846153846,
+        "pct_correct": 56.00000000000001
+      },
+      "contextual": {
+        "n": 319,
+        "avg_recall": 0.335423197492163,
+        "avg_correctness": 0.6363636363636364,
+        "pct_wrong": 64.26332288401254,
+        "pct_partial": 7.836990595611286,
+        "pct_correct": 27.89968652037618
+      }
+    },
+    "full_systemprompt": {
+      "visual": {
+        "n": 320,
+        "avg_recall": 0.5734375,
+        "avg_correctness": 1.10625,
+        "pct_wrong": 41.875,
+        "pct_partial": 5.625,
+        "pct_correct": 52.5
+      },
+      "contextual": {
+        "n": 311,
+        "avg_recall": 0.2877813504823151,
+        "avg_correctness": 0.5627009646302251,
+        "pct_wrong": 68.81028938906752,
+        "pct_partial": 6.109324758842444,
+        "pct_correct": 25.080385852090032
+      }
+    },
+    "full_classify_notags": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.5996932515337423,
+        "avg_correctness": 1.1411042944785277,
+        "pct_wrong": 39.263803680981596,
+        "pct_partial": 7.361963190184049,
+        "pct_correct": 53.37423312883436
+      },
+      "contextual": {
+        "n": 325,
+        "avg_recall": 0.33692307692307694,
+        "avg_correctness": 0.6246153846153846,
+        "pct_wrong": 63.38461538461539,
+        "pct_partial": 10.76923076923077,
+        "pct_correct": 25.846153846153847
+      }
+    },
+    "full_alwaysretrieve": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.6187116564417178,
+        "avg_correctness": 1.205521472392638,
+        "pct_wrong": 37.73006134969325,
+        "pct_partial": 3.9877300613496933,
+        "pct_correct": 58.282208588957054
+      },
+      "contextual": {
+        "n": 324,
+        "avg_recall": 0.3111111111111111,
+        "avg_correctness": 0.5895061728395061,
+        "pct_wrong": 66.35802469135803,
+        "pct_partial": 8.333333333333332,
+        "pct_correct": 25.308641975308642
+      }
+    },
+    "full_singleretrieve": {
+      "visual": {
+        "n": 326,
+        "avg_recall": 0.5812883435582822,
+        "avg_correctness": 1.1288343558282208,
+        "pct_wrong": 40.49079754601227,
+        "pct_partial": 6.134969325153374,
+        "pct_correct": 53.37423312883436
+      },
+      "contextual": {
+        "n": 326,
+        "avg_recall": 0.3081901840490798,
+        "avg_correctness": 0.598159509202454,
+        "pct_wrong": 66.25766871165644,
+        "pct_partial": 7.668711656441718,
+        "pct_correct": 26.07361963190184
+      }
+    }
+  }
+}

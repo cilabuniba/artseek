@@ -1,0 +1,218 @@
+{
+  "judge_model": "microsoft/phi-4",
+  "counts": {
+    "base": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_gemma3": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "base_mistral3": {
+      "image_download_failure": 0,
+      "context_length_overflow": 0,
+      "answer_truncated_empty": 0,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify": {
+      "image_download_failure": 0,
+      "context_length_overflow": 1,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_noclassify": {
+      "image_download_failure": 0,
+      "context_length_overflow": 10,
+      "answer_truncated_empty": 2,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_systemprompt": {
+      "image_download_failure": 0,
+      "context_length_overflow": 7,
+      "answer_truncated_empty": 24,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    },
+    "full_classify_noartist": {
+      "image_download_failure": 0,
+      "context_length_overflow": 1,
+      "answer_truncated_empty": 1,
+      "tool_call_cap_exceeded": 0,
+      "malformed_tool_call": 0,
+      "generation_timeout": 0,
+      "classification_failure": 0,
+      "other_runtime_error": 0,
+      "judge_parse_failure": 0
+    }
+  },
+  "crosstab": {
+    "base": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 2.1641666666666666,
+      "n_lost": 0,
+      "n_kept": 1200
+    },
+    "base_gemma3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 2.1641666666666666,
+      "n_lost": 0,
+      "n_kept": 1200
+    },
+    "base_mistral3": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": NaN,
+      "mean_ref_words_kept": 2.1641666666666666,
+      "n_lost": 0,
+      "n_kept": 1200
+    },
+    "full_classify": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 1.0,
+      "mean_ref_words_kept": 2.164440734557596,
+      "n_lost": 2,
+      "n_kept": 1198
+    },
+    "full_noclassify": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 1.5,
+      "mean_ref_words_kept": 2.17003367003367,
+      "n_lost": 12,
+      "n_kept": 1188
+    },
+    "full_systemprompt": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 2.7916666666666665,
+      "mean_ref_words_kept": 2.1377245508982035,
+      "n_lost": 31,
+      "n_kept": 1169
+    },
+    "full_classify_noartist": {
+      "lost_visual": 0,
+      "lost_contextual": 0,
+      "mean_ref_words_lost": 3.0,
+      "mean_ref_words_kept": 2.164440734557596,
+      "n_lost": 2,
+      "n_kept": 1198
+    }
+  },
+  "worst_case_imputation": {
+    "base": {
+      "n_universe": 1200,
+      "n_observed": 1200,
+      "observed_recall": 0.48725,
+      "observed_correctness": 0.9366666666666666,
+      "imputed_recall": 0.48725,
+      "imputed_correctness": 0.9366666666666666
+    },
+    "base_gemma3": {
+      "n_universe": 1200,
+      "n_observed": 1200,
+      "observed_recall": 0.47657499999999997,
+      "observed_correctness": 0.9208333333333333,
+      "imputed_recall": 0.47657499999999997,
+      "imputed_correctness": 0.9208333333333333
+    },
+    "base_mistral3": {
+      "n_universe": 1200,
+      "n_observed": 1200,
+      "observed_recall": 0.3900416666666667,
+      "observed_correctness": 0.7491666666666666,
+      "imputed_recall": 0.3900416666666667,
+      "imputed_correctness": 0.7491666666666666
+    },
+    "full_classify": {
+      "n_universe": 1200,
+      "n_observed": 1198,
+      "observed_recall": 0.479440734557596,
+      "observed_correctness": 0.9140233722871453,
+      "imputed_recall": 0.4786416666666667,
+      "imputed_correctness": 0.9125
+    },
+    "full_noclassify": {
+      "n_universe": 1200,
+      "n_observed": 1188,
+      "observed_recall": 0.4351851851851852,
+      "observed_correctness": 0.8282828282828283,
+      "imputed_recall": 0.43083333333333335,
+      "imputed_correctness": 0.82
+    },
+    "full_systemprompt": {
+      "n_universe": 1200,
+      "n_observed": 1169,
+      "observed_recall": 0.44488451668092394,
+      "observed_correctness": 0.8520102651839179,
+      "imputed_recall": 0.43339166666666673,
+      "imputed_correctness": 0.83
+    },
+    "full_classify_noartist": {
+      "n_universe": 1200,
+      "n_observed": 1198,
+      "observed_recall": 0.4599332220367279,
+      "observed_correctness": 0.8597662771285476,
+      "imputed_recall": 0.45916666666666667,
+      "imputed_correctness": 0.8583333333333333
+    }
+  },
+  "ranking_observed": [
+    "base",
+    "base_gemma3",
+    "full_classify",
+    "full_classify_noartist",
+    "full_systemprompt",
+    "full_noclassify",
+    "base_mistral3"
+  ],
+  "ranking_worst_case": [
+    "base",
+    "base_gemma3",
+    "full_classify",
+    "full_classify_noartist",
+    "full_systemprompt",
+    "full_noclassify",
+    "base_mistral3"
+  ],
+  "ranking_preserved": true,
+  "n_universe": 1200
+}
