@@ -1,16 +1,74 @@
-# ArtSeek
+<div align="center">
 
-Official code for ["ArtSeek: Deep artwork understanding via multimodal in-context reasoning and late interaction retrieval"](https://arxiv.org/abs/2507.21917).
+# 🎨 ArtSeek
 
-![ArtSeek pipeline overview](assets/artseek.png)
+### Deep artwork understanding via multimodal in-context reasoning and late interaction retrieval
 
-ArtSeek answers open-ended questions about artworks by combining three components:
+Nicola Fanelli · Gennaro Vessio · Giovanna Castellano<br>
+University of Bari Aldo Moro
 
-1. **Multimodal retrieval.** A ColQwen2 late-interaction retriever searches **WikiFragments**, 8.2M multimodal fragments (paragraph + images) from 973k visual-arts pages of Wikipedia, stored in a Qdrant vector database.
-2. **Late Interaction Classification Network (LICN).** It predicts the artist, genre, style, media and tags of the artwork. The predictions are shown to the model as an *artwork card*.
-3. **In-context reasoning.** Qwen2.5-VL-32B sees the image and the card, decides when to call the retrieval tool (the policy is taught with a one-shot example), and reasons over the retrieved fragments before answering.
+[![arXiv](https://img.shields.io/badge/arXiv-2507.21917-b31b1b.svg)](https://arxiv.org/abs/2507.21917)
+[![Dataset](https://img.shields.io/badge/🤗%20Dataset-WikiFragments-yellow)](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds)
+[![Model](https://img.shields.io/badge/🤗%20Model-LICN-yellow)](https://huggingface.co/cilabuniba/artseek-licn)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Contents**
+<img src="assets/artseek.png" width="80%" alt="ArtSeek pipeline: a retriever over Wikipedia fragments, an attribute classifier producing an artwork card, and a multimodal LLM that reasons and calls retrieval">
+
+</div>
+
+ArtSeek answers open-ended questions about artworks. Given an image and a question, a multimodal LLM looks at the painting, reads an *artwork card* predicted by a classifier, decides when it needs external knowledge, and retrieves it from Wikipedia before answering. The language model is used zero-shot, and the repository includes an interactive demo.
+
+## ✨ Highlights
+
+- **WikiFragments**, a multimodal knowledge base: 8.2M fragments (a paragraph plus the images above it, rendered as one image) from 973k visual-arts pages of English Wikipedia, searched with ColQwen2 late interaction.
+- **Two-stage retrieval** that keeps only the text tokens of a multimodal query and prefetches on pooled vectors, matching full multi-vector retrieval at under 7% of its cost.
+- **LICN**, a late-interaction classifier for artist, genre, style, media and tags that beats prior work on ArtGraph and works over an open label set.
+- **In-context tool calling**: a single worked example teaches Qwen2.5-VL-32B when and what to retrieve, over several steps.
+
+## 🔍 How it works
+
+<table>
+<tr><td align="center">
+<img src="assets/retrieval.png" width="95%" alt="Two-stage retrieval with ColQwen2: filtered query embeddings, prefetch on a pooled knowledge base, rerank with full representations"><br>
+<b>Multimodal retrieval.</b> The image and the question are encoded together by ColQwen2; only the question tokens are kept, candidates are prefetched on pooled fragment vectors and reranked on the full ones.
+</td></tr>
+<tr><td align="center">
+<img src="assets/classification.png" width="95%" alt="LICN: text and image embeddings concatenated with task embeddings and encoded by a shared transformer"><br>
+<b>Late Interaction Classification Network.</b> Frozen ColQwen2 embeddings of the image and of every label, concatenated with learnable task embeddings, are encoded by a shared transformer and matched per task. The predictions form the <i>artwork card</i>.
+</td></tr>
+<tr><td align="center">
+<img src="assets/generation.png" width="95%" alt="An in-context example: the model answers a visual question directly, then retrieves documents step by step for a complex question"><br>
+<b>In-context reasoning.</b> The one-shot example shown to the model: visual questions are answered directly, knowledge questions trigger <code>get_relevant_documents</code> calls whose fragments are read before answering.
+</td></tr>
+</table>
+
+## 📊 Results at a glance
+
+Question answering, mean correctness on a 0-2 scale judged by phi-4, with 95% confidence intervals (paper, Tab. 3). ArtSeek gains where its knowledge base covers the painting and ties with its backbone where it does not.
+
+| Benchmark | KB coverage | Qwen2.5-VL-32B | ArtSeek | Δ [95% CI] |
+|---|---|---|---|---|
+| ArtPedia-VQA | 85.8% | 0.535 | **0.722** | **+0.186** [+0.119, +0.254] |
+| LICNHeldOut | 53.3% | 1.010 | **1.197** | **+0.186** [+0.114, +0.257] |
+| AQUA | 10.4% | 0.920 | 0.896 | −0.025 [−0.095, +0.046] |
+| ArtCurate-AIC | 10.3% | 1.125 | 1.093 | −0.034 [−0.071, +0.003] |
+| ArtQuest | 8.9% | 0.937 | 0.914 | −0.023 [−0.076, +0.031] |
+
+The same gain holds with Gemma-3-27B and Mistral-Small-3.1-24B as backbones (+0.22 to +0.28 on ArtPedia-VQA). LICN reaches 71.8 / 78.5 / 69.8 top-1 on ArtGraph artist / genre / style. Captioning, retrieval and classification tables, with the commands to reproduce them, are in [`data/README.md`](data/README.md).
+
+## 🖼️ Examples
+
+<p align="center">
+<img src="assets/vqa_example.png" width="70%" alt="ArtSeek identifies a balzo headdress by retrieving a fragment about 1500-1550 European fashion, while the backbone answers hennin"><br>
+<em>The question names nothing to search for; the image and the card turn it into a query, and a retrieved fragment corrects the backbone's “hennin” into the right <b>balzo</b> (even though the card's artist is wrong).</em>
+</p>
+
+<p align="center">
+<img src="assets/qual3.png" width="100%" alt="ArtSeek compared with ChatGPT and Qwen2.5-VL on identifying Saint Nicholas and a battle scene"><br>
+<em>ArtSeek compared with Qwen2.5-VL and ChatGPT. Right: a failure case, where retrieval suggests a plausible but wrong battle.</em>
+</p>
+
+## 📑 Contents
 
 1. [Requirements](#1-requirements)
 2. [Installation](#2-installation)
@@ -21,7 +79,7 @@ ArtSeek answers open-ended questions about artworks by combining three component
 7. [Reproduce the paper's evaluation](#7-reproduce-the-papers-evaluation)
 8. [Rebuild the resources from scratch](#8-rebuild-the-resources-from-scratch)
 
-The experiments of the revised paper are on the [`rebuttal`](https://github.com/cilabuniba/artseek/tree/rebuttal) branch (see its `rebuttal_experiments/README.md`).
+The additional experiments of the revised paper (question-answering benchmarks, other backbones, human evaluation) are on the [`rebuttal`](https://github.com/cilabuniba/artseek/tree/rebuttal) branch.
 
 ---
 
