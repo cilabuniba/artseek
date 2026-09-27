@@ -208,25 +208,14 @@ models/configs/  experiment configurations
 
 ## 7. Reproduce the paper's evaluation
 
-The evaluation datasets (ArtPedia, PaintingForm, SemArt/ExplainMe, AQUA) go in `data/external/`; see [`data/README.md`](data/README.md).
+[`data/README.md`](data/README.md) explains how to download and lay out every dataset of the paper and how to run each experiment, with the results to expect:
 
-**Text generation**. Configurations are in `models/configs/generate/` (with/without classification and retrieval):
-
-```bash
-python -m artseek.method.generate.test inference --config-path models/configs/generate/artpedia_short.yaml
-python -m artseek.method.generate.eval pred-message-to-str --config-path models/configs/generate/artpedia_short.yaml
-```
-
-Consider disabling SPICE for large datasets such as PaintingForm.
-
-**Classification (LICN)**. `test` evaluates, `train` trains. The configurations in `models/configs/classify/` expect the ArtGraph splits in `data/artgraph` (Section 8):
-
-```bash
-accelerate launch -m artseek.method.classify.train_li_classification_network test \
-    --config-path models/configs/classify/li_classification_network_tft.yaml
-```
-
-**Retrieval**. `artseek/method/retrieve/eval.py` builds the sampled evaluation stores and computes the metrics. It needs one Qdrant collection per configuration.
+| Experiment | Command |
+|---|---|
+| Retrieval (Tab. S2) | `python -m artseek.method.retrieve.eval {sample,questions,embed,store,evaluate}` |
+| Classification (Tab. 1) | `accelerate launch -m artseek.method.classify.train_li_classification_network {precompute,train,test}` |
+| Artwork explanation (Tab. 2) | `python -m artseek.method.generate.test inference` + `python -m artseek.method.generate.eval score` |
+| Question answering, human study (Tab. 3) | [`rebuttal`](https://github.com/cilabuniba/artseek/tree/rebuttal) branch, `rebuttal_experiments/` |
 
 ## 8. Rebuild the resources from scratch
 

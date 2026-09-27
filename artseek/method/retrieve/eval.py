@@ -1,21 +1,45 @@
+"""Retrieval evaluation (paper Sec. 5.1 and supplementary Tab. S1).
+
+Steps, each a command of this module:
+
+  sample     10,000 WikiFragments with images: 5,000 with exactly one image
+             and 5,000 with two or more (the first half becomes text-only once
+             its image is removed).
+  questions  remove the first image of every fragment, re-render the fragment,
+             and let Qwen2.5-VL-32B write a question about the removed image
+             ("this image") answerable from the fragment.
+  embed      ColQwen2 embeddings of the re-rendered fragments (full and pooled).
+  store      Qdrant collections: full multi-vector, pooled two-stage, or CLIP.
+  evaluate   NDCG@5, R@1 and query time for a store / query-encoding pair.
+
+Usage:
+    python -m artseek.method.retrieve.eval sample --out data/retrieval_eval/sample
+    python -m artseek.method.retrieve.eval questions --dataset data/retrieval_eval/sample --out data/retrieval_eval/qa
+    python -m artseek.method.retrieve.eval embed --dataset data/retrieval_eval/qa --out data/retrieval_eval/qa_embeds
+    python -m artseek.method.retrieve.eval store --dataset data/retrieval_eval/qa_embeds --kind pooled
+    python -m artseek.method.retrieve.eval evaluate --dataset data/retrieval_eval/qa --store pooled --query filtered
+"""
+
 import io
 import json
 import os
+import shutil
 import time
 from pathlib import Path
+
+import click
 
 import numpy as np
 import pandas as pd
 import torch
 from accelerate import infer_auto_device_map
 from colpali_engine.models import ColQwen2, ColQwen2Processor
-from datasets import concatenate_datasets, load_from_disk
+from datasets import concatenate_datasets, load_dataset, load_from_disk
 from langchain_core.messages import HumanMessage, SystemMessage
 from multiprocess import set_start_method
 from PIL import Image
 from qdrant_client import QdrantClient, models
 from sklearn.cluster import AgglomerativeClustering
-from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 from transformers import CLIPProcessor, CLIPModel
 from torchmetrics.aggregation import SumMetric
@@ -24,6 +48,27 @@ from ...data.datasets.processing import FragmentCreator
 from ...method.generate import Qwen2_5_VLChatModel
 from ...utils.dirutils import get_fonts_dir
 from .metrics import RetrievalMetrics
+
+EMBEDDING_COLUMNS = ("embedding", "vcount", "pooled_embedding",
+                     "full_embeddings", "pooled_embeddings")
+# Qdrant collection per store kind (binary quantization, as in the paper).
+COLLECTIONS = {
+    "full": "retrieval_eval_full_binary",
+    "pooled": "retrieval_eval_reduced_binary",
+    "clip": "retrieval_eval_clip_binary",
+}
+
+
+def _load(path):
+    """A dataset saved with save_to_disk, or a Hugging Face Hub id."""
+    return load_from_disk(path) if Path(path).exists() else load_dataset(str(path))
+
+
+def _to_pil(image):
+    """Dataset images come either decoded or as {"bytes": ...}."""
+    if isinstance(image, dict):
+        return Image.open(io.BytesIO(image["bytes"]))
+    return image
 
 
 def stratified_sample(df, column_name, n_samples, random_state=42):
@@ -52,19 +97,11 @@ def stratified_sample(df, column_name, n_samples, random_state=42):
     return sampled_df.sample(frac=1, random_state=random_state).reset_index(drop=True)
 
 
-def make_sample_dataset(dataset_path, sample_size=10000, min_images=1):
-    """Make a sample dataset from the original dataset.
-
-    This function will select a sample of the dataset and save it to disk.
-    The sample will be selected randomly and will contain at least `min_images` in the fragment.
-
-    Args:
-        dataset_path (_type_): _description_
-        sample_size (int, optional): _description_. Defaults to 10000.
-        min_images (int, optional): _description_. Defaults to 1.
-    """
-    ds = load_from_disk(dataset_path)
-    ds = ds.remove_columns(["embedding", "vcount", "pooled_embedding"])
+def make_sample_dataset(dataset_path, out_path, sample_size=10000, min_images=1):
+    """Sample fragments with at least `min_images` images: half with exactly
+    `min_images`, half with more (stratified by image count, seed 42)."""
+    ds = _load(dataset_path)
+    ds = ds.remove_columns([c for c in EMBEDDING_COLUMNS if c in ds["train"].column_names])
     ds = ds.filter(
         lambda x: len(x["images"]["image"]) >= min_images,
         num_proc=32,
@@ -98,15 +135,10 @@ def make_sample_dataset(dataset_path, sample_size=10000, min_images=1):
 
     # Select the sample examples
     ds_sample = ds["train"].select(sample_indices)
-    dataset_name = os.path.basename(dataset_path)
-    dataset_dir = os.path.dirname(dataset_path)
-    ds_sample.save_to_disk(
-        os.path.join(dataset_dir, f"{dataset_name}_sample_{sample_size}"),
-        num_proc=32,
-    )
+    ds_sample.save_to_disk(out_path, num_proc=min(32, max(1, len(ds_sample) // 100)))
 
 
-def make_question_answer_dataset(dataset_path):
+def make_question_answer_dataset(dataset_path, out_path):
     ds = load_from_disk(dataset_path)
     fragment_creator = FragmentCreator(font_path=get_fonts_dir() / "arial.ttf")
 
@@ -158,7 +190,7 @@ def make_question_answer_dataset(dataset_path):
 
     def make_question_answer(example):
         images = [
-            Image.open(io.BytesIO(example["old_images"]["image"][0]["bytes"])),
+            _to_pil(example["old_images"]["image"][0]),
             example["fragment"],
         ]
 
@@ -184,41 +216,23 @@ def make_question_answer_dataset(dataset_path):
         example["answer"] = response["answer"]
         return example
 
-    dataset_name = os.path.basename(dataset_path)
-    dataset_dir = os.path.dirname(dataset_path)
-    for i in range(10):
-        # If shard already exists, skip it
-        if os.path.exists(
-            os.path.join(dataset_dir, f"{dataset_name}_question_answer_{i}")
-        ):
+    # Ten shards, each saved when done, so an interrupted run resumes.
+    shard_paths = [f"{out_path}_shard_{i}" for i in range(10)]
+    for i, shard_path in enumerate(shard_paths):
+        if os.path.exists(shard_path):
             continue
-        # Load the dataset and shard it
-        shard = ds.shard(10, i)
+        shard = ds.shard(10, i, contiguous=True)
         shard = shard.map(make_question_answer)
+        shard.save_to_disk(shard_path, num_proc=32)
 
-        shard.save_to_disk(
-            os.path.join(dataset_dir, f"{dataset_name}_question_answer_{i}"),
-            num_proc=32,
-        )
-
-    # Save the entire dataset
-    shards = [
-        load_from_disk(os.path.join(dataset_dir, f"{dataset_name}_question_answer_{i}"))
-        for i in range(10)
-    ]
-    ds = concatenate_datasets(shards)
-    ds.save_to_disk(
-        os.path.join(dataset_dir, f"{dataset_name}_question_answer"),
-        num_proc=32,
-    )
-    # Clean up shards
-    for i in range(10):
-        os.remove(os.path.join(dataset_dir, f"{dataset_name}_question_answer_{i}"))
-        os.rmdir(os.path.join(dataset_dir, f"{dataset_name}_question_answer_{i}"))
+    ds = concatenate_datasets([load_from_disk(p) for p in shard_paths])
+    ds.save_to_disk(out_path, num_proc=32)
+    for shard_path in shard_paths:
+        shutil.rmtree(shard_path)
 
 
 @torch.no_grad()
-def colqwen_embed(dataset_path: Path | str):
+def colqwen_embed(dataset_path: Path | str, out_path: Path | str):
     set_start_method("spawn")
 
     ds = load_from_disk(dataset_path)
@@ -278,12 +292,7 @@ def colqwen_embed(dataset_path: Path | str):
         with_rank=True,
         num_proc=torch.cuda.device_count(),
     )
-    dataset_name = os.path.basename(dataset_path)
-    dataset_dir = os.path.dirname(dataset_path)
-    new_ds.save_to_disk(
-        os.path.join(dataset_dir, f"{dataset_name}_embeds"),
-        num_proc=torch.cuda.device_count(),
-    )
+    new_ds.save_to_disk(out_path, num_proc=torch.cuda.device_count())
 
 
 def make_full_qdrant_store(dataset_path: Path | str, binary: bool = True):
@@ -511,7 +520,8 @@ def make_clip_qdrant_store(dataset_path: Path | str, binary: bool = True):
 
 
 @torch.no_grad()
-def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full"):
+def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full",
+         out_dir: Path | str = "."):
     assert query_type in [
         "full",
         "reduced",
@@ -536,10 +546,12 @@ def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full
 
     dataset_path = Path(dataset_path)
     ds = load_from_disk(dataset_path)
+    # Metrics over the first half of the sample (the text-only fragments).
     metrics_dict_half = {}
-    
+
     def process_example_clip(example, i):
-        image = Image.open(io.BytesIO(example["old_images"]["image"][0]["bytes"]))
+        nonlocal metrics_dict_half
+        image = _to_pil(example["old_images"]["image"][0])
         question = example["question"]
         
         # Embed the query
@@ -584,7 +596,8 @@ def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full
             metrics_dict_half = {f"half_{k}": v for k, v in metrics_dict_half.items()}
 
     def process_example(example, i):
-        image = Image.open(io.BytesIO(example["old_images"]["image"][0]["bytes"]))
+        nonlocal metrics_dict_half
+        image = _to_pil(example["old_images"]["image"][0])
         question = example["question"]
 
         # Embed the query
@@ -684,8 +697,6 @@ def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full
         ds.map(process_example_clip, with_indices=True, num_proc=1, load_from_cache_file=False)
     else:
         ds.map(process_example, with_indices=True, num_proc=1, load_from_cache_file=False)
-    # shard = ds.shard(num_shards=2000, index=0)
-    # shard.map(process_example, with_indices=True, num_proc=1, load_from_cache_file=False)
 
     # Save the metrics
     metrics_dict = metrics.compute()
@@ -696,33 +707,67 @@ def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full
         k: v.item() if isinstance(v, torch.Tensor) else v
         for k, v in metrics_dict.items()
     }
-    file_name = f"{'reduced' if 'reduced' in collection_name else 'full'}_{query_type}_metrics.json"
-
-    # Save the metrics to a file
+    os.makedirs(out_dir, exist_ok=True)
+    file_name = os.path.join(out_dir, f"{collection_name}__{query_type}_metrics.json")
     with open(file_name, "w") as f:
-        json.dump(metrics_dict, f)
+        json.dump(metrics_dict, f, indent=2)
+    print(json.dumps(metrics_dict, indent=2))
+    print(f"saved {file_name}")
 
 
-# make_sample_dataset(
-#     "data/wikifragments_visual_arts_dataset_embeds",
-# )
-# make_question_answer_dataset(
-#     "data/wikifragments_visual_arts_dataset_embeds_sample_10000",
-# )
-# colqwen_embed(
-#     "data/wikifragments_visual_arts_dataset_embeds_sample_10000_question_answer",
-# )
-# make_full_qdrant_store(
-#     "data/wikifragments_visual_arts_dataset_embeds_sample_10000_question_answer_embeds",
-# )
-# make_reduced_qdrant_store(
-#     "data/wikifragments_visual_arts_dataset_embeds_sample_10000_question_answer_embeds",
-# )
-# make_clip_qdrant_store(
-#     "data/wikifragments_visual_arts_dataset_embeds_sample_10000_question_answer_embeds",
-# )
-eval(
-    "data/wikifragments_visual_arts_dataset_embeds_sample_10000_question_answer",
-    "retrieval_eval_clip_binary",
-    "clip",
-)
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.option("--dataset", default="cilabuniba/wikifragments-visual-arts-embeds",
+              show_default=True, help="Hub id or save_to_disk path.")
+@click.option("--out", required=True, type=click.Path())
+@click.option("--sample-size", default=10000, show_default=True)
+def sample(dataset, out, sample_size):
+    """Sample the evaluation fragments."""
+    make_sample_dataset(dataset, out, sample_size=sample_size)
+
+
+@cli.command()
+@click.option("--dataset", required=True, type=click.Path(exists=True))
+@click.option("--out", required=True, type=click.Path())
+def questions(dataset, out):
+    """Remove the first image and generate the questions (GPU)."""
+    make_question_answer_dataset(dataset, out)
+
+
+@cli.command()
+@click.option("--dataset", required=True, type=click.Path(exists=True))
+@click.option("--out", required=True, type=click.Path())
+def embed(dataset, out):
+    """ColQwen2 full and pooled embeddings of the fragments (GPU)."""
+    colqwen_embed(dataset, out)
+
+
+@cli.command()
+@click.option("--dataset", required=True, type=click.Path(exists=True),
+              help="Output of `embed` (full/pooled) or of `questions` (clip).")
+@click.option("--kind", type=click.Choice(list(COLLECTIONS)), required=True)
+def store(dataset, kind):
+    """Create a Qdrant collection for the evaluation (QDRANT_URL)."""
+    {"full": make_full_qdrant_store, "pooled": make_reduced_qdrant_store,
+     "clip": make_clip_qdrant_store}[kind](dataset, binary=True)
+
+
+@cli.command()
+@click.option("--dataset", required=True, type=click.Path(exists=True),
+              help="Output of `questions`.")
+@click.option("--store", "store_kind", type=click.Choice(list(COLLECTIONS)), required=True)
+@click.option("--query", type=click.Choice(["full", "filtered", "clip"]), required=True,
+              help="full: whole multimodal query; filtered: its text tokens only.")
+@click.option("--out-dir", default="data/retrieval_eval/results", show_default=True)
+def evaluate(dataset, store_kind, query, out_dir):
+    """NDCG@5, R@1 and query time."""
+    query_type = {"full": "full", "filtered": "reduced", "clip": "clip"}[query]
+    eval(dataset, COLLECTIONS[store_kind], query_type, out_dir=out_dir)
+
+
+if __name__ == "__main__":
+    cli()

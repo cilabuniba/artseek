@@ -30,3 +30,6 @@ __pycache__
 /open_gpu_vscode.sh
 /start_demo.sh
 /.qdrant-initialized
+
+# Paper sources
+/ArtSeek.zip

@@ -19,15 +19,19 @@ from pycocoevalcap.spice.spice import Spice
 
 
 class Evaluator:
-    def __init__(self) -> None:
+    """COCO caption metrics (pycocoevalcap): BLEU@1-4, METEOR, ROUGE-L, CIDEr
+    and, optionally, SPICE. METEOR and SPICE need Java."""
+
+    def __init__(self, with_spice: bool = True) -> None:
         self.tokenizer = PTBTokenizer()
         self.scorer_list = [
             (Bleu(4), ["Bleu_1", "Bleu_2", "Bleu_3", "Bleu_4"]),
             (Meteor(), "METEOR"),
             (Rouge(), "ROUGE_L"),
             (Cider(), "CIDEr"),
-            # (Spice(), "SPICE"),
         ]
+        if with_spice:
+            self.scorer_list.append((Spice(), "SPICE"))
         self.evaluation_report = {}
 
     def do_the_thing(self, golden_reference, candidate_reference):
@@ -41,9 +45,7 @@ class Evaluator:
         golden_reference = self.tokenizer.tokenize(golden_reference)
         candidate_reference = self.tokenizer.tokenize(candidate_reference)
         
-        # From this point, some variables are named as in the original code
-        # I have no idea why they name like these
-        # The original code: https://github.com/salaniz/pycocoevalcap/blob/a24f74c408c918f1f4ec34e9514bc8a76ce41ffd/eval.py#L51-L63
+        # As in https://github.com/salaniz/pycocoevalcap/blob/a24f74c408c918f1f4ec34e9514bc8a76ce41ffd/eval.py#L51-L63
         for scorer, method in self.scorer_list:
             score, scores = scorer.compute_score(golden_reference, candidate_reference)
             if isinstance(method, list):
@@ -51,29 +53,6 @@ class Evaluator:
                     self.evaluation_report[m] = sc
             else:
                 self.evaluation_report[method] = score
-
-golden_reference = [
-    ["The quick brown fox jumps over the lazy dog.", "the lazy dog."],
-    ["The brown fox quickly jumps over the lazy dog.", "the lazy dog."],
-    ["A sly brown fox jumps over the lethargic dog.", "the lazy dog."],
-    ["The speedy brown fox leaps over the sleepy hound.", "the lazy dog."],
-    ["A fast, brown fox jumps over the lazy dog.", "the lazy dog."],
-]
-
-candidate_reference = [
-    "A fast brown fox leaps above the tired dog.",
-    "A quick brown fox jumps over the sleepy dog.",
-    "The fast brown fox jumps over the lazy dog.",
-    "The brown fox jumps swiftly over the lazy dog.",
-    "A speedy brown fox leaps over the drowsy dog.",
-]
-
-evaluator = Evaluator()
-
-evaluator.do_the_thing(golden_reference, candidate_reference)
-
-print(evaluator.evaluation_report)
-
 
 class RobustAccuracy(Metric):
     def __init__(self, **kwargs):

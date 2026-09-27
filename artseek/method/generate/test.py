@@ -1,3 +1,15 @@
+"""Zero-shot artwork explanation (captioning) on ArtPedia, SemArt v2.0 and
+PaintingForm with the LangGraph pipeline.
+
+The config (models/configs/generate/*.yaml) sets the dataset, the prompt,
+whether classification and retrieval are used, and the output directory.
+Predictions go to <out_dir>/preds.json (saved every 50 images; a re-run
+resumes). Score them with `python -m artseek.method.generate.eval score`.
+
+Usage:
+    python -m artseek.method.generate.test inference --config-path models/configs/generate/artpedia_short.yaml
+"""
+
 import json
 from pathlib import Path
 
@@ -11,7 +23,6 @@ from tqdm import tqdm
 from ...data.datasets.explain_me import ExplainMeDataset
 from ...data.datasets.painting_form import PaintingFormDataset
 from ...utils.dirutils import get_data_dir
-import re
 
 
 @click.group
@@ -116,22 +127,6 @@ def inference(config_path: Path | str):
 
     # Save the results at the end
     save_results(config.out_dir, preds)
-
-
-@cli.command
-@click.option(
-    "--config-path",
-    type=click.Path(exists=True),
-    required=True,
-    help="Path to the config file.",
-)
-def eval(config_path: Path | str):
-    with open(config_path, "r") as f:
-        config_dict = yaml.safe_load(f)
-        config = instantiate(config_dict)
-
-    annotation_file = config.out_dir / "gts.json"
-    preds_file = config.out_dir / "preds_str.json"
 
 
 if __name__ == "__main__":
