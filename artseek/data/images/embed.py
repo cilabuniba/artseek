@@ -251,12 +251,11 @@ def make_qdrant_store(
     dataset_path: Path | str, process_idx: int, num_proc: int, from_disk: bool = False
 ):
     batch_size = 512
-    qdrant_url = "http://localhost"
+    qdrant_url = os.environ.get("QDRANT_URL", "http://localhost")
     collection_name = Path(dataset_path).stem
 
     # --- 1. WAIT FOR QDRANT TO BE READY ---
-    # Since Qdrant starts in the background of your Slurm script,
-    # we check if it's accepting connections before proceeding.
+    # Qdrant may still be starting up: wait until it accepts connections.
     wait_client = QdrantClient(url=qdrant_url)
     connected = False
     for i in range(10):
@@ -269,7 +268,7 @@ def make_qdrant_store(
             time.sleep(2)
 
     if not connected:
-        raise RuntimeError("Could not connect to Qdrant server on localhost.")
+        raise RuntimeError(f"Could not connect to the Qdrant server at {qdrant_url}.")
 
     # --- 2. DATASET LOADING ---
     if from_disk:

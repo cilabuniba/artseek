@@ -31,21 +31,11 @@ from transformers import (
 
 
 class Qwen2_5_VLChatModel(BaseChatModel):
-    """A custom chat model that echoes the first `n` characters of the input.
+    """A langchain chat model wrapping Qwen2.5-VL run with transformers `generate`.
 
-    When contributing an implementation to LangChain, carefully document
-    the model including the initialization parameters, include
-    an example of how to initialize the model and include any relevant
-    links to the underlying models documentation or API.
-
-    Example:
-
-        .. code-block:: python
-
-            model = CustomChatModel(n=2)
-            result = model.invoke([HumanMessage(content="hello")])
-            result = model.batch([[HumanMessage(content="hello")],
-                                 [HumanMessage(content="world")]])
+    Messages may contain `{"type": "image"}` placeholders; the matching PIL
+    images are passed separately through the `images` keyword of `invoke`.
+    Tool calls are parsed from Qwen's Hermes-style `<tool_call>` blocks.
     """
 
     processor: ProcessorMixin
@@ -303,6 +293,12 @@ class Qwen2_5_VLChatModel(BaseChatModel):
         for more information on how to bind tools to a HF Transformers model.
         """
         return super().bind(tools=tools, **kwargs)
+
+    @property
+    def device(self):
+        """The device the underlying model runs on (used to place auxiliary
+        modules like LICN on the same device)."""
+        return self.mllm.device
 
     @property
     def _llm_type(self) -> str:

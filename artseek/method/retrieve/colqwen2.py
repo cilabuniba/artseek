@@ -35,7 +35,8 @@ class ColQwen2Qdrant:
 
         # Client instantiation
         self.collection_name = collection_name
-        self.client = QdrantClient(url="http://localhost", prefer_grpc=True, timeout=180)
+        qdrant_url = os.environ.get("QDRANT_URL", "http://localhost")
+        self.client = QdrantClient(url=qdrant_url, prefer_grpc=True, timeout=180)
         info = self.client.get_collection(self.collection_name)
         print(f"Client started with the following collection: {info}")
 

@@ -1,15 +1,19 @@
-# Data: Guide
+# Data
 
-## External Datasets
+Evaluation datasets go in `data/external/<name>/`. They are not needed to run the demo.
+
+### [ArtPedia](https://aimagelab.ing.unimore.it/imagelab/page.asp?IdPage=35)
+
+Put `artpedia.json` in `artpedia/` and the images in `artpedia/images/{id}.jpg`, where `id` is the key of the entry in `artpedia.json`. The images are downloaded from the `img_url` field of each entry.
 
 ### [AQUA](https://github.com/noagarcia/ArtVQA/tree/master/AQUA)
 
-We download the dataset from the link. Then we put it in a folder named `aqua`. We move the JSON annotations file to the subfolder `annotations`, the images to the subfolder `images`, and everything else to the the subfolder `additional`. 
+Download the dataset from the link into `aqua/`. Move the JSON annotation files to `aqua/annotations`, the images to `aqua/images`, and everything else to `aqua/additional`.
 
 ### [PaintingForm](https://huggingface.co/datasets/steven16/Painting-Form)
 
-We download the dataset from the link using the Hugging Face CLI. We put the dataset in a folder named `painting_form`. Unzip the folder with the images.
+Download the dataset with the Hugging Face CLI into `painting_form/` and unzip the images.
 
 ### [ExplainMe](https://github.com/noagarcia/explain-paintings)
 
-We download the annotations from the link and put them in a folder `explain_me/annotations` and copy the images from SemArt (AQUA) to the `images` folder. 
+Put the annotations in `explain_me/annotations` and copy the SemArt images (the same as AQUA) into `explain_me/images`.

@@ -14,7 +14,7 @@ accelerator:
   log_with: wandb
   project_dir: models/checkpoints/retrieve/li_classification_network_ttf
 model:
-  pretrained_model_name_or_path: models/colqwen2-v1.0
+  pretrained_model_name_or_path: vidore/colqwen2-v1.0
   torch_dtype: bfloat16
   attn_implementation: flash_attention_2
 li_classification_network:

@@ -1,15 +1,23 @@
 """
-ArtSeek – Interactive Art Analysis Demo
-========================================
+ArtSeek – interactive demo
+==========================
 Launch with:  streamlit run app.py
-Requires:     pip install streamlit
+
+Needs a GPU and a running Qdrant server with the WikiFragments collection
+(see README.md). Settings are read from the environment or from a `.env` file
+in the repository root (see `.env.example`).
 """
 
 import os
 
-os.environ["HF_HOME"] = "data_/hf"
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["HF_DATASETS_OFFLINE"] = "1"
+from dotenv import load_dotenv
+
+# Must run before anything imports huggingface_hub, so that HF_HOME and the
+# offline flags in .env are honoured.
+load_dotenv()
+# vLLM keeps a large CUDA memory pool on the GPU shared with the retriever;
+# expandable segments reduce fragmentation between the two.
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
 import io
 import re
@@ -44,11 +52,11 @@ st.markdown(
 # ── Model loading (cached across reruns) ─────────────────────────────────────
 
 
-@st.cache_resource(show_spinner="Loading ArtSeek model… this may take a minute ⏳")
+@st.cache_resource(show_spinner="Loading ArtSeek model… this may take a few minutes ⏳")
 def load_model():
-    from artseek.method.generate.pipe import MODEL
+    from artseek.method.generate.config import get_model
 
-    return MODEL
+    return get_model()
 
 
 # ── Session-state defaults ───────────────────────────────────────────────────
@@ -151,6 +159,29 @@ def render_documents(artifact: dict | None):
                 st.markdown(doc.get("text", ""))
 
 
+def render_timing_breakdown(step_durations: list[dict]):
+    """Render a per-step timing breakdown for a full model turn."""
+    total = sum(s["duration"] for s in step_durations)
+    n = len(step_durations)
+    with st.expander(
+        f"⏱️ Answered in {total:.1f}s ({n} step{'s' if n != 1 else ''})",
+        expanded=False,
+    ):
+        for i, step in enumerate(step_durations, start=1):
+            pct = int(step["duration"] / total * 100) if total else 0
+            if step["type"] == "generation":
+                st.progress(
+                    pct / 100,
+                    text=f"{i}. 🧠 Generation/reasoning — {step['duration']:.1f}s",
+                )
+            else:
+                q = step.get("query", "")
+                st.progress(
+                    pct / 100,
+                    text=f"{i}. 🔍 Retrieving *{q}* — {step['duration']:.1f}s",
+                )
+
+
 def render_message(msg):
     """Render one message from the conversation history."""
 
@@ -192,6 +223,15 @@ def render_message(msg):
                 if response:
                     st.markdown(response)
 
+            # Per-step generation time + full turn breakdown (set on the
+            # final AIMessage of a turn, once tool-calling is done)
+            duration = msg.response_metadata.get("duration")
+            step_durations = msg.response_metadata.get("step_durations")
+            if step_durations:
+                render_timing_breakdown(step_durations)
+            elif duration is not None:
+                st.caption(f"⏱️ Generated in {duration:.1f}s")
+
     # ── Tool result message ──────────────────────────────────────────────
     elif isinstance(msg, ToolMessage):
         with st.chat_message("assistant", avatar="📚"):
@@ -201,27 +241,19 @@ def render_message(msg):
                 if artifact and "documents" in artifact
                 else "?"
             )
-            with st.expander(f"📄 Retrieved {n} documents", expanded=False):
+            duration = artifact.get("duration") if artifact else None
+            label = f"📄 Retrieved {n} documents"
+            if duration is not None:
+                label += f" · ⏱️ {duration:.1f}s"
+            with st.expander(label, expanded=False):
                 render_documents(artifact)
 
 
 def build_first_user_message(prompt: str, card: dict | None) -> HumanMessage:
-    """Build the first user message (includes the image placeholder + card)."""
-    parts: list[dict] = [
-        {"type": "text", "text": "# Current query image\n"},
-        {"type": "image"},
-    ]
-    if card:
-        card_text = "\n# Artwork card"
-        for k, v in card.items():
-            card_text += f"\n{k}: "
-            for i, (pred, prob) in enumerate(v):
-                card_text += f"{pred} ({int(_prob_value(prob) * 100)}%)"
-                if i < len(v) - 1:
-                    card_text += ", "
-        parts.append({"type": "text", "text": card_text})
-    parts.append({"type": "text", "text": f"\n# Query\n{prompt}"})
-    return HumanMessage(content=parts)
+    """Build the first user message (image placeholder, artwork card, query)."""
+    from artseek.method.generate.prompts import build_user_content
+
+    return HumanMessage(content=build_user_content(prompt, card))
 
 
 # ── Sidebar ──────────────────────────────────────────────────────────────────

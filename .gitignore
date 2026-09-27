@@ -1,18 +1,32 @@
-/.cache
+# Environment and caches
 /.env
+/.venv
+/.cache
 /.vscode
-/artgraph
-/launch
-/data
-/models
-/out
-/store
+__pycache__
 /wandb
-/models/checkpoints
-/wikiextractor
-/.byaldi
+
+# Data, models and stores (large, downloaded or generated)
+/data
+/data_
+/models
+/store
 /storage
 /snapshots
+/artgraph
+/wikiextractor
+/.byaldi
+
+# Logs and outputs
+/out
+/launch
 /launches
-/.venv
-__pycache__
+*.out
+*.err
+/paper_imgs
+
+# Local working folders
+/rebuttal
+/open_gpu_vscode.sh
+/start_demo.sh
+/.qdrant-initialized

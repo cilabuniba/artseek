@@ -222,7 +222,7 @@ def colqwen_embed(dataset_path: Path | str):
     set_start_method("spawn")
 
     ds = load_from_disk(dataset_path)
-    model_name = "models/colqwen2-v1.0"
+    model_name = "vidore/colqwen2-v1.0"
 
     model = ColQwen2.from_pretrained(model_name, torch_dtype=torch.bfloat16)
     processor = ColQwen2Processor.from_pretrained(model_name)
@@ -290,7 +290,7 @@ def make_full_qdrant_store(dataset_path: Path | str, binary: bool = True):
     batch_size = 32
     dataset_path = Path(dataset_path)
 
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
+    client = QdrantClient(url=os.environ.get("QDRANT_URL", "http://localhost"), prefer_grpc=True)
     collection_name = f"retrieval_eval_full{'_binary' if binary else ''}"
     ds = load_from_disk(dataset_path)
 
@@ -358,7 +358,7 @@ def make_reduced_qdrant_store(dataset_path: Path | str, binary: bool = True):
     batch_size = 32
     dataset_path = Path(dataset_path)
 
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
+    client = QdrantClient(url=os.environ.get("QDRANT_URL", "http://localhost"), prefer_grpc=True)
     collection_name = f"retrieval_eval_reduced{'_binary' if binary else ''}"
     ds = load_from_disk(dataset_path)
 
@@ -438,7 +438,7 @@ def make_clip_qdrant_store(dataset_path: Path | str, binary: bool = True):
     batch_size = 32
     dataset_path = Path(dataset_path)
 
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
+    client = QdrantClient(url=os.environ.get("QDRANT_URL", "http://localhost"), prefer_grpc=True)
     collection_name = f"retrieval_eval_clip{'_binary' if binary else ''}"
     ds = load_from_disk(dataset_path)
 
@@ -518,16 +518,16 @@ def eval(dataset_path: Path | str, collection_name: str, query_type: str = "full
         "text",
         "clip",
     ], "query_type must be either 'full' or 'reduced'"
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
+    client = QdrantClient(url=os.environ.get("QDRANT_URL", "http://localhost"), prefer_grpc=True)
 
     metrics = RetrievalMetrics()
     total_time = SumMetric()
 
     if query_type != "clip":
         model = ColQwen2.from_pretrained(
-            "models/colqwen2-v1.0", torch_dtype=torch.bfloat16
+            "vidore/colqwen2-v1.0", torch_dtype=torch.bfloat16
         )
-        processor = ColQwen2Processor.from_pretrained("models/colqwen2-v1.0")
+        processor = ColQwen2Processor.from_pretrained("vidore/colqwen2-v1.0")
         model = model.eval()
     else:
         model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")

@@ -313,7 +313,9 @@ def make_qdrant_store(ctx, process_idx, num_proc):
 def add_qdrant_index(ctx):
     logger = ctx.obj["logger"]
 
-    client = QdrantClient(url="http://localhost", prefer_grpc=True)
+    client = QdrantClient(
+        url=os.environ.get("QDRANT_URL", "http://localhost"), prefer_grpc=True
+    )
     try:
         client.get_collection("wikifragments-visual-arts-embeds")
     except Exception:

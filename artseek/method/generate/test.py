@@ -44,7 +44,7 @@ def save_results(out_dir, preds):
 )
 @torch.no_grad()
 def inference(config_path: Path | str):
-    from .pipe import build_graph
+    from .graph import build_graph
 
     # Load the config
     with open(config_path, "r") as f:
