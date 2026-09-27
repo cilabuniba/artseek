@@ -1,22 +1,42 @@
-import re
-from pathlib import Path
-import click
+"""Captioning metrics for the artwork-explanation experiments (ArtPedia,
+SemArt v2.0 / ExplainMe, PaintingForm).
+
+Reads <out_dir>/preds.json written by `test.py inference`, applies the paper's
+normalisation (one sentence per aspect for ArtPedia, every aspect sentence for
+SemArt v2.0, the whole paragraph for PaintingForm) and computes BLEU@1-4,
+METEOR, ROUGE-L, CIDEr and SPICE. Scores are printed and saved to
+<out_dir>/metrics.json. METEOR and SPICE need Java.
+
+Usage:
+    python -m artseek.method.generate.eval score --config-path models/configs/generate/artpedia_short.yaml
+"""
+
 import json
+import re
+import string
+import unicodedata
+from pathlib import Path
+
+import click
+import nltk
 import yaml
 from hydra.utils import instantiate
-from ...data.datasets.explain_me import ExplainMeDataset
-from ...data.datasets.painting_form import PaintingFormDataset
-from ...data.datasets.artpedia import ArtpediaDataset
-from ...utils.dirutils import get_data_dir
-import evaluate
-import unidecode
-import unicodedata
-from .metrics import Evaluator
-import numpy as np
-import string
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tokenize.treebank import TreebankWordDetokenizer
+
+from ...data.datasets.artpedia import ArtpediaDataset
+from ...data.datasets.explain_me import ExplainMeDataset
+from ...data.datasets.painting_form import PaintingFormDataset
+from .metrics import Evaluator
+
+
+def _ensure_nltk_data():
+    for resource, package in (("tokenizers/punkt", "punkt"),
+                              ("tokenizers/punkt_tab", "punkt_tab")):
+        try:
+            nltk.data.find(resource)
+        except LookupError:
+            nltk.download(package, quiet=True)
 
 
 @click.group()
@@ -24,14 +44,18 @@ def cli():
     pass
 
 
-@cli.command
+@cli.command("score")
 @click.option(
     "--config-path",
     type=click.Path(exists=True),
     required=True,
     help="Path to the config file.",
 )
-def pred_message_to_str(config_path):
+@click.option("--no-spice", is_flag=True,
+              help="Skip SPICE (slow on long texts; the paper skips it for PaintingForm).")
+def score(config_path, no_spice):
+    """Compute captioning metrics for the predictions of a config."""
+    _ensure_nltk_data()
     config = load_config(config_path)
     preds = load_predictions(config.out_dir)
     messages = extract_messages(preds)
@@ -40,20 +64,26 @@ def pred_message_to_str(config_path):
     if isinstance(ds, ExplainMeDataset):
         jsons = [extract_json_from_message(message["content"]) for message in messages]
         hypotheses, references = process_explain_me_dataset(ds, jsons)
-        # hypotheses, references = process_explain_me_dataset(ds, messages)
     elif isinstance(ds, ArtpediaDataset):
         jsons = [extract_json_from_message(message["content"]) for message in messages]
         hypotheses, references = process_artpedia_dataset(ds, jsons)
     elif isinstance(ds, PaintingFormDataset):
         hypotheses, references = process_painting_form_dataset(ds, messages)
+    else:
+        raise click.UsageError(f"Unsupported dataset: {type(ds).__name__}")
 
-    # vocab = build_vocab(references)
-    # new_hypotheses, new_references = filter_vocab(hypotheses, references, vocab)
     hypotheses = filter_hypotheses_by_reference_vocab(hypotheses, references)
 
-    evaluate_results(references, hypotheses)
-    
-    
+    report = evaluate_results(references, hypotheses, with_spice=not no_spice)
+    out = Path(config.out_dir) / "metrics.json"
+    out.write_text(json.dumps(report, indent=2))
+    print(f"saved {out}")
+
+
+# Former name of the command.
+cli.add_command(score, name="pred-message-to-str")
+
+
 def filter_hypotheses_by_reference_vocab(hypotheses, references):
     # Step 1: Build vocabulary from all reference sentences
     vocab = set()
@@ -269,12 +299,12 @@ def truncate_caption(caption, max_words=30):
     return result
 
 
-def evaluate_results(references, hypotheses):
-    print(references[:5])
-    print(hypotheses[:5])
-    evaluator = Evaluator()
+def evaluate_results(references, hypotheses, with_spice=True):
+    evaluator = Evaluator(with_spice=with_spice)
     evaluator.do_the_thing(references, hypotheses)
-    print(evaluator.evaluation_report)
+    report = {k: float(v) for k, v in evaluator.evaluation_report.items()}
+    print(json.dumps(report, indent=2))
+    return report
 
 
 if __name__ == "__main__":
