@@ -7,6 +7,7 @@
 Nicola Fanelli · Gennaro Vessio · Giovanna Castellano<br>
 University of Bari Aldo Moro
 
+[![Project page](https://img.shields.io/badge/Project-Page-b5532f)](https://cilabuniba.github.io/artseek/)
 [![arXiv](https://img.shields.io/badge/arXiv-2507.21917-b31b1b.svg)](https://arxiv.org/abs/2507.21917)
 [![Dataset](https://img.shields.io/badge/🤗%20Dataset-WikiFragments-yellow)](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds)
 [![Model](https://img.shields.io/badge/🤗%20Model-LICN-yellow)](https://huggingface.co/cilabuniba/artseek-licn)
