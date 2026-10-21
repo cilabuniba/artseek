@@ -6,7 +6,7 @@
   <title>ArtSeek: Deep Artwork Understanding</title>
   <meta name="description" content="ArtSeek: deep artwork understanding via multimodal in-context reasoning and late interaction retrieval. A multimodal LLM that classifies an artwork, retrieves Wikipedia knowledge with late interaction, and reasons before answering.">
   <meta property="og:title" content="ArtSeek: Deep artwork understanding via multimodal in-context reasoning and late interaction retrieval">
-  <meta property="og:description" content="Retrieval-augmented multimodal reasoning over artworks, with the WikiFragments knowledge base.">
+  <meta property="og:description" content="WACV 2027. Retrieval-augmented multimodal reasoning over artworks, with the WikiFragments knowledge base.">
   <meta property="og:image" content="static/img/figures/artseek.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23b5532f'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>A</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,10 @@
 </nav>
 
 <header class="hero" id="top">
-  <span class="status-badge">Paper under review</span>
+  <a class="venue" href="https://wacv.thecvf.com/" aria-label="WACV 2027, Orlando, Florida">
+    <img src="static/img/logos/wacv2027.svg" alt="WACV 2027 logo">
+  </a>
+  <span class="status-badge">Accepted at WACV 2027</span>
   <h1><span class="brand">ArtSeek</span><br><span class="subtitle">Deep Artwork Understanding via Multimodal In-Context Reasoning and Late Interaction Retrieval</span></h1>
   <p class="authors">
     <span>Nicola Fanelli</span><span>Gennaro Vessio</span><span>Giovanna Castellano</span>
@@ -42,6 +45,7 @@
     <a class="btn" href="https://github.com/cilabuniba/artseek"><i class="fa-brands fa-github"></i>Code</a>
     <a class="btn" href="https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds"><i class="fa-solid fa-database"></i>WikiFragments</a>
     <a class="btn" href="https://huggingface.co/cilabuniba/artseek-licn"><i class="fa-solid fa-cube"></i>LICN model</a>
+    <a class="btn" href="https://huggingface.co/collections/cilabuniba/artseek-698ef12b30a4b14b61979c9a"><i class="fa-solid fa-layer-group"></i>HF collection</a>
     <a class="btn" href="https://github.com/cilabuniba/artseek/tree/rebuttal/rebuttal_experiments"><i class="fa-solid fa-flask"></i>Experiments</a>
     <a class="btn btn-ghost" href="#bibtex"><i class="fa-solid fa-quote-right"></i>BibTeX</a>
   </div>
@@ -298,12 +302,13 @@
   <h2>BibTeX</h2>
   <div class="bib">
     <button class="chip copy" id="copyBib">Copy</button>
-<pre id="bibText">@article{fanelli2025artseek,
-  title   = {ArtSeek: Deep artwork understanding via multimodal in-context
-             reasoning and late interaction retrieval},
-  author  = {Fanelli, Nicola and Vessio, Gennaro and Castellano, Giovanna},
-  journal = {arXiv preprint arXiv:2507.21917},
-  year    = {2025}
+<pre id="bibText">@inproceedings{fanelli2027artseek,
+  title     = {ArtSeek: Deep artwork understanding via multimodal in-context
+               reasoning and late interaction retrieval},
+  author    = {Fanelli, Nicola and Vessio, Gennaro and Castellano, Giovanna},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications
+               of Computer Vision (WACV)},
+  year      = {2027}
 }</pre>
   </div>
 </section>
@@ -311,7 +316,7 @@
 </main>
 
 <footer class="footer">
-  <p>Paintings shown in the demo are in the public domain (ArtPedia, Wikimedia Commons). Retrieved images come from Wikimedia Commons and are in the public domain, except the <i>Kefermarkt altarpiece</i> photograph (<a href="https://commons.wikimedia.org/wiki/File:Kefermarkt_Kirche_Fl%C3%BCgelaltar_Schrein_01.jpg">source</a>), licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. WikiFragments text is from Wikipedia, CC BY-SA 4.0.</p>
+  <p>Paintings shown in the demo are in the public domain (ArtPedia, Wikimedia Commons). Retrieved images come from Wikimedia Commons and are in the public domain, except the <i>Kefermarkt altarpiece</i> photograph (<a href="https://commons.wikimedia.org/wiki/File:Kefermarkt_Kirche_Fl%C3%BCgelaltar_Schrein_01.jpg">source</a>), licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. WikiFragments text is from Wikipedia, CC BY-SA 4.0. The WACV logo belongs to the IEEE/CVF Winter Conference on Applications of Computer Vision.</p>
   <p>© ArtSeek authors · <a href="https://github.com/cilabuniba/artseek">GitHub</a></p>
 </footer>
 

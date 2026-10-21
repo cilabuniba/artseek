@@ -70,6 +70,11 @@ h4 { margin: 0 0 .5rem; font-size: 1rem; }
 /* hero */
 .hero { text-align: center; padding: clamp(3rem, 7vw, 5.5rem) 1rem 2rem;
   background: radial-gradient(1200px 400px at 50% -10%, var(--accent-soft), transparent 70%); }
+/* the WACV logo is white; render it in ink on the light theme */
+.venue { display: block; width: fit-content; margin: 0 auto 1.1rem; }
+.venue img { display: block; height: clamp(56px, 9vw, 84px); width: auto; filter: brightness(0); opacity: .85; }
+:root[data-theme="dark"] .venue img { filter: none; opacity: 1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .venue img { filter: none; opacity: 1; } }
 .status-badge { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
   color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: .25rem .8rem; margin-bottom: 1.2rem; }
 .hero h1 { margin: 0 auto; max-width: 980px; font-family: var(--serif); font-weight: 650; line-height: 1.12; }
