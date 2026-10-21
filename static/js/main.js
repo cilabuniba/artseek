@@ -12,16 +12,23 @@
 
   /* ── theme ─────────────────────────────────────────────────────────── */
   const root = document.documentElement;
+  // Figures pick their dark variant via <source media>; a forced theme overrides it.
+  const syncFigures = () => {
+    const media = { dark: "all", light: "not all" }[root.dataset.theme] || "(prefers-color-scheme: dark)";
+    $$("source[data-theme-source]").forEach((s) => { s.media = media; });
+  };
   try {
     const saved = localStorage.getItem("artseek-theme");
     if (saved) root.dataset.theme = saved;
   } catch (e) { /* storage unavailable */ }
+  syncFigures();
   $("#themeToggle").addEventListener("click", () => {
     const dark = root.dataset.theme
       ? root.dataset.theme === "dark"
       : window.matchMedia("(prefers-color-scheme: dark)").matches;
     root.dataset.theme = dark ? "light" : "dark";
     try { localStorage.setItem("artseek-theme", root.dataset.theme); } catch (e) { /* ignore */ }
+    syncFigures();
     drawCharts();
   });
 

@@ -194,14 +194,6 @@ main { padding-bottom: 2rem; }
 .tab-panel.active { display: block; }
 figure { margin: 0 0 1.2rem; }
 figure img { margin: 0 auto; border-radius: 10px; }
-/* method figures ship a transparent light variant and a recolored dark one */
-.fig-dark { display: none; }
-:root[data-theme="dark"] .fig-light { display: none; }
-:root[data-theme="dark"] .fig-dark { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .fig-light { display: none; }
-  :root:not([data-theme="light"]) .fig-dark { display: block; }
-}
 /* fragment screenshots are rendered pages: show them as a white sheet */
 .frame img { background: #fff; }
 :root[data-theme="dark"] .frame img { padding: .6rem; border-radius: 8px; }
