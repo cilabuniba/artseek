@@ -12,7 +12,7 @@ University of Bari Aldo Moro
 [![arXiv](https://img.shields.io/badge/arXiv-2507.21917-b31b1b.svg)](https://arxiv.org/abs/2507.21917)
 [![Dataset](https://img.shields.io/badge/🤗%20Dataset-WikiFragments-yellow)](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds)
 [![Model](https://img.shields.io/badge/🤗%20Model-LICN-yellow)](https://huggingface.co/cilabuniba/artseek-licn)
-[![🤗 Collection](https://img.shields.io/badge/🤗%20Collection-ArtSeek-yellow)](https://huggingface.co/collections/cilabuniba/artseek)
+[![🤗 Collection](https://img.shields.io/badge/🤗%20Collection-ArtSeek-yellow)](https://huggingface.co/collections/cilabuniba/artseek-698ef12b30a4b14b61979c9a)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <img src="assets/artseek.png" width="80%" alt="ArtSeek pipeline: a retriever over Wikipedia fragments, an attribute classifier producing an artwork card, and a multimodal LLM that reasons and calls retrieval">
@@ -126,7 +126,7 @@ Everything is hosted on the Hugging Face Hub:
 
 | resource | Hub id | size |
 |---|---|---|
-| ArtSeek full collection (all assets) | [`cilabuniba/artseek` collection](https://huggingface.co/collections/cilabuniba/artseek) | — |
+| ArtSeek full collection (all assets) | [`cilabuniba/artseek` collection](https://huggingface.co/collections/cilabuniba/artseek-698ef12b30a4b14b61979c9a) | — |
 | WikiFragments with ColQwen2 embeddings | [`cilabuniba/wikifragments-visual-arts-embeds`](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds) | ~495 GB |
 | LICN weights | [`cilabuniba/artseek-licn`](https://huggingface.co/cilabuniba/artseek-licn) | small |
 | LICN label spaces | [`cilabuniba/artseek-licn-data`](https://huggingface.co/datasets/cilabuniba/artseek-licn-data) | small |
