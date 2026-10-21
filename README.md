@@ -8,14 +8,18 @@ Nicola Fanelli · Gennaro Vessio · Giovanna Castellano<br>
 University of Bari Aldo Moro
 
 [![Project page](https://img.shields.io/badge/Project-Page-b5532f)](https://cilabuniba.github.io/artseek/)
+[![WACV 2027](https://img.shields.io/badge/WACV-2027-4b68b7)](https://wacv.thecvf.com/)
 [![arXiv](https://img.shields.io/badge/arXiv-2507.21917-b31b1b.svg)](https://arxiv.org/abs/2507.21917)
 [![Dataset](https://img.shields.io/badge/🤗%20Dataset-WikiFragments-yellow)](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds)
 [![Model](https://img.shields.io/badge/🤗%20Model-LICN-yellow)](https://huggingface.co/cilabuniba/artseek-licn)
+[![🤗 Collection](https://img.shields.io/badge/🤗%20Collection-ArtSeek-yellow)](https://huggingface.co/collections/cilabuniba/artseek)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <img src="assets/artseek.png" width="80%" alt="ArtSeek pipeline: a retriever over Wikipedia fragments, an attribute classifier producing an artwork card, and a multimodal LLM that reasons and calls retrieval">
 
 </div>
+
+🎉 **Accepted at WACV 2027.**
 
 ArtSeek answers open-ended questions about artworks. Given an image and a question, a multimodal LLM looks at the painting, reads an *artwork card* predicted by a classifier, decides when it needs external knowledge, and retrieves it from Wikipedia before answering. The language model is used zero-shot, and the repository includes an interactive demo.
 
@@ -122,6 +126,7 @@ Everything is hosted on the Hugging Face Hub:
 
 | resource | Hub id | size |
 |---|---|---|
+| ArtSeek full collection (all assets) | [`cilabuniba/artseek` collection](https://huggingface.co/collections/cilabuniba/artseek) | — |
 | WikiFragments with ColQwen2 embeddings | [`cilabuniba/wikifragments-visual-arts-embeds`](https://huggingface.co/datasets/cilabuniba/wikifragments-visual-arts-embeds) | ~495 GB |
 | LICN weights | [`cilabuniba/artseek-licn`](https://huggingface.co/cilabuniba/artseek-licn) | small |
 | LICN label spaces | [`cilabuniba/artseek-licn-data`](https://huggingface.co/datasets/cilabuniba/artseek-licn-data) | small |
@@ -325,11 +330,11 @@ accelerate launch -m artseek.method.classify.train_li_classification_network tra
 ## Citation
 
 ```bibtex
-@article{fanelli2025artseek,
+@inproceedings{fanelli2027artseek,
   title   = {ArtSeek: Deep artwork understanding via multimodal in-context reasoning and late interaction retrieval},
   author  = {Fanelli, Nicola and Vessio, Gennaro and Castellano, Giovanna},
-  journal = {arXiv preprint arXiv:2507.21917},
-  year    = {2025}
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year    = {2027}
 }
 ```
 
