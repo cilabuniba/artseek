@@ -125,7 +125,7 @@
   </div>
   <div class="tab-panels" data-panels="method">
     <div class="tab-panel active" id="m-retrieval">
-      <figure><img src="static/img/figures/retrieval.png" alt="Two-stage retrieval with ColQwen2" loading="lazy"></figure>
+      <figure><img src="static/img/figures/retrieval-light.png" alt="Two-stage retrieval with ColQwen2" loading="lazy" class="fig-light"><img src="static/img/figures/retrieval-dark.png" alt="Two-stage retrieval with ColQwen2" loading="lazy" class="fig-dark"></figure>
       <div class="cols">
         <p><b>Late interaction.</b> ColQwen2 encodes every fragment, rendered as an image, into a sequence of token embeddings. A query matches each of its tokens to the most similar document token (MaxSim) and sums the scores, which is far more expressive than a single vector.</p>
         <p><b>Filtered multimodal queries.</b> The painting and the question are encoded together, but only the question tokens are kept: they are contextualized by the image, and dropping the image tokens halves query time and raises NDCG@5 from 33.9 to 44.9.</p>
@@ -140,7 +140,7 @@
       </div>
     </div>
     <div class="tab-panel" id="m-licn">
-      <figure><img src="static/img/figures/classification.png" alt="Late Interaction Classification Network" loading="lazy"></figure>
+      <figure><img src="static/img/figures/classification-light.png" alt="Late Interaction Classification Network" loading="lazy" class="fig-light"><img src="static/img/figures/classification-dark.png" alt="Late Interaction Classification Network" loading="lazy" class="fig-dark"></figure>
       <div class="cols">
         <p><b>Late Interaction Classification Network.</b> Frozen ColQwen2 embeddings of the image and of every label name are concatenated with learnable task embeddings and encoded by a shared transformer. Each task (artist, genre, style, media, tags) gets its own projection, and images and labels are matched in embedding space.</p>
         <p><b>Contrastive and open-set.</b> A SigLIP-style loss per task, combined with uncertainty weighting, trains it on the 116,475 ArtGraph artworks. Because it scores labels by similarity, it classifies over the whole label set and can take new classes without new layers.</p>
@@ -148,7 +148,7 @@
       </div>
     </div>
     <div class="tab-panel" id="m-icl">
-      <figure><img src="static/img/figures/generation.png" alt="The one-shot in-context example" loading="lazy"></figure>
+      <figure><img src="static/img/figures/generation-light.png" alt="The one-shot in-context example" loading="lazy" class="fig-light"><img src="static/img/figures/generation-dark.png" alt="The one-shot in-context example" loading="lazy" class="fig-dark"></figure>
       <div class="cols">
         <p><b>One worked example.</b> Instead of fine-tuning, Qwen2.5-VL-32B is shown a single conversation: a visual question it answers directly, and a complex one where it calls <code>get_relevant_documents</code> several times, each time deciding what to look up next.</p>
         <p><b>Policy that pays off.</b> Replacing the example with a prose description of the same policy lowers correctness on all five benchmarks (+0.05 to +0.19 for the example), makes answers 52% slower, and sometimes produces no answer at all.</p>
@@ -156,7 +156,7 @@
       </div>
     </div>
     <div class="tab-panel" id="m-overview">
-      <figure><img src="static/img/figures/artseek.png" alt="ArtSeek pipeline" loading="lazy" class="fig-medium"></figure>
+      <figure><img src="static/img/figures/artseek-light.png" alt="ArtSeek pipeline" loading="lazy" class="fig-light fig-medium"><img src="static/img/figures/artseek-dark.png" alt="ArtSeek pipeline" loading="lazy" class="fig-dark fig-medium"></figure>
       <p class="center muted">The full pipeline: user input, retriever over WikiFragments, attribute classifier, and the multimodal LLM that reasons over the context.</p>
     </div>
   </div>
@@ -294,7 +294,7 @@
 
 <section class="section" id="examples">
   <h2>More examples</h2>
-  <figure><img src="static/img/figures/qual3.png" alt="ArtSeek compared with ChatGPT and Qwen2.5-VL on two paintings" loading="lazy"></figure>
+  <figure><img src="static/img/figures/qual3-light.png" alt="ArtSeek compared with ChatGPT and Qwen2.5-VL on two paintings" loading="lazy" class="fig-light"><img src="static/img/figures/qual3-dark.png" alt="ArtSeek compared with ChatGPT and Qwen2.5-VL on two paintings" loading="lazy" class="fig-dark"></figure>
   <p class="center muted">Left: ArtSeek identifies Saint Nicholas, which the backbone misses. Right: a failure case, where retrieval suggests a plausible but wrong battle.</p>
 </section>
 
